@@ -23,6 +23,10 @@ for l in locations.PAGES:
     path, html = locations.build_location(l)
     write(path.lstrip("/") + ".html", html); urls.append((path, "0.8"))
 
+# Location pages moved from /service-areas/<slug> to /fl/<slug>
+import shutil
+shutil.rmtree(os.path.join(OUT, "service-areas"), ignore_errors=True)
+
 # The junk removal service page was folded into the homepage
 old = os.path.join(OUT, "service", "junk-removal.html")
 if os.path.exists(old):
@@ -49,6 +53,8 @@ vercel = {
   "redirects": [
     {"source": "/service", "destination": "/services", "permanent": True},
     {"source": "/service/junk-removal", "destination": "/", "permanent": True},
+    {"source": "/service-areas/:city", "destination": "/fl/:city", "permanent": True},
+    {"source": "/fl", "destination": "/service-areas", "permanent": False},
     {"source": "/areas", "destination": "/service-areas", "permanent": True},
     {"source": "/locations", "destination": "/service-areas", "permanent": True},
     {"source": "/index", "destination": "/", "permanent": True}

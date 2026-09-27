@@ -13,6 +13,16 @@
       "permanent": true
     },
     {
+      "source": "/service-areas/:city",
+      "destination": "/fl/:city",
+      "permanent": true
+    },
+    {
+      "source": "/fl",
+      "destination": "/service-areas",
+      "permanent": false
+    },
+    {
       "source": "/areas",
       "destination": "/service-areas",
       "permanent": true

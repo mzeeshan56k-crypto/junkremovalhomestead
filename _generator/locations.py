@@ -268,7 +268,7 @@ def build_location(l):
         split(l["local_h2"], l["local_html"], l["local_img"], l["local_alt"], rev=True, alt_bg=True, eyebrow="Local Know How"),
         nearby(l),
         areas(f"Areas We Serve Around {n}", f"{n} is part of our core South Miami-Dade service area. Here are the communities and ZIP codes we cover.",
-              map_q=l["map_q"], map_title=f"{n}, Florida"),
+              map_q=l["map_q"], map_title=f"{n}, Florida", current=n),
         faq(l["faq_h2"], l["faq_p"], l["faqs"]),
         cta(l["cta_h2"], l["cta_p"]),
     ]

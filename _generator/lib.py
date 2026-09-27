@@ -56,7 +56,7 @@ LOC_PAGES = {"Florida City": "florida-city", "Cutler Bay": "cutler-bay", "Leisur
              "Princeton": "princeton", "Redland": "redland"}
 
 def loc_url(name):
-    return f"/service-areas/{LOC_PAGES[name]}"
+    return f"/fl/{LOC_PAGES[name]}"
 
 AREAS = [
     ("Homestead", "33030, 33033, 33035"),
@@ -184,7 +184,11 @@ def gallery(h2, p, alt_bg=True):
             f'<div class="ba-grid stagger">{"".join(figs)}</div>'
             f'<div class="ba-cta reveal"><p>Want results like these at your property?</p>{call_btn("btn btn-primary pulse")}</div></div></section>')
 
-def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead, Florida", sid="service-areas", show_all=True):
+def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead, Florida", sid="service-areas", show_all=True, current=None):
+    links = [f'<a href="{loc_url(n)}">junk removal in {n}</a>' for n in LOC_PAGES if n != current]
+    if current:
+        links.insert(0, '<a href="/">junk removal in Homestead</a>')
+    p = f'{p} Local pages: {", ".join(links[:-1])} and {links[-1]}.'
     lis = []
     for n, z in AREAS:
         name = f'<a href="{loc_url(n)}">{n}</a>' if n in LOC_PAGES else n
