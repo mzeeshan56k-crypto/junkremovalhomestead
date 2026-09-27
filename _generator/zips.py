@@ -122,9 +122,18 @@ def service_faq(slug, name):
     return (q, a)
 
 # ---------- Location pages ----------
+# Location pages describe each ZIP only in terms of that community
+LOC_ZIP = {
+ "33031": ("Western Redland", "Groves, plant nurseries and homes on large lots near the Fruit and Spice Park. Farm cleanups, shed removal and brush piles are typical here."),
+ "33032": ("Princeton", "Newer subdivisions along SW 248th Street and older homes near US 1. We haul a lot of moving boxes, remodel debris and garage clutter here."),
+ "33033": ("Leisure City", "Established block homes, duplexes and rentals across Leisure City. Carport cleanouts, appliance pickups and tenant move-outs are common."),
+ "33157": ("Northern Cutler Bay", "The northern neighborhoods of Cutler Bay. Remodel debris, estate cleanouts and furniture pickups are frequent here."),
+ "33170": ("Eastern Redland", "Homes, small farms and nurseries on the eastern edge of the Redland. Yard waste, appliance pickups and shed removal are frequent requests."),
+}
+
 def location_section(l, place):
     zs = [z.strip() for z in l["zips"].split(",")]
-    rows = [[f"<b>{z}</b>", ZIP[z][0], ZIP[z][1]] for z in zs]
+    rows = [[f"<b>{z}</b>", *LOC_ZIP.get(z, ZIP[z])] for z in zs]
     cap = place[0].upper() + place[1:]
     if len(zs) == 1:
         h2 = f"Junk Removal in {place}, FL {zs[0]}"
@@ -136,4 +145,7 @@ def location_section(l, place):
                  "in each one, with no travel fee.")
     return (f'<section class="section" id="zip-codes"><div class="wrap">'
             f'{sec_head(h2, intro, "ZIP Codes")}'
-            f'{_table(["ZIP Code", "Area", "What to Know"], rows)}</div></section>')
+            f'{_table(["ZIP Code", "Area", "What to Know"], rows)}'
+            f'<div class="map reveal" style="margin-top:30px"><iframe title="Junk removal service map for {place}, Florida" '
+            f'src="https://www.google.com/maps?q={l["map_q"]}&z=12&output=embed" loading="lazy" '
+            'referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>')

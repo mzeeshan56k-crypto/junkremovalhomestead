@@ -140,8 +140,33 @@ def sec_head(h2, p="", eyebrow=None):
     pp = f"<p>{p}</p>" if p else ""
     return f'<div class="sec-head reveal">{e}<h2>{h2}</h2>{pp}</div>'
 
-def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_home=False):
+
+# Service card text for location pages: plain service names, text about that area only
+LOC_CARD = {
+ "junk-removal": "We provide full-service junk removal in {p} for homes, condos, rentals and businesses. Our two-person crew lifts, loads and hauls furniture, appliances, mattresses and clutter from any room in {zt}. Same-day pickup is often available, and every price is confirmed before we start. Usable items are donated first.",
+ "furniture-removal": "We remove couches, sectionals, recliners, mattresses, dressers and patio sets from homes and apartments in {p}. Our crew carries each piece from any room or floor in {zt}, donates what can be reused and prices every job upfront by truck volume. Same-day pickup is often available. Pads protect your floors and walls.",
+ "appliance-removal": "We remove old refrigerators, freezers, washers, dryers, stoves and water heaters from homes in {p}. Our crew carries each unit out for you, and every appliance goes to a licensed recycler that recovers refrigerant under EPA Section 608 rules. Washer and dryer pairs removed on the same visit cost less.",
+ "dumpster-rental": "Rent a 10-, 15- or 20-yard roll-off dumpster in {p} for roofing, remodels and large cleanouts. Our trailer dumpsters sit on boards to protect driveways in {zt}, and flat-rate pricing includes delivery, pickup and a 7-day rental. Delivery is usually the next day. Extra days are available if your project runs long.",
+ "construction-debris-removal": "We haul drywall, lumber, tile, cabinets, roofing shingles and other remodel waste from homes and job sites in {p}. Our crew loads everything by hand and leaves each site in {zt} broom-clean and ready for inspection. Contractors can book recurring pickups between project phases. Heavy loads like tile may be priced by weight.",
+ "yard-waste-removal": "We remove palm fronds, tree limbs, brush piles and overgrown landscaping from yards in {p}. Green waste is bagged and hauled from any property in {zt}, and clean vegetation goes to mulching facilities instead of the landfill. After storms, we add crews to clear fallen limbs faster. No bundling is required.",
+ "garage-cleanout": "Our garage cleanouts in {p} clear years of boxes, broken tools, old furniture and appliances in a single visit. The crew sorts what you keep, donates usable items and sweeps the floor so you can park inside again. Most garage cleanouts take just two to four hours from start to finish. Donations go to local charities.",
+ "estate-cleanout": "We provide respectful estate cleanouts in {p} for families, executors and realtors. Our crew empties homes, sheds and storage units room by room in {zt}, sets aside photos and documents and leaves the home broom-clean for sale. Photos and receipts are available for probate. Out-of-state heirs can use lockbox access.",
+ "commercial-junk-removal": "We provide commercial junk removal in {p} for offices, stores, restaurants and rental properties. Our crews haul furniture, fixtures, pallets and tenant leftovers from any business in {zt}, with after-hours pickups available. Certificates of insurance are available on request. Recurring pickups are available.",
+ "hurricane-debris-removal": "We remove storm debris in {p}, including downed limbs, palm fronds, broken fencing, soaked drywall, carpet and furniture. After a storm, crews reach {zt} as soon as roads are safe, which helps you recover before mold sets in. We also document each job for insurance. Our storm pricing never goes up.",
+}
+
+def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_home=False, place=None, zip_text=None):
     cards = []
+    sizes = "(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw"
+    if place:
+        items = [("junk-removal", "/", "Junk Removal", "junk-removal-truck-homestead-fl")] + \
+                [(s, f"/service/{s}", nav, image) for s, nav, _, _, image in SERVICES]
+        for slug, url, name, image in items:
+            text = LOC_CARD[slug].format(p=place, zt=zip_text)
+            cards.append(f'''<article class="card">
+<figure>{img(image, f"{name} in {place}, FL", sizes=sizes)}</figure>
+<div class="body"><h3><a href="{url}">{name}</a></h3><p>{text}</p></div></article>''')
+        return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Our Services")}<div class="cards stagger">{"".join(cards)}</div></div></section>'
     if include_home:
         cards.append(f'''<article class="card">
 <figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
@@ -214,21 +239,23 @@ def related(h2, p, items, alt_bg=True):
     arts = "".join(f'<article><h3><a href="{svc_url(s)}">{svc_title(s)}</a></h3><p>{t}</p></article>' for s, t in items)
     return f'<section class="section{" alt" if alt_bg else ""}"><div class="wrap">{sec_head(h2, p, "Related Services")}<div class="related stagger">{arts}</div></div></section>'
 
-def call_card(selected=None):
+def call_card(selected=None, area=None):
     svc = selected or "Junk Removal"
+    team = f"Talk to our local crew about junk removal in {area} and get an upfront price in minutes." if area else "Talk to a local Homestead team and get an upfront price in minutes."
+    served = f"Serving every street in {area}" if area else "Serving Homestead and all of South Dade"
     return f'''<div class="quote-card call-card" id="call">
 <span class="eyebrow dark">{icon("clock")} {HOURS}</span>
 <h2>Call for a Free {svc} Quote</h2>
-<p>Talk to a local Homestead team and get an upfront price in minutes. No forms, no waiting.</p>
+<p>{team} No forms, no waiting.</p>
 <a class="call-number" href="tel:{TEL}" aria-label="Call {PHONE}">{icon("phone")}<span>{PHONE}</span></a>
 {call_btn("btn btn-primary pulse call-wide", "Tap to Call Now")}
 <ul class="call-points">
 <li>{icon("check")}Same-day pickup when you call before noon</li>
 <li>{icon("check")}Free, no-obligation price over the phone</li>
-<li>{icon("check")}Serving Homestead and all of South Dade</li>
+<li>{icon("check")}{served}</li>
 </ul></div>'''
 
-def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None, second=("See Prices", "#pricing")):
+def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None, second=("See Prices", "#pricing"), area=None):
     pts = "".join(f'<li><span class="tick">{icon("check")}</span>{p}</li>' for p in points)
     cr = ""
     if crumbs:
@@ -240,7 +267,7 @@ def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk 
 <div class="hero-anim">{cr}<span class="eyebrow">{icon("pin")} {eyebrow}</span><h1>{h1}</h1><p class="hero-lead">{lead}</p>
 <ul class="hero-points">{pts}</ul>
 <div class="hero-ctas">{call_btn("btn btn-primary pulse")}<a class="btn btn-outline" href="{second[1]}">{second[0]}</a></div></div>
-{call_card(selected=selected)}
+{call_card(selected=selected, area=area)}
 </div></section>'''
 
 def trust():
