@@ -68,7 +68,7 @@ AREAS = [
     ("Homestead Air Reserve Base", "33039"),
     ("Modello", "33032"),
     ("Goulds", "33170"),
-    ("Cutler Bay", "33189, 33190"),
+    ("Cutler Bay", "33157, 33189, 33190"),
     ("South Miami Heights", "33177"),
     ("Keys Gate", "33035"),
 ]
@@ -268,7 +268,7 @@ def business_schema():
         "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": "07:00", "closes": "19:00"}],
-        "areaServed": [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS] +
+        "areaServed": [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS] + __import__("zips").zip_schema() +
                       [{"@type": "AdministrativeArea", "name": "Miami-Dade County, FL"}],
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Junk Removal Services",
             "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": HOME_SVC[2], "url": SITE + "/"}}] +

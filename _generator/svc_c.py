@@ -3,7 +3,7 @@ from lib import *
 EST = dict(
  slug="estate-cleanout", name="Estate Cleanout", schema_name="Estate Cleanout in Homestead, FL", min=300,
  title="Estate Cleanout in Homestead, FL | Whole-House Cleanouts",
- desc="Estate cleanouts in Homestead, FL. Respectful whole-house cleanouts for families, executors and realtors, with sorting and donation. Call 877-745-9845.",
+ desc="Estate cleanouts in Homestead, FL 33030. Respectful whole-house cleanouts for families, executors and realtors, with sorting and donation. Call 877-745-9845.",
  h1="<em>Estate Cleanout</em> Services in Homestead, FL",
  lead="Clearing a loved one's home is hard enough. Our crew handles the sorting, lifting, donating and hauling with care so families, executors and realtors can move forward on their timeline.",
  points=["Respectful, patient crews", "Sorting and donation included", "Realtor- and probate-ready", "Whole house in 1 to 2 days"],
@@ -68,7 +68,7 @@ EST = dict(
 COM = dict(
  slug="commercial-junk-removal", name="Commercial Junk Removal", schema_name="Commercial Junk Removal in Homestead, FL", min=150,
  title="Commercial Junk Removal in Homestead, FL | Office Cleanouts",
- desc="Commercial junk removal in Homestead, FL. Office furniture, retail fixtures and property turnovers with after-hours service. Call 877-745-9845.",
+ desc="Commercial junk removal in Homestead, FL 33030. Office furniture, retail fixtures and property turnovers with after-hours service. Call 877-745-9845.",
  h1="Commercial <em>Junk Removal</em> in Homestead, FL",
  lead="Offices, retail stores, restaurants, warehouses and rental properties across Homestead count on us to clear junk fast, on their schedule, without disrupting business.",
  points=["After-hours and weekend service", "Office and retail cleanouts", "Property manager turnovers", "Invoicing and COI available"],
@@ -132,7 +132,7 @@ COM = dict(
 HURR = dict(
  slug="hurricane-debris-removal", name="Hurricane Debris Removal", schema_name="Hurricane and Storm Debris Removal in Homestead, FL", min=150,
  title="Hurricane Debris Removal in Homestead, FL | Storm Cleanup",
- desc="Hurricane and storm debris removal in Homestead, FL. Downed limbs, fencing, wet drywall and ruined contents hauled fast. Call 877-745-9845.",
+ desc="Hurricane and storm debris removal in Homestead, FL 33030. Downed limbs, fencing, wet drywall and ruined contents hauled fast. Call 877-745-9845.",
  h1="<em>Hurricane Debris Removal</em> and Storm Cleanup in Homestead, FL",
  lead="After a hurricane or tropical storm, fast cleanup protects your home and family. We haul downed limbs, broken fencing, water-damaged drywall, flooring and ruined contents across Homestead and South Dade.",
  points=["Rapid post-storm response", "Trees, fencing and roofing", "Flood-damaged contents", "Photos for insurance claims"],

@@ -5,7 +5,7 @@ STD_STEPS = None
 FURN = dict(
  slug="furniture-removal", name="Furniture Removal", schema_name="Furniture Removal in Homestead, FL", min=95,
  title="Furniture Removal in Homestead, FL | Couch and Mattress Pickup",
- desc="Furniture removal in Homestead, FL. Couch, sectional, mattress and dresser pickup from any room, often the same day. From $95. Call 877-745-9845.",
+ desc="Furniture removal in Homestead, FL 33030. Couch, sectional, mattress and dresser pickup from any room, often the same day. From $95. Call 877-745-9845.",
  h1="Furniture Removal and <em>Couch Pickup</em> in Homestead, FL",
  lead="Old sofa, broken bed frame or a whole room of furniture? We carry it out of any room in your Homestead home, load it and haul it away the same day, donating whatever still has life left in it.",
  points=["Couches, beds and dressers", "Removed from any floor", "Donation drop-offs included", "Same-day pickup available"],
@@ -71,7 +71,7 @@ FURN = dict(
 APPL = dict(
  slug="appliance-removal", name="Appliance Removal", schema_name="Appliance Removal and Disposal in Homestead, FL", min=95,
  title="Appliance Removal in Homestead, FL | Fridge and Washer Pickup",
- desc="Appliance removal in Homestead, FL. Refrigerator, washer, dryer, stove, AC and water heater pickup and recycling from $95. Call 877-745-9845.",
+ desc="Appliance removal in Homestead, FL 33030. Refrigerator, washer, dryer, stove, AC and water heater pickup and recycling from $95. Call 877-745-9845.",
  h1="Appliance Removal and <em>Disposal</em> in Homestead, FL",
  lead="Old refrigerator, dead washer or rusted water heater? We disconnect where safe, carry it out, and recycle it responsibly so you do not have to rent a truck or wrestle it to the curb.",
  points=["Fridges, freezers and AC units", "Washers, dryers and stoves", "Recycled at licensed facilities", "Same-day appliance pickup"],
@@ -136,7 +136,7 @@ APPL = dict(
 DUMP = dict(
  slug="dumpster-rental", name="Dumpster Rental", schema_name="Dumpster Rental in Homestead, FL", min=295,
  title="Dumpster Rental in Homestead, FL | Roll-Off Dumpsters",
- desc="Dumpster rental in Homestead, FL. 10-, 15- and 20-yard roll-off dumpsters for cleanouts, roofing and remodels, with 7 days included. Call 877-745-9845.",
+ desc="Dumpster rental in Homestead, FL 33030. 10-, 15- and 20-yard roll-off dumpsters for cleanouts, roofing and remodels, with 7 days included. Call 877-745-9845.",
  h1="Roll-Off <em>Dumpster Rental</em> in Homestead, FL",
  lead="Load at your own pace with a driveway-friendly roll-off dumpster. Flat-rate pricing includes delivery, pickup, disposal and a full week on site for Homestead homeowners and contractors.",
  points=["10-, 15- and 20-yard sizes", "7-day standard rental", "Driveway-safe placement", "Next-day delivery"],

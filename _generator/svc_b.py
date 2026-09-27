@@ -3,7 +3,7 @@ from lib import *
 CONS = dict(
  slug="construction-debris-removal", name="Construction Debris Removal", schema_name="Construction Debris Removal in Homestead, FL", min=150,
  title="Construction Debris Removal in Homestead, FL | Remodel Waste",
- desc="Construction debris removal in Homestead, FL. Drywall, lumber, tile and remodel waste hauled from homes and job sites. Call 877-745-9845.",
+ desc="Construction debris removal in Homestead, FL 33030. Drywall, lumber, tile and remodel waste hauled from homes and job sites. Call 877-745-9845.",
  h1="Construction <em>Debris Removal</em> in Homestead, FL",
  lead="Remodel finished, but the mess is not? We load and haul drywall, lumber, tile, cabinets and packaging from homes and job sites across Homestead, leaving the space broom-clean and ready for inspection.",
  points=["Drywall, wood and tile", "Remodel and demo cleanup", "Contractor-friendly scheduling", "Loaded by our crew"],
@@ -69,7 +69,7 @@ CONS = dict(
 YARD = dict(
  slug="yard-waste-removal", name="Yard Waste Removal", schema_name="Yard Waste Removal in Homestead, FL", min=95,
  title="Yard Waste Removal in Homestead, FL | Brush and Frond Hauling",
- desc="Yard waste removal in Homestead, FL. Branches, palm fronds, brush piles and landscaping debris hauled the same day, from $95. Call 877-745-9845.",
+ desc="Yard waste removal in Homestead, FL 33030. Branches, palm fronds, brush piles and landscaping debris hauled the same day, from $95. Call 877-745-9845.",
  h1="<em>Yard Waste Removal</em> and Brush Hauling in Homestead, FL",
  lead="Palm fronds piling up, overgrown brush or a heap of branches after a trim? We bag, load and haul yard debris of any size so your Homestead property looks clean again.",
  points=["Branches and palm fronds", "Brush piles and clippings", "Old landscaping and sod", "Storm limb cleanup"],
@@ -135,7 +135,7 @@ YARD = dict(
 GAR = dict(
  slug="garage-cleanout", name="Garage Cleanout", schema_name="Garage Cleanout in Homestead, FL", min=150,
  title="Garage Cleanout in Homestead, FL | Garage Junk Removal",
- desc="Garage cleanout in Homestead, FL. We sort, haul and donate so you can park inside again. Same-day clutter removal. Call 877-745-9845.",
+ desc="Garage cleanout in Homestead, FL 33030. We sort, haul and donate so you can park inside again. Same-day clutter removal. Call 877-745-9845.",
  h1="Garage Cleanout Services in <em>Homestead, FL</em>",
  lead="Can't park in the garage anymore? We clear out boxes, old furniture, broken tools, paint cans you forgot about and years of clutter, then sweep the floor so the space is ready to use.",
  points=["Full or partial cleanouts", "Sorting help available", "Donate usable items", "Floor swept clean"],

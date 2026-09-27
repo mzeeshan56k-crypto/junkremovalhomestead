@@ -1,5 +1,5 @@
 from lib import *
-import svc_a, svc_b, svc_c, locations
+import svc_a, svc_b, svc_c, locations, zips
 
 # ---------- /services ----------
 SVC_FAQS = [
@@ -82,6 +82,9 @@ AREA_FAQS = [
  ("Do you serve businesses in all of these areas?",
   "Yes. Commercial junk removal, construction debris removal and dumpster rental are available to businesses, contractors and property managers "
   "anywhere in our service area."),
+ ("Which ZIP codes do you serve for junk removal?",
+  "We serve 33030, 33031, 33032, 33033, 33034, 33035 and 33039 in and around Homestead. We also cover 33170 in Goulds, "
+  "33177 in South Miami Heights, 33187 in the northern Redland and 33157, 33189 and 33190 in Cutler Bay."),
  ("My neighborhood is not listed. Can you still help?",
   "Probably. If you are in South Miami-Dade between Cutler Bay and the gateway to the Keys, we almost certainly serve you. Call, and we will confirm."),
 ]
@@ -119,6 +122,7 @@ def areas_page():
               "junk-hauling-truck-homestead", "Junk hauling truck heading out from Homestead",
               badge="<b>20 miles</b>core service radius", eyebrow="Where We Work"),
         area_cards(),
+        zips.hub_section(),
         prose("<h2>Every Service, in Every Area</h2>"
               "<p>Every service we offer is available across South Miami-Dade. That includes furniture and appliance removal, "
               "dumpster rental, debris and yard waste removal, garage and estate cleanouts, commercial junk removal and storm cleanup. "

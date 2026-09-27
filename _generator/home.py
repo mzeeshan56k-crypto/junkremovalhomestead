@@ -1,8 +1,8 @@
 from lib import *
-import blogs
+import blogs, zips
 
 TITLE = "Junk Removal in Homestead, FL | Same-Day Junk Hauling"
-DESC = ("Affordable junk removal in Homestead, FL. Same-day junk pickup, furniture and appliance removal, dumpster rental and cleanouts. Call 877-745-9845.")
+DESC = ("Affordable junk removal in Homestead, FL 33030. Same-day junk pickup, furniture and appliance removal, dumpster rental and cleanouts. Call 877-745-9845.")
 
 FAQS = [
  ("How much does junk removal cost in Homestead, FL?",
@@ -113,6 +113,8 @@ def body():
         "June 1 through November 30, we also keep crews ready for hurricane debris removal after storms.</p>",
         "roll-off-dumpster-rental-homestead", "Roll-off dumpsters ready for rental in Homestead, FL", rev=True, alt_bg=False, eyebrow="Bigger Jobs"))
 
+    b.append(zips.home_section())
+
     b.append(areas("Junk Removal Service Areas Around Homestead",
         "We cover the City of Homestead and the South Dade communities between Cutler Bay and the gateway to the Florida Keys. That includes neighborhoods near Coral Castle, the Redland farms and Everglades National Park.", alt_bg=True))
 
@@ -125,6 +127,8 @@ def body():
     b.append(cta("Ready to Get Rid of Your Junk Today?",
         "Call for a free, no-obligation quote. Same-day junk removal is available across Homestead, Florida City and South Miami-Dade."))
     return "\n".join(b)
+
+FAQS.append(zips.HOME_FAQ)
 
 def build():
     crumbs = [("Home", "/")]

@@ -1,4 +1,5 @@
 from lib import *
+import zips
 
 # Standard volume pricing shared by the homepage, hubs and location pages
 PRICE_HEADERS = ["Load Size", "What It Usually Holds", "Typical Price Range"]
@@ -10,9 +11,9 @@ PRICE_ROWS = [["Single item", "One couch, mattress or appliance", "$95 to $150"]
 
 FC = dict(
  slug="florida-city", name="Florida City", zips="33034", map_q="Florida+City,+FL+33034",
- title="Junk Removal in Florida City, FL | Same-Day Junk Pickup",
+ title="Junk Removal in Florida City, FL 33034 | Same-Day Pickup",
  desc="Junk removal in Florida City, FL 33034. Same-day junk pickup, furniture and appliance hauling, cleanouts and dumpsters. Upfront prices. Call 877-745-9845.",
- h1="Junk Removal in <em>Florida City, FL</em>",
+ h1="Junk Removal in <em>Florida City, FL 33034</em>",
  lead="From motel turnovers on US 1 to backyard cleanups west of Krome Avenue, we haul junk across Florida City. Most jobs are done the same day you call. You get an upfront price before we lift a thing.",
  points=["Same-day pickup in 33034", "Upfront, volume-based pricing", "Homes, rentals and businesses", "Donation and recycling first"],
  hero_img="junk-hauling-truck-homestead", hero_alt="Junk hauling truck on a job in Florida City, FL",
@@ -55,8 +56,8 @@ FC = dict(
 
 CB = dict(
  slug="cutler-bay", name="Cutler Bay", zips="33157, 33189, 33190", map_q="Cutler+Bay,+FL",
- title="Junk Removal in Cutler Bay, FL | Furniture and Junk Pickup",
- desc="Junk removal in Cutler Bay, FL. Same-day furniture, appliance and junk pickup, garage and estate cleanouts with upfront pricing. Call 877-745-9845.",
+ title="Junk Removal in Cutler Bay, FL 33157, 33189 and 33190",
+ desc="Junk removal in Cutler Bay, FL 33189. Same-day furniture, appliance and junk pickup, garage and estate cleanouts with upfront pricing. Call 877-745-9845.",
  h1="Junk Removal in <em>Cutler Bay, FL</em>",
  lead="Remodeling in Saga Bay, cleaning out a parent's home in Lakes by the Bay or just done with the clutter? Our crew lifts, loads and hauls it away across Cutler Bay with an upfront price and a clean sweep at the end.",
  points=["Same-day and next-day pickup", "Priced by truck volume", "We carry from any room", "Donate and recycle first"],
@@ -100,9 +101,9 @@ CB = dict(
 
 LC = dict(
  slug="leisure-city", name="Leisure City", zips="33033", map_q="Leisure+City,+FL+33033",
- title="Junk Removal in Leisure City, FL | Same-Day Hauling",
+ title="Junk Removal in Leisure City, FL 33033 | Same-Day Hauling",
  desc="Junk removal in Leisure City, FL 33033. Same-day junk hauling for furniture, appliances, yard waste and cleanouts. Upfront pricing. Call 877-745-9845.",
- h1="Junk Removal in <em>Leisure City, FL</em>",
+ h1="Junk Removal in <em>Leisure City, FL 33033</em>",
  lead="Old furniture in the carport, a broken fridge on the patio or a rental that needs clearing? Our crew handles junk hauling across Leisure City, often the same day, and you get a firm price before we start.",
  points=["Same-day pickup in 33033", "No need to drag junk to the curb", "Upfront volume pricing", "Homes, rentals and yards"],
  hero_img="dumpster-delivery-driveway-homestead", hero_alt="Junk removal and dumpster delivery on a Leisure City driveway",
@@ -145,9 +146,9 @@ LC = dict(
 
 PR = dict(
  slug="princeton", name="Princeton", zips="33032", map_q="Princeton,+FL+33032",
- title="Junk Removal in Princeton, FL | Junk Pickup and Cleanouts",
+ title="Junk Removal in Princeton, FL 33032 | Pickup and Cleanouts",
  desc="Junk removal in Princeton, FL 33032. Same-day junk pickup, move-in and move-out cleanouts, construction debris and garage cleanouts. Call 877-745-9845.",
- h1="Junk Removal in <em>Princeton, FL</em>",
+ h1="Junk Removal in <em>Princeton, FL 33032</em>",
  lead="New home boxes, builder leftovers or a garage that filled up faster than expected? Our crew clears it out across Princeton with same-day service and an upfront price before we lift anything.",
  points=["Same-day pickup in 33032", "HOA-friendly, nothing left out", "Upfront volume pricing", "Move-in and move-out help"],
  hero_img="construction-dumpster-homestead-fl", hero_alt="Construction debris ready for removal at a new home in Princeton, FL",
@@ -190,8 +191,8 @@ PR = dict(
 
 RL = dict(
  slug="redland", name="Redland", zips="33031, 33170, 33187", map_q="Redland,+FL",
- title="Junk Removal in the Redland, FL | Farm and Home Cleanouts",
- desc="Junk removal in the Redland, FL. Farm and grove cleanups, yard waste, sheds, appliances and property cleanouts with upfront pricing. Call 877-745-9845.",
+ title="Junk Removal in the Redland, FL 33031 | Farm Cleanouts",
+ desc="Junk removal in the Redland, FL 33031. Farm and grove cleanups, yard waste, sheds, appliances and property cleanouts with upfront pricing. Call 877-745-9845.",
  h1="Junk Removal in the <em>Redland, FL</em>",
  lead="Big lots, long driveways and years of stored equipment? Our crew clears homes, barns, groves and nurseries across the Redland with upfront pricing and trucks that handle rural properties with ease.",
  points=["Acreage and farm cleanouts", "Sheds, trailers and equipment", "Yard waste and storm debris", "Upfront volume pricing"],
@@ -270,11 +271,12 @@ def build_location(l):
         pricing(l["price_h2"], l["price_intro"], PRICE_HEADERS, PRICE_ROWS,
                 "Typical price ranges. Very heavy loads such as concrete, dirt or roofing may be priced by weight. Your final price is confirmed on site before work begins."),
         split(l["local_h2"], l["local_html"], l["local_img"], l["local_alt"], rev=True, alt_bg=True, eyebrow="Local Know How"),
+        zips.location_section(l, p),
         nearby(l),
         areas(f"Areas We Serve Around {p}", f"{p[0].upper() + p[1:]} is part of our core South Miami-Dade service area. Here are the communities and ZIP codes we cover.",
               map_q=l["map_q"], map_title=f"{n}, Florida", current=n),
         faq(l["faq_h2"], l["faq_p"], l["faqs"]),
         cta(l["cta_h2"], l["cta_p"]),
     ]
-    svc = {"name": f"Junk Removal in {n}, FL", "type": "Junk Removal", "min": 95, "area": [{"@type": "City", "name": f"{n}, FL"}]}
+    svc = {"name": f"Junk Removal in {n}, FL", "type": "Junk Removal", "min": 95, "area": [{"@type": "City", "name": f"{p}, FL"}] + zips.zip_schema([z.strip() for z in l["zips"].split(",")])}
     return path, page(path, l["title"], l["desc"], "\n".join(b), l["faqs"], crumbs, service=svc)

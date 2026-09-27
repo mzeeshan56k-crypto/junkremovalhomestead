@@ -324,3 +324,12 @@ td:first-child{font-weight:600;color:var(--g900)}
 .article .callout p:last-child{margin:0}
 .article ol{padding-left:1.3em}
 .article li{margin-bottom:.4em}
+/* ZIP tables stack into cards on phones */
+@media (max-width:640px){
+  table.stack{min-width:0}
+  table.stack thead{display:none}
+  table.stack tr{display:block;padding:14px 16px;border-bottom:1px solid var(--line)}
+  table.stack td{display:block;border:0;padding:2px 0}
+  table.stack td:first-child{font-size:1.1rem}
+  table.stack td:nth-child(2){font-weight:700;color:var(--g900)}
+}
