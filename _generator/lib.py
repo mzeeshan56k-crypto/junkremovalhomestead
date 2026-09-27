@@ -13,32 +13,32 @@ IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets
 
 SERVICES = [
     # slug, nav name, card title, card blurb, image
-    ("furniture-removal", "Furniture Removal", "Furniture Removal Homestead",
-     "Same day furniture removal in Homestead, FL for couches, sectionals, recliners, mattresses, box springs, dressers and patio sets. Our two person crew carries items from any room or floor in Keys Gate, Waterstone and across South Miami-Dade, donates usable pieces to local charities and hauls the rest, with upfront pricing by truck volume.",
+    ("furniture-removal", "Furniture Removal", "Furniture Removal in Homestead",
+     "We offer same-day furniture removal in Homestead, FL for couches, sectionals, recliners, mattresses, dressers and patio sets. Our two-person crew carries items from any room or floor in Keys Gate, Waterstone and across South Miami-Dade. Usable pieces go to local charities, and every job is priced upfront by truck volume.",
      "furniture-junk-pickup-homestead"),
-    ("appliance-removal", "Appliance Removal", "Appliance Removal and Disposal",
-     "Appliance removal and disposal in Homestead, FL for old refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters. Because the City of Homestead bulk pickup does not accept appliances, we carry them out for you and deliver every unit to licensed scrap recyclers that recover refrigerant under EPA Section 608 rules.",
+    ("appliance-removal", "Appliance Removal", "Appliance Removal in Homestead",
+     "We remove old refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters from homes in Homestead, FL. City of Homestead bulk pickup does not accept appliances, so we carry them out for you. Every unit goes to a licensed recycler that recovers refrigerant under EPA Section 608 rules.",
      "junk-hauling-truck-homestead"),
-    ("dumpster-rental", "Dumpster Rental", "Dumpster Rental Homestead, FL",
-     "Dumpster rental in Homestead, FL with 10, 15 and 20 yard roll off containers for roofing, remodels, estate cleanouts and construction projects. Driveway friendly trailer dumpsters are set on boards to protect pavers, and flat rate pricing includes delivery, pickup, a 7 day rental and disposal anywhere in South Miami-Dade County.",
+    ("dumpster-rental", "Dumpster Rental", "Dumpster Rental in Homestead",
+     "Rent a 10-, 15- or 20-yard roll-off dumpster in Homestead, FL for roofing, remodels, estate cleanouts and construction projects. Our driveway-friendly trailer dumpsters sit on boards to protect pavers. Flat-rate pricing includes delivery, pickup, a 7-day rental and disposal anywhere in South Miami-Dade County.",
      "roll-off-dumpster-rental-homestead"),
-    ("construction-debris-removal", "Construction Debris Removal", "Construction Debris Removal",
-     "Construction debris removal in Homestead, FL for drywall, lumber, tile, concrete, cabinets, roofing shingles and renovation waste. We clear job sites, garages and new builds for contractors and homeowners across South Miami-Dade, going well beyond the 3 cubic yard daily limit at county Trash and Recycling Centers, and leave every site broom clean.",
+    ("construction-debris-removal", "Construction Debris Removal", "Construction Debris Removal in Homestead",
+     "We haul drywall, lumber, tile, concrete, cabinets, roofing shingles and other renovation waste in Homestead, FL. Our crews clear job sites, garages and new builds for contractors and homeowners across South Miami-Dade. Unlike county drop-off centers, we have no 3-cubic-yard daily cap, and every site is left broom-clean.",
      "construction-dumpster-homestead-fl"),
-    ("yard-waste-removal", "Yard Waste Removal", "Yard Waste Removal Homestead",
-     "Yard waste removal in Homestead, FL for palm fronds, tree limbs, brush piles, stumps, sod and overgrown landscaping. We bag and haul green waste from backyards, Redland groves and rental lots without the City of Homestead 10 cubic yard curbside limit or 4 inch limb rule, and send clean vegetation to mulching and composting facilities.",
+    ("yard-waste-removal", "Yard Waste Removal", "Yard Waste Removal in Homestead",
+     "We remove palm fronds, tree limbs, brush piles, stumps, sod and overgrown landscaping in Homestead, FL. Green waste is bagged and hauled from backyards, Redland groves and rental lots, with no 10-cubic-yard cap or 4-inch limb rule. Clean vegetation goes to local mulching and composting facilities instead of the landfill.",
      "dumpster-trailer-loaded-homestead"),
-    ("garage-cleanout", "Garage Cleanout", "Garage Cleanout Services",
-     "Garage cleanout services in Homestead, FL that clear years of boxes, old tools, broken furniture, bikes, exercise equipment and appliances in a single visit. Our crew sorts what you keep, donates usable items, recycles metal and cardboard and sweeps the floor, so you can park inside again and protect your car from South Florida heat and storms.",
+    ("garage-cleanout", "Garage Cleanout", "Garage Cleanouts in Homestead",
+     "Our garage cleanouts in Homestead, FL clear years of boxes, old tools, broken furniture, bikes, exercise equipment and appliances in a single visit. The crew sorts what you keep, donates usable items, recycles metal and cardboard and sweeps the floor. You can park inside again and protect your car from the South Florida heat.",
      "garage-junk-pickup-carport-homestead"),
-    ("estate-cleanout", "Estate Cleanout", "Estate Cleanout Homestead, FL",
-     "Estate cleanout services in Homestead, FL for families, executors, probate attorneys and realtors. We empty whole houses, sheds and storage units room by room, set aside photos, documents and keepsakes, donate furniture and household goods to South Miami-Dade charities and leave the property broom clean and ready for appraisal, listing or sale.",
+    ("estate-cleanout", "Estate Cleanout", "Estate Cleanouts in Homestead",
+     "We provide respectful estate cleanouts in Homestead, FL for families, executors, probate attorneys and realtors. Our crew empties whole houses, sheds and storage units room by room and sets aside photos, documents and keepsakes. Usable goods go to local charities, and the home is left broom-clean for listing or sale.",
      "estate-cleanout-home-homestead"),
-    ("commercial-junk-removal", "Commercial Junk Removal", "Commercial Junk Removal",
-     "Commercial junk removal in Homestead, FL for offices, retail stores, restaurants, hotels, warehouses and rental property turnovers. We haul office furniture, cubicles, fixtures, pallets, kitchen equipment and tenant leftovers along Krome Avenue, Campbell Drive and US 1, with after hours, recurring and certificate of insurance options for property managers.",
+    ("commercial-junk-removal", "Commercial Junk Removal", "Commercial Junk Removal in Homestead",
+     "We provide commercial junk removal in Homestead, FL for offices, retail stores, restaurants, hotels, warehouses and rental properties. Our crews haul office furniture, cubicles, fixtures, pallets, kitchen equipment and tenant leftovers. Property managers can book after-hours or recurring pickups and request a certificate of insurance.",
      "commercial-debris-dumpster-homestead"),
-    ("hurricane-debris-removal", "Hurricane Debris Removal", "Hurricane Debris Removal",
-     "Hurricane debris removal in Homestead, FL after tropical storms and hurricanes, from downed trees, palm fronds and broken fencing to storm damaged roofing, soaked drywall, carpet and furniture. We clear properties fast across South Miami-Dade, sort vegetative debris from construction debris as Miami-Dade County requires, and help you recover before mold sets in.",
+    ("hurricane-debris-removal", "Hurricane Debris Removal", "Hurricane Debris Removal in Homestead",
+     "We remove hurricane and storm debris in Homestead, FL, including downed trees, palm fronds, broken fencing, damaged roofing, soaked drywall, carpet and furniture. Our crews work fast across South Miami-Dade and sort vegetative debris from construction debris, as the county requires. Quick removal helps you recover before mold sets in.",
      "storm-debris-lumber-pile-homestead"),
 ]
 SVC = {s[0]: s for s in SERVICES}
@@ -65,12 +65,12 @@ AREAS = [
     ("Naranja", "33032"),
     ("Princeton", "33032"),
     ("Redland", "33031, 33170, 33187"),
-    ("Homestead Base", "33039"),
+    ("Homestead Air Reserve Base", "33039"),
     ("Modello", "33032"),
     ("Goulds", "33170"),
     ("Cutler Bay", "33189, 33190"),
     ("South Miami Heights", "33177"),
-    ("Keys Gateway", "33034, 33035"),
+    ("Keys Gate", "33035"),
 ]
 
 ICONS = {
@@ -145,7 +145,7 @@ def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_hom
     if include_home:
         cards.append(f'''<article class="card">
 <figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
-<div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>Full service junk removal in Homestead, FL for homes, condos, rentals and businesses. Our two person crew lifts, loads and hauls furniture, appliances, mattresses, electronics, yard waste and household clutter from any room, often the same day you call, then donates and recycles first across Florida City, Leisure City and South Miami-Dade.</p></div></article>''')
+<div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>We provide full-service junk removal in Homestead, FL for homes, condos, rentals and businesses. Our two-person crew lifts, loads and hauls furniture, appliances, mattresses, electronics, yard waste and clutter from any room. Same-day pickup is often available, and we donate and recycle first across South Miami-Dade.</p></div></article>''')
     for slug, nav, title, blurb, image in SERVICES:
         if slug == exclude:
             continue
@@ -223,8 +223,8 @@ def call_card(selected=None):
 <a class="call-number" href="tel:{TEL}" aria-label="Call {PHONE}">{icon("phone")}<span>{PHONE}</span></a>
 {call_btn("btn btn-primary pulse call-wide", "Tap to Call Now")}
 <ul class="call-points">
-<li>{icon("check")}Same day pickup when you call before noon</li>
-<li>{icon("check")}Free, no obligation price over the phone</li>
+<li>{icon("check")}Same-day pickup when you call before noon</li>
+<li>{icon("check")}Free, no-obligation price over the phone</li>
 <li>{icon("check")}Serving Homestead and all of South Dade</li>
 </ul></div>'''
 
@@ -244,10 +244,10 @@ def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk 
 </div></section>'''
 
 def trust():
-    items = [("clock", "Same Day Pickup", "Book by noon, gone today"),
+    items = [("clock", "Same-Day Pickup", "Book by noon, gone today"),
              ("dollar", "Upfront Pricing", "Priced by volume, no surprises"),
              ("recycle", "Donate and Recycle", "Less goes to the landfill"),
-             ("broom", "We Sweep Up", "Space left broom clean")]
+             ("broom", "We Sweep Up", "Space left broom-clean")]
     out = "".join(f'<div class="trust-item"><span class="ic">{icon(i)}</span><div><b>{t}</b><span>{s}</span></div></div>' for i, t, s in items)
     return f'<section class="trust" aria-label="Why homeowners choose us"><div class="wrap stagger">{out}</div></section>'
 
@@ -305,7 +305,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
                  f'<li><a href="/">Homestead</a></li>' +
                  "".join(f'<li><a href="{loc_url(n)}"{cur(loc_url(n))}>{n}</a></li>' for n in LOC_PAGES))
     foot_svcs = ('<li><a href="/">Junk Removal Homestead</a></li>' +
-                 "".join(f'<li><a href="/service/{s[0]}">{s[1]} Homestead</a></li>' for s in SERVICES))
+                 "".join(f'<li><a href="/service/{s[0]}">{s[1]} in Homestead</a></li>' for s in SERVICES))
     foot_areas = ('<li><a href="/">Homestead, FL</a></li>' +
                   "".join(f'<li><a href="{loc_url(n)}">{n}, FL</a></li>' for n in LOC_PAGES) +
                   '<li><a href="/service-areas">All Service Areas</a></li>')
@@ -366,7 +366,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <footer class="site-footer">
 <div class="wrap fgrid">
 <div><div class="flogo"><img src="/assets/img/junk-removal-homestead-logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>Junk Removal<br>Homestead</span></div>
-<p>Locally focused junk removal, dumpster rental and property cleanouts for Homestead, Florida City, Redland, Leisure City and the rest of South Miami-Dade County.</p>
+<p>Locally focused junk removal, dumpster rental and property cleanouts for Homestead, Florida City, the Redland, Leisure City and the rest of South Miami-Dade County.</p>
 <a class="fphone" href="tel:{TEL}">{PHONE}</a><p>{HOURS}</p></div>
 <div><h2>Services</h2><ul>{foot_svcs}</ul></div>
 <div><h2>Service Areas</h2><ul>{foot_areas}</ul></div>
