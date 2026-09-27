@@ -26,9 +26,14 @@ def services_page():
     path = "/services"
     crumbs = [("Home", "/"), ("Services", None)]
     all_pages = svc_a.PAGES + svc_b.PAGES + svc_c.PAGES
-    rows = [['<a href="/">Junk Removal</a>', "Household junk and clutter pickup", "$95"]]
+    best = {"furniture-removal": "Couches, mattresses and bedroom sets", "appliance-removal": "Fridges, washers, dryers and water heaters",
+            "dumpster-rental": "Roofing, remodels and multi day cleanouts", "construction-debris-removal": "Drywall, lumber, tile and job site waste",
+            "yard-waste-removal": "Palm fronds, limbs and brush piles", "garage-cleanout": "Packed garages, sheds and carports",
+            "estate-cleanout": "Whole house cleanouts for families and executors", "commercial-junk-removal": "Offices, retail, hotels and rentals",
+            "hurricane-debris-removal": "Storm damaged trees, fencing and contents"}
+    rows = [["Junk Removal", "Household junk and clutter pickup", "$95"]]
     for s in all_pages:
-        rows.append([f'<a href="/service/{s["slug"]}">{s["name"]}</a>', SVC[s["slug"]][3].split(".")[0], f'${s["min"]}'])
+        rows.append([s["name"], best[s["slug"]], f'${s["min"]}'])
     b = [
         hero("Junk Removal and Hauling <em>Services</em> in Homestead, FL",
              "One local crew for every kind of cleanup. From a single couch to a full estate, construction site or storm cleanup, "
@@ -124,9 +129,8 @@ def areas_page():
         area_cards(),
         prose("<h2>Every Service, in Every Area</h2>"
               "<p>All of our services are available across South Miami-Dade, including "
-              + ", ".join(f'<a href="/service/{s[0]}">{s[1].lower()}</a>' for s in SERVICES[:-1])
-              + f' and <a href="/service/{SERVICES[-1][0]}">{SERVICES[-1][1].lower()}</a>. '
-              "Browse <a href=\"/services\">all services</a> to see what is included in each one.</p>"
+              + ", ".join(s[1].lower() for s in SERVICES[:-1]) + f" and {SERVICES[-1][1].lower()}. "
+              "Every area gets the same trained crews, the same trucks and the same upfront pricing.</p>"
               "<h2>Pricing Is the Same Across Our Service Area</h2>"
               "<p>You pay the same volume based rates whether you are in Homestead, Florida City or Cutler Bay. Labor, loading, travel and disposal "
               "are included, and your final price is confirmed on site before any work starts.</p>"),

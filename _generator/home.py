@@ -1,4 +1,5 @@
 from lib import *
+import blogs
 
 TITLE = "Junk Removal Homestead FL | Same Day Junk Hauling"
 DESC = ("Affordable junk removal in Homestead, FL. Same day junk pickup, furniture and appliance removal, dumpster rental and cleanouts. Call 877-745-9845.")
@@ -93,7 +94,7 @@ def body():
         "<h2>Residential and Commercial Junk Removal Homestead Trusts</h2>"
         "<p>On the residential side we handle garage cleanouts, move out junk, hoarding situations, shed demolition debris and backyard cleanups. "
         "On the commercial side we serve property managers, realtors, contractors and small businesses along Krome Avenue and Campbell Drive with "
-        "<a href=\"/service/commercial-junk-removal\">commercial junk removal</a> on flexible schedules, including early mornings before stores open. "
+        "commercial junk removal on flexible schedules, including early mornings before stores open. "
         "Landlords turning over units near Homestead Air Reserve Base also rely on us to clear out tenant leftovers in a single visit so the unit can be "
         "cleaned and listed the same week.</p>"))
 
@@ -118,16 +119,19 @@ def body():
     b.append(split(
         "Dumpster Rental and Debris Hauling for Bigger Projects",
         "<p>Some projects are too big or too long for a single pickup. For roof replacements, kitchen remodels and multi day cleanouts we offer "
-        "<a href=\"/service/dumpster-rental\">dumpster rental in Homestead</a> with 10, 15 and 20 yard roll off containers. Our trailer mounted dumpsters "
+        "dumpster rental in Homestead with 10, 15 and 20 yard roll off containers. Our trailer mounted dumpsters "
         "roll gently onto boards to protect pavers and driveways, a common concern in newer communities around the Homestead Miami Speedway.</p>"
-        "<p>Contractors who would rather not manage a container can book <a href=\"/service/construction-debris-removal\">construction debris removal</a> instead. "
+        "<p>Contractors who would rather not manage a container can book construction debris removal instead. "
         "We load drywall, lumber, tile, cabinets and packaging directly into the truck and leave the site clean for inspections. With hurricane season running "
-        "June 1 through November 30, we also keep crews ready for <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> after storms.</p>",
+        "June 1 through November 30, we also keep crews ready for hurricane debris removal after storms.</p>",
         "roll-off-dumpster-rental-homestead", "Roll off dumpsters ready for rental in Homestead, FL", rev=True, alt_bg=False, eyebrow="Bigger Jobs"))
 
     b.append(areas("Junk Removal Service Areas Around Homestead",
         "We cover the city of Homestead and the surrounding South Dade communities between Cutler Bay and the gateway to the Florida Keys, "
         "including neighborhoods near Coral Castle, the Redland farms and Everglades National Park.", alt_bg=True))
+
+    b.append(blogs.guide_cards("Homestead Junk Removal Guides",
+        "Local guides on junk removal costs, bulk trash rules, storm cleanup and disposal in Homestead and South Miami-Dade.", alt_bg=False))
 
     b.append(faq("Homestead Junk Removal FAQs",
         "Clear answers to the questions Homestead homeowners ask most before booking junk pickup.", FAQS, alt_bg=False))

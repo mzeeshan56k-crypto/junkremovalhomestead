@@ -26,17 +26,17 @@ FC = dict(
   "<p>If two people can safely carry it, we can usually take it. Popular Florida City pickups include:</p>"
   + checks(["Couches, beds and dressers", "Mattresses and box springs", "Refrigerators and washers", "TVs and electronics",
             "Motel and rental furniture", "Office and retail fixtures", "Old sheds and playsets", "Palm fronds and yard waste"])
-  + "<p>For single bulky pieces, see our <a href=\"/service/furniture-removal\">furniture removal</a> and <a href=\"/service/appliance-removal\">appliance removal</a> services. We cannot haul paint, fuel, pool chemicals, propane tanks, asbestos or medical waste.</p>"
+  + "<p>For single bulky pieces, see our furniture removal and appliance removal services. We cannot haul paint, fuel, pool chemicals, propane tanks, asbestos or medical waste.</p>"
   "<h2>Why Florida City Residents Call a Junk Removal Company</h2>"
   "<p>Florida City is its own municipality, so its trash and bulk pickup schedule is not the same as the City of Homestead or unincorporated Miami-Dade. Bulk collection also has limits on what goes to the curb and how much. Construction debris, tires, concrete and large piles often do not qualify, and you still have to drag everything to the street yourself in the South Florida heat.</p>"
   "<p>A private <strong>junk pickup service in Florida City</strong> skips the waiting and the heavy lifting. We carry items from inside the home, garage or unit, haul them away the same day and pay the disposal fees. Landlords and property managers use us between tenants so units can be cleaned, painted and rented without a pile of old furniture sitting in the parking lot.</p>"
   "<h2>Commercial Junk Removal Along US 1 and Palm Drive</h2>"
-  "<p>Hotels, restaurants, shops and offices along US 1 and Palm Drive rely on us for <a href=\"/service/commercial-junk-removal\">commercial junk removal</a>: mattress and case goods swaps, kitchen equipment, display fixtures, pallets and cardboard. We schedule early mornings or after closing so guests and customers never see the work, and we can return on a recurring schedule for businesses that generate junk every month.</p>",
+  "<p>Hotels, restaurants, shops and offices along US 1 and Palm Drive rely on us for commercial junk removal: mattress and case goods swaps, kitchen equipment, display fixtures, pallets and cardboard. We schedule early mornings or after closing so guests and customers never see the work, and we can return on a recurring schedule for businesses that generate junk every month.</p>",
  price_h2="Junk Removal Cost in Florida City, FL",
  price_intro="Florida City pricing is the same as Homestead. You pay for the space your items take up in our 15 cubic yard truck, with labor, travel and disposal included.",
  local_h2="Farm, Grove and Storm Cleanup West of Florida City",
  local_html="<p>West of Krome Avenue, Florida City blends into working farmland, nurseries and packing houses. We clear out broken irrigation parts, old shade cloth and frames, worn out farm furniture, tires and the odd abandoned trailer, and we bring a second truck when a property needs a big one day cleanup.</p>"
-  "<p>Florida City took the full force of Hurricane Andrew in 1992, and every hurricane season since has been a reminder to stay ready. When a storm passes, we add crews for <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> and <a href=\"/service/yard-waste-removal\">yard waste removal</a>, hauling downed limbs, fencing and water damaged contents so you are not waiting weeks for county collection.</p>",
+  "<p>Florida City took the full force of Hurricane Andrew in 1992, and every hurricane season since has been a reminder to stay ready. When a storm passes, we add crews for hurricane debris removal and yard waste removal, hauling downed limbs, fencing and water damaged contents so you are not waiting weeks for county collection.</p>",
  local_img="furniture-junk-pickup-homestead", local_alt="Old furniture picked up from a home in Florida City, FL",
  nearby=["Homestead", "Leisure City", "Redland", "Princeton"],
  faq_h2="Florida City Junk Removal FAQs",
@@ -71,17 +71,17 @@ CB = dict(
   "<p>We take almost everything that is not hazardous, including:</p>"
   + checks(["Sofas, sectionals and recliners", "Mattresses and bed frames", "Old kitchen cabinets and counters", "Refrigerators, washers and dryers",
             "Garage and attic clutter", "Patio sets and grills", "Exercise equipment", "Hot tubs and playsets"])
-  + "<p>Bigger projects often combine services: a <a href=\"/service/garage-cleanout\">garage cleanout</a> with <a href=\"/service/appliance-removal\">appliance removal</a>, or a remodel that needs <a href=\"/service/construction-debris-removal\">construction debris removal</a> once the demo crew is done.</p>"
+  + "<p>Bigger projects often combine services: a garage cleanout with appliance removal, or a remodel that needs construction debris removal once the demo crew is done.</p>"
   "<h2>Why Hire Junk Haulers Instead of Waiting for Bulky Pickup</h2>"
   "<p>Most Cutler Bay homes are covered by Miami-Dade County waste collection, which includes two bulky waste pickups per year of up to 25 cubic yards each. The county will not take single items over 150 pounds, construction debris, tires or anything left in the swale more than 3 days before your appointment, and you still have to carry it all out yourself.</p>"
   "<p>With a private <strong>junk pickup service in Cutler Bay</strong>, the crew removes items from inside the house, loads the truck on the spot and leaves nothing on the lawn for neighbors or code enforcement to notice. For families on a closing date or landlords between tenants, same day removal is often worth far more than waiting weeks for a free slot.</p>"
   "<h2>Estate Cleanouts and Downsizing in Cutler Bay</h2>"
-  "<p>Many Cutler Bay homes have been in the same family for decades. When it is time to sell, our <a href=\"/service/estate-cleanout\">estate cleanout</a> team works room by room, sets aside keepsakes and paperwork for you, donates what is usable and hauls the rest. Realtors and executors can hand us a key and get photos when the home is empty and swept.</p>",
+  "<p>Many Cutler Bay homes have been in the same family for decades. When it is time to sell, our estate cleanout team works room by room, sets aside keepsakes and paperwork for you, donates what is usable and hauls the rest. Realtors and executors can hand us a key and get photos when the home is empty and swept.</p>",
  price_h2="Junk Removal Prices in Cutler Bay, FL",
  price_intro="You pay only for the space your items fill in the truck. Labor, loading, travel to Cutler Bay and disposal fees are included in every price.",
  local_h2="Storm Ready Junk Removal Near Biscayne Bay",
  local_html="<p>Cutler Bay sits right on Biscayne Bay, and Hurricane Andrew brought one of the worst storm surges in the area's history in 1992. Low lying streets near the bay still see flooding in heavy summer storms. When water gets in, soaked carpet, drywall and furniture need to come out fast before mold sets in, and our crews prioritize those calls.</p>"
-  "<p>After storms we also run <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> for fallen limbs, broken fencing and damaged sheds, and <a href=\"/service/yard-waste-removal\">yard waste removal</a> for the palm fronds and branches that pile up every season.</p>",
+  "<p>After storms we also run hurricane debris removal for fallen limbs, broken fencing and damaged sheds, and yard waste removal for the palm fronds and branches that pile up every season.</p>",
  local_img="storm-debris-lumber-pile-homestead", local_alt="Storm debris and lumber pile removed in Cutler Bay",
  nearby=["Princeton", "Homestead", "Leisure City", "Florida City"],
  faq_h2="Cutler Bay Junk Removal FAQs",
@@ -116,7 +116,7 @@ LC = dict(
   "<p>Common Leisure City junk removal jobs include:</p>"
   + checks(["Carport and patio clutter", "Couches, mattresses and beds", "Old refrigerators and freezers", "Washers, dryers and water heaters",
             "Broken sheds and fencing", "Tires and car parts", "Yard waste and tree limbs", "Move out and tenant leftovers"])
-  + "<p>Need more room to work? Pair a pickup with a <a href=\"/service/garage-cleanout\">garage cleanout</a>, or rent a <a href=\"/service/dumpster-rental\">dumpster</a> for a remodel that will take a few weeks.</p>"
+  + "<p>Need more room to work? Pair a pickup with a garage cleanout, or rent a dumpster for a remodel that will take a few weeks.</p>"
   "<h2>County Bulky Pickup Rules in Leisure City</h2>"
   "<p>Leisure City is unincorporated, so trash service comes from Miami-Dade County rather than the City of Homestead. The county allows two bulky waste pickups per year, up to 25 cubic yards each, and will not collect single items over 150 pounds, construction debris or tires. Piles can only go out 3 days before the appointment, and anything placed early can bring a code citation.</p>"
   "<p>When your two pickups are used up, when you have heavy items like a fridge or a hot tub, or when you simply cannot wait weeks, a <strong>junk pickup service in Leisure City</strong> is the easy fix. We take items straight from wherever they sit and handle disposal and recycling for you.</p>"
@@ -125,8 +125,8 @@ LC = dict(
  price_h2="Junk Removal Cost in Leisure City, FL",
  price_intro="Leisure City prices match our Homestead rates. You pay for the truck space your items use, with labor, travel and disposal included.",
  local_h2="Backyard and Yard Waste Cleanup in Leisure City",
- local_html="<p>Leisure City lots often have mature mango, avocado and palm trees, and they drop a steady stream of fronds, branches and fruit. After a trim, or after a summer storm, we bag and haul the whole pile through our <a href=\"/service/yard-waste-removal\">yard waste removal</a> service so it is not sitting on the swale for weeks.</p>"
-  "<p>We also tear down and remove rotted wood sheds, old chain link, playsets and above ground pools, and we can handle <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> when a storm brings down limbs and fencing across the neighborhood.</p>",
+ local_html="<p>Leisure City lots often have mature mango, avocado and palm trees, and they drop a steady stream of fronds, branches and fruit. After a trim, or after a summer storm, we bag and haul the whole pile through our yard waste removal service so it is not sitting on the swale for weeks.</p>"
+  "<p>We also tear down and remove rotted wood sheds, old chain link, playsets and above ground pools, and we can handle hurricane debris removal when a storm brings down limbs and fencing across the neighborhood.</p>",
  local_img="garage-cleanout-before-after-homestead", local_alt="Garage cleanout before and after in Leisure City, FL",
  nearby=["Homestead", "Princeton", "Florida City", "Redland"],
  faq_h2="Leisure City Junk Removal FAQs",
@@ -161,7 +161,7 @@ PR = dict(
   "<p>Some of the most common Princeton pickups:</p>"
   + checks(["Moving boxes and packing material", "Old furniture and mattresses", "Appliances replaced in upgrades", "Builder scraps and trim",
             "Garage and closet clutter", "Patio furniture and grills", "Exercise equipment", "Kids' playsets and trampolines"])
-  + "<p>Doing upgrades after closing? Our <a href=\"/service/construction-debris-removal\">construction debris removal</a> clears drywall, tile, flooring and cabinets. For longer projects, a <a href=\"/service/dumpster-rental\">driveway dumpster</a> lets you load at your own pace.</p>"
+  + "<p>Doing upgrades after closing? Our construction debris removal clears drywall, tile, flooring and cabinets. For longer projects, a driveway dumpster lets you load at your own pace.</p>"
   "<h2>HOA Friendly Junk Pickup</h2>"
   "<p>Many Princeton subdivisions have homeowners associations with rules about piles, trailers and bulk items sitting out front. Princeton is also unincorporated, so county bulky collection applies: two pickups per year, nothing over 150 pounds and nothing placed out more than 3 days early. That leaves a lot of junk with nowhere to go.</p>"
   "<p>We avoid the problem entirely. Our crew picks up straight from the garage, patio or inside the home, loads the truck on the spot and leaves nothing on the curb for the HOA to flag. If you need a pickup on a specific day for an inspection or walk through, we will schedule around it.</p>"
@@ -170,7 +170,7 @@ PR = dict(
  price_h2="Junk Removal Prices in Princeton, FL",
  price_intro="Prices are based on truck volume, with labor, loading, travel and disposal included. The final price is always confirmed on site before we start.",
  local_h2="Garage and Remodel Cleanups Across Princeton",
- local_html="<p>Newer Princeton homes often have compact garages that fill quickly with overflow furniture, tools and boxes. Our <a href=\"/service/garage-cleanout\">garage cleanout</a> service sorts what you keep, hauls the rest and sweeps the floor so you can park inside again, which matters in South Florida summers.</p>"
+ local_html="<p>Newer Princeton homes often have compact garages that fill quickly with overflow furniture, tools and boxes. Our garage cleanout service sorts what you keep, hauls the rest and sweeps the floor so you can park inside again, which matters in South Florida summers.</p>"
   "<p>For contractors and homeowners doing larger remodels, we remove tear out debris between phases so the site stays clean for inspections, and we can come back on a schedule as the project moves forward.</p>",
  local_img="dumpster-trailer-loaded-homestead", local_alt="Loaded junk trailer after a cleanout in Princeton, FL",
  nearby=["Leisure City", "Homestead", "Cutler Bay", "Redland"],
@@ -205,16 +205,16 @@ RL = dict(
   "<p>Typical Redland pickups include:</p>"
   + checks(["Old sheds and barn contents", "Shade house frames and cloth", "Irrigation pipe and fittings", "Tires and equipment parts",
             "Old trailers and camper junk", "Fencing and gates", "Tree limbs and brush piles", "Household furniture and appliances"])
-  + "<p>For big brush piles, see our <a href=\"/service/yard-waste-removal\">yard waste removal</a> service. For a remodel or an extended cleanup, a <a href=\"/service/dumpster-rental\">roll off dumpster</a> can sit on site while you work.</p>"
+  + "<p>For big brush piles, see our yard waste removal service. For a remodel or an extended cleanup, a roll off dumpster can sit on site while you work.</p>"
   "<h2>Why Redland Owners Hire a Junk Hauling Company</h2>"
   "<p>The Redland is unincorporated, so county bulky collection applies: two pickups per year of up to 25 cubic yards, no single item over 150 pounds and no construction debris or tires. On a large property that barely scratches the surface, and loading a borrowed trailer for trips to the Moody Drive center means many hot hours of work.</p>"
   "<p>We handle the lifting, loading and disposal, and we sort metal for scrap, usable items for donation and green waste for mulch where possible. You get one price upfront and one visit that clears the whole list.</p>"
   "<h2>Estate and Property Cleanouts on Acreage</h2>"
-  "<p>When a Redland property is sold or passed down, there is often a house, a barn and several outbuildings to empty. Our <a href=\"/service/estate-cleanout\">estate cleanout</a> team works through each building, sets aside anything the family wants to keep and leaves every structure clean for buyers, surveyors and appraisers.</p>",
+  "<p>When a Redland property is sold or passed down, there is often a house, a barn and several outbuildings to empty. Our estate cleanout team works through each building, sets aside anything the family wants to keep and leaves every structure clean for buyers, surveyors and appraisers.</p>",
  price_h2="Junk Removal Cost in the Redland",
  price_intro="Redland prices use the same volume rates as Homestead. Very heavy materials such as concrete, rock or scrap metal in bulk may be priced by weight.",
  local_h2="Storm and Grove Cleanup in the Redland",
- local_html="<p>Open groves and tall trees take a beating in tropical storms and hurricanes, and the Redland saw heavy damage from Andrew in 1992 and again from Irma in 2017. After a storm we run <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> for downed limbs, twisted shade structures, broken fencing and damaged sheds.</p>"
+ local_html="<p>Open groves and tall trees take a beating in tropical storms and hurricanes, and the Redland saw heavy damage from Andrew in 1992 and again from Irma in 2017. After a storm we run hurricane debris removal for downed limbs, twisted shade structures, broken fencing and damaged sheds.</p>"
   "<p>We also help growers and nurseries clear out dead trees after a freeze or a disease outbreak, old pots and trays, and worn out equipment, working around your harvest and shipping schedule.</p>",
  local_img="dumpster-trailer-loaded-homestead", local_alt="Trailer loaded with junk from a Redland property cleanout",
  nearby=["Homestead", "Florida City", "Princeton", "Leisure City"],

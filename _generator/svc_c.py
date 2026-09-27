@@ -20,7 +20,7 @@ EST = dict(
   "<p>When a home is headed to market, time matters. Empty homes photograph better, show better and let inspectors see walls and floors clearly. We coordinate with realtors to meet listing dates, and we can provide photos and itemized receipts for executors who need to document the process for probate.</p>"
   "<p>If an estate sale company is handling valuables first, we come in afterward to clear everything that did not sell. That combination often recovers the most value for the estate.</p>"
   "<h2>Hoarding and Heavy Clutter Cleanouts</h2>"
-  "<p>Some homes need more than a standard cleanout. We handle hoarding situations with discretion, working at a pace that respects the homeowner or family. Unmarked vehicles can be arranged on request, and our crews treat every home with patience. For single rooms or smaller projects, our standard <a href=\"/\">junk removal service</a> may be all you need.</p>"
+  "<p>Some homes need more than a standard cleanout. We handle hoarding situations with discretion, working at a pace that respects the homeowner or family. Unmarked vehicles can be arranged on request, and our crews treat every home with patience. For single rooms or smaller projects, our standard junk removal service may be all you need.</p>"
   "<h2>Donation First Approach</h2>"
   "<p>Furniture, kitchenware, linens and clothing in good condition go to charities and resale partners in South Miami-Dade. Many families find comfort knowing a parent's belongings will help others locally. Metal and electronics are recycled, and only what is left goes to disposal.</p>",
  steps_h2="How an Estate Cleanout Works",
@@ -82,11 +82,11 @@ COM = dict(
   + checks(["Office furniture and cubicles", "Retail fixtures and shelving", "Restaurant equipment", "Warehouse pallets and racking",
             "Apartment turnovers and evictions", "Foreclosure and bank owned cleanouts", "Electronic waste and IT equipment", "Construction and tenant buildout debris"])
   + "<h2>Office Cleanouts and Furniture Liquidation</h2>"
-  "<p>Moving, downsizing or remodeling? We remove desks, chairs, filing cabinets, cubicle systems and break room appliances. Usable office furniture is donated or resold where possible, and electronics go to certified recyclers. See our <a href=\"/service/furniture-removal\">furniture removal service</a> for smaller office jobs.</p>"
+  "<p>Moving, downsizing or remodeling? We remove desks, chairs, filing cabinets, cubicle systems and break room appliances. Usable office furniture is donated or resold where possible, and electronics go to certified recyclers. See our furniture removal service for smaller office jobs.</p>"
   "<h2>Property Management and Apartment Turnovers</h2>"
   "<p>With a large rental market driven by Homestead Air Reserve Base families, agricultural workers and seasonal residents, property managers face frequent turnovers. We clear tenant leftovers, eviction contents and common area junk quickly so units can be cleaned and relisted. Many managers keep us on call for recurring pickups across multiple properties.</p>"
   "<h2>Retail, Restaurant and Warehouse Cleanouts</h2>"
-  "<p>Store resets, restaurant remodels and warehouse reorganizations create piles of fixtures, pallets and equipment. We haul it all, including commercial refrigerators through our <a href=\"/service/appliance-removal\">appliance removal service</a>. For buildouts with heavy debris, our <a href=\"/service/construction-debris-removal\">construction debris removal</a> crews can work alongside your contractor.</p>",
+  "<p>Store resets, restaurant remodels and warehouse reorganizations create piles of fixtures, pallets and equipment. We haul it all, including commercial refrigerators through our appliance removal service. For buildouts with heavy debris, our construction debris removal crews can work alongside your contractor.</p>",
  steps_h2="How Commercial Junk Removal Works",
  steps_p="Professional, documented service from quote to cleanup.",
  steps=[("Site Review", "Share photos or schedule a walkthrough for a written quote.", "list"),
@@ -148,9 +148,9 @@ HURR = dict(
             "Soaked carpet and flooring", "Ruined furniture and mattresses", "Spoiled refrigerators", "Damaged sheds and carports",
             "Pool cage and screen enclosure debris", "Outdoor furniture and grills"])
   + "<h2>Flood and Water Damage Cleanouts</h2>"
-  "<p>When water gets inside, speed matters. The EPA advises that water damaged materials be dried or removed within 24 to 48 hours to limit mold growth. We remove wet carpet, padding, drywall, cabinets and furniture so restoration contractors can start drying the structure. Refrigerators with spoiled food are sealed and hauled through our <a href=\"/service/appliance-removal\">appliance removal service</a>.</p>"
+  "<p>When water gets inside, speed matters. The EPA advises that water damaged materials be dried or removed within 24 to 48 hours to limit mold growth. We remove wet carpet, padding, drywall, cabinets and furniture so restoration contractors can start drying the structure. Refrigerators with spoiled food are sealed and hauled through our appliance removal service.</p>"
   "<h2>Tree and Yard Storm Cleanup</h2>"
-  "<p>Fallen limbs, snapped palms and uprooted trees are the most common storm debris in Homestead. We cut and load cut limbs and haul them away. For trees still standing or leaning on structures, call a licensed tree service first, then we handle the hauling. Routine yard piles are covered by our <a href=\"/service/yard-waste-removal\">yard waste removal</a> page.</p>"
+  "<p>Fallen limbs, snapped palms and uprooted trees are the most common storm debris in Homestead. We cut and load cut limbs and haul them away. For trees still standing or leaning on structures, call a licensed tree service first, then we handle the hauling. Routine yard piles are covered by our yard waste removal page.</p>"
   "<h2>Documentation for Insurance Claims</h2>"
   "<p>Insurance adjusters need proof. We take before and after photos of the debris we remove and provide detailed invoices that list the materials hauled. Many Homestead homeowners submit these with their claims. We recommend taking your own photos and videos before any cleanup begins.</p>"
   "<h2>Pre Storm Cleanup</h2>"

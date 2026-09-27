@@ -23,9 +23,9 @@ FURN = dict(
   "<p>The EPA reports that Americans discarded about 12.1 million tons of furniture and furnishings in 2018, and roughly 80 percent of it went to landfills. We sort each load so that clean, sturdy pieces go to local charities and resale shops in South Miami-Dade. Items that cannot be reused are broken down so wood and metal can be recycled where possible.</p>"
   "<p>Mattresses are a special case. More than 15 million mattresses are thrown away in the United States each year, and they take up enormous landfill space. When recycling is available we separate the steel springs, foam and fabric instead of dumping the whole mattress.</p>"
   "<h2>Mattress Disposal and Bed Removal Homestead</h2>"
-  "<p>Bed bug concerns, water damage after summer storms and simple upgrades all lead to mattress removal calls. We wrap damaged mattresses before carrying them through your home and haul them out the same day. Pair it with our <a href=\"/\">junk removal service</a> to clear the rest of the bedroom at the same visit.</p>"
+  "<p>Bed bug concerns, water damage after summer storms and simple upgrades all lead to mattress removal calls. We wrap damaged mattresses before carrying them through your home and haul them out the same day. Pair it with our junk removal service to clear the rest of the bedroom at the same visit.</p>"
   "<h2>Office Furniture Removal for Homestead Businesses</h2>"
-  "<p>Relocating or downsizing? We remove desks, filing cabinets, conference tables and cubicle panels from offices along Krome Avenue, Campbell Drive and the Homestead business parks. Larger jobs are covered under our <a href=\"/service/commercial-junk-removal\">commercial junk removal</a> service with after hours scheduling.</p>",
+  "<p>Relocating or downsizing? We remove desks, filing cabinets, conference tables and cubicle panels from offices along Krome Avenue, Campbell Drive and the Homestead business parks. Larger jobs are covered under our commercial junk removal service with after hours scheduling.</p>",
  steps_h2="How Furniture Pickup Works",
  steps_p="From quote to empty room in four easy steps.",
  steps=[("Snap a Photo", "Send pictures of the furniture for a fast, accurate price.", "phone"),
@@ -90,7 +90,7 @@ APPL = dict(
   "<h2>Washer, Dryer and Water Heater Removal Homestead</h2>"
   "<p>Upgrading your laundry room? We can remove the old washer and dryer the day your new set arrives. For water heaters, we ask that the unit be drained and the power or gas shut off by a licensed plumber or the homeowner. Once disconnected, we carry it out through the garage or side yard and recycle the tank.</p>"
   "<h2>AC Unit Removal After Replacements and Storms</h2>"
-  "<p>Homestead summers are brutal on air conditioners, and many homes replace condensers every 10 to 15 years. We haul old condensers, air handlers and window units, often alongside debris from <a href=\"/service/hurricane-debris-removal\">hurricane debris cleanups</a>. Remodel crews can bundle appliance hauling with <a href=\"/service/construction-debris-removal\">construction debris removal</a> for one easy invoice.</p>",
+  "<p>Homestead summers are brutal on air conditioners, and many homes replace condensers every 10 to 15 years. We haul old condensers, air handlers and window units, often alongside debris from hurricane debris cleanups. Remodel crews can bundle appliance hauling with construction debris removal for one easy invoice.</p>",
  steps_h2="How Appliance Pickup Works",
  steps_p="Quick, safe and fully handled from start to finish.",
  steps=[("Tell Us What It Is", "Share the appliance type, location and any stairs involved.", "phone"),
@@ -154,9 +154,9 @@ DUMP = dict(
   + "<h2>Roofing Dumpster Rental Homestead</h2>"
   "<p>Roofing shingles are heavy. One square of asphalt shingles, which covers 100 square feet, weighs roughly 200 to 350 pounds. A typical 2,000 square foot Homestead roof can produce 3 to 4 tons of debris, so we match roofers with the right container and weight allowance. Tile and concrete roofs, common in South Florida, are heavier still and priced by the ton.</p>"
   "<h2>What You Can and Cannot Put in the Dumpster</h2>"
-  "<p>Household junk, furniture, drywall, lumber, flooring, cabinets, shingles and yard waste are all fine. Not allowed: paint, oil, chemicals, batteries, tires, propane tanks, asbestos and hazardous waste. Appliances with refrigerant should be booked separately through our <a href=\"/service/appliance-removal\">appliance removal service</a>.</p>"
+  "<p>Household junk, furniture, drywall, lumber, flooring, cabinets, shingles and yard waste are all fine. Not allowed: paint, oil, chemicals, batteries, tires, propane tanks, asbestos and hazardous waste. Appliances with refrigerant should be booked separately through our appliance removal service.</p>"
   "<h2>Dumpster vs Full Service Junk Removal</h2>"
-  "<p>If you have a few days and people to help load, a dumpster usually wins on cost. If you would rather not lift anything, or the job is a single afternoon, <a href=\"/\">full service junk removal</a> is often cheaper because labor is included and nothing sits in the driveway.</p>",
+  "<p>If you have a few days and people to help load, a dumpster usually wins on cost. If you would rather not lift anything, or the job is a single afternoon, full service junk removal is often cheaper because labor is included and nothing sits in the driveway.</p>",
  steps_h2="How Dumpster Rental Works in Homestead",
  steps_p="Simple scheduling from delivery to pickup.",
  steps=[("Choose a Size", "Tell us your project and we recommend a 10, 15 or 20 yard dumpster.", "list"),

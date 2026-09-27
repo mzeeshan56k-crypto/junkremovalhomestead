@@ -14,31 +14,31 @@ IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets
 SERVICES = [
     # slug, nav name, card title, card blurb, image
     ("furniture-removal", "Furniture Removal", "Furniture Removal Homestead",
-     "Couches, sectionals, mattresses, dressers and patio sets hauled from any room, any floor, the same day you call.",
+     "Same day furniture removal in Homestead, FL for couches, sectionals, recliners, mattresses, box springs, dressers and patio sets. Our two person crew carries items from any room or floor in Keys Gate, Waterstone and across South Miami-Dade, donates usable pieces to local charities and hauls the rest, with upfront pricing by truck volume.",
      "furniture-junk-pickup-homestead"),
     ("appliance-removal", "Appliance Removal", "Appliance Removal and Disposal",
-     "Old refrigerators, washers, dryers, stoves and water heaters removed and recycled the right way.",
+     "Appliance removal and disposal in Homestead, FL for old refrigerators, freezers, washers, dryers, stoves, dishwashers and water heaters. Because the City of Homestead bulk pickup does not accept appliances, we carry them out for you and deliver every unit to licensed scrap recyclers that recover refrigerant under EPA Section 608 rules.",
      "junk-hauling-truck-homestead"),
     ("dumpster-rental", "Dumpster Rental", "Dumpster Rental Homestead, FL",
-     "Driveway friendly roll off dumpsters for cleanouts, roofing and remodels with flat rate pricing.",
+     "Dumpster rental in Homestead, FL with 10, 15 and 20 yard roll off containers for roofing, remodels, estate cleanouts and construction projects. Driveway friendly trailer dumpsters are set on boards to protect pavers, and flat rate pricing includes delivery, pickup, a 7 day rental and disposal anywhere in South Miami-Dade County.",
      "roll-off-dumpster-rental-homestead"),
     ("construction-debris-removal", "Construction Debris Removal", "Construction Debris Removal",
-     "Drywall, lumber, tile, cabinets and renovation waste cleared from job sites and garages.",
+     "Construction debris removal in Homestead, FL for drywall, lumber, tile, concrete, cabinets, roofing shingles and renovation waste. We clear job sites, garages and new builds for contractors and homeowners across South Miami-Dade, going well beyond the 3 cubic yard daily limit at county Trash and Recycling Centers, and leave every site broom clean.",
      "construction-dumpster-homestead-fl"),
     ("yard-waste-removal", "Yard Waste Removal", "Yard Waste Removal Homestead",
-     "Palm fronds, branches, brush piles and storm limbs bagged and hauled so your lawn looks clean again.",
+     "Yard waste removal in Homestead, FL for palm fronds, tree limbs, brush piles, stumps, sod and overgrown landscaping. We bag and haul green waste from backyards, Redland groves and rental lots without the City of Homestead 10 cubic yard curbside limit or 4 inch limb rule, and send clean vegetation to mulching and composting facilities.",
      "dumpster-trailer-loaded-homestead"),
     ("garage-cleanout", "Garage Cleanout", "Garage Cleanout Services",
-     "Reclaim your garage. We sort, haul and donate so you can park inside again.",
+     "Garage cleanout services in Homestead, FL that clear years of boxes, old tools, broken furniture, bikes, exercise equipment and appliances in a single visit. Our crew sorts what you keep, donates usable items, recycles metal and cardboard and sweeps the floor, so you can park inside again and protect your car from South Florida heat and storms.",
      "garage-junk-pickup-carport-homestead"),
     ("estate-cleanout", "Estate Cleanout", "Estate Cleanout Homestead, FL",
-     "Respectful whole house cleanouts for families, executors and realtors on a tight timeline.",
+     "Estate cleanout services in Homestead, FL for families, executors, probate attorneys and realtors. We empty whole houses, sheds and storage units room by room, set aside photos, documents and keepsakes, donate furniture and household goods to South Miami-Dade charities and leave the property broom clean and ready for appraisal, listing or sale.",
      "estate-cleanout-home-homestead"),
     ("commercial-junk-removal", "Commercial Junk Removal", "Commercial Junk Removal",
-     "Office furniture, retail fixtures, warehouse pallets and property turnovers handled after hours if needed.",
+     "Commercial junk removal in Homestead, FL for offices, retail stores, restaurants, hotels, warehouses and rental property turnovers. We haul office furniture, cubicles, fixtures, pallets, kitchen equipment and tenant leftovers along Krome Avenue, Campbell Drive and US 1, with after hours, recurring and certificate of insurance options for property managers.",
      "commercial-debris-dumpster-homestead"),
     ("hurricane-debris-removal", "Hurricane Debris Removal", "Hurricane Debris Removal",
-     "Fast storm cleanup for downed limbs, fencing, soaked drywall and damaged contents across South Dade.",
+     "Hurricane debris removal in Homestead, FL after tropical storms and hurricanes, from downed trees, palm fronds and broken fencing to storm damaged roofing, soaked drywall, carpet and furniture. We clear properties fast across South Miami-Dade, sort vegetative debris from construction debris as Miami-Dade County requires, and help you recover before mold sets in.",
      "storm-debris-lumber-pile-homestead"),
 ]
 SVC = {s[0]: s for s in SERVICES}
@@ -145,7 +145,7 @@ def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_hom
     if include_home:
         cards.append(f'''<article class="card">
 <figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
-<div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>Full service junk pickup for homes, condos and rentals. We lift, load, haul and sweep up so you never touch a thing.</p></div></article>''')
+<div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>Full service junk removal in Homestead, FL for homes, condos, rentals and businesses. Our two person crew lifts, loads and hauls furniture, appliances, mattresses, electronics, yard waste and household clutter from any room, often the same day you call, then donates and recycles first across Florida City, Leisure City and South Miami-Dade.</p></div></article>''')
     for slug, nav, title, blurb, image in SERVICES:
         if slug == exclude:
             continue
@@ -185,14 +185,15 @@ def gallery(h2, p, alt_bg=True):
             f'<div class="ba-cta reveal"><p>Want results like these at your property?</p>{call_btn("btn btn-primary pulse")}</div></div></section>')
 
 def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead, Florida", sid="service-areas", show_all=True, current=None):
-    links = [f'<a href="{loc_url(n)}">junk removal in {n}</a>' for n in LOC_PAGES if n != current]
-    if current:
-        links.insert(0, '<a href="/">junk removal in Homestead</a>')
-    p = f'{p} Local pages: {", ".join(links[:-1])} and {links[-1]}.'
     lis = []
     for n, z in AREAS:
-        name = f'<a href="{loc_url(n)}">{n}</a>' if n in LOC_PAGES else n
-        lis.append(f'<li>{icon("pin")}<div><b>{name}</b><span>ZIP {z}</span></div></li>')
+        if n in LOC_PAGES and n != current:
+            name = f'<a href="{loc_url(n)}">{n}</a>'
+        elif n == "Homestead" and current:
+            name = '<a href="/">Homestead</a>'
+        else:
+            name = n
+        lis.append(f'<li>{icon("pin")}<div><h3>{name}</h3><span>ZIP {z}</span></div></li>')
     mp = (f'<div class="map reveal"><iframe title="Junk removal service area map for {map_title}" '
           f'src="https://www.google.com/maps?q={map_q}&z=12&output=embed" loading="lazy" '
           'referrerpolicy="no-referrer-when-downgrade"></iframe></div>')
@@ -227,7 +228,7 @@ def call_card(selected=None):
 <li>{icon("check")}Serving Homestead and all of South Dade</li>
 </ul></div>'''
 
-def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None):
+def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None, second=("See Prices", "#pricing")):
     pts = "".join(f'<li><span class="tick">{icon("check")}</span>{p}</li>' for p in points)
     cr = ""
     if crumbs:
@@ -238,7 +239,7 @@ def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk 
 <div class="wrap">
 <div class="hero-anim">{cr}<span class="eyebrow">{icon("pin")} {eyebrow}</span><h1>{h1}</h1><p class="hero-lead">{lead}</p>
 <ul class="hero-points">{pts}</ul>
-<div class="hero-ctas">{call_btn("btn btn-primary pulse")}<a class="btn btn-outline" href="#pricing">See Prices</a></div></div>
+<div class="hero-ctas">{call_btn("btn btn-primary pulse")}<a class="btn btn-outline" href="{second[1]}">{second[0]}</a></div></div>
 {call_card(selected=selected)}
 </div></section>'''
 
@@ -274,7 +275,7 @@ def business_schema():
                 [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[2], "url": f"{SITE}/service/{s[0]}"}} for s in SERVICES]},
     }
 
-def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-removal-homestead.jpg"):
+def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-removal-homestead.jpg", extra=None, og_type="website"):
     url = SITE + path
     graph = [
         business_schema(),
@@ -293,6 +294,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
                       "areaServed": service.get("area") or [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS],
                       "offers": {"@type": "Offer", "priceCurrency": "USD", "availability": "https://schema.org/InStock",
                                  "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": service["min"]}}})
+    graph += extra or []
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(",", ":"))
 
     CUR = ' aria-current="page"'
@@ -322,7 +324,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <meta name="geo.position" content="25.4687;-80.4776">
 <meta name="ICBM" content="25.4687, -80.4776">
 <meta name="theme-color" content="#1e6b34">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{BRAND}">
 <meta property="og:title" content="{H.escape(title)}">
 <meta property="og:description" content="{H.escape(desc)}">
@@ -350,7 +352,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <li><a href="/"{home_cur}>Home</a></li>
 <li class="has-dd"><button class="dd-toggle" aria-expanded="false">Services</button><ul class="dropdown">{nav_svcs}</ul></li>
 <li class="has-dd"><button class="dd-toggle" aria-expanded="false">Service Areas</button><ul class="dropdown">{nav_areas}</ul></li>
-<li><a href="/#pricing">Pricing</a></li>
+<li><a href="/blog"{cur("/blog")}>Blog</a></li>
 <li><a href="#faq">FAQs</a></li>
 <li>{call_btn("btn btn-primary")}</li>
 </ul>
@@ -368,7 +370,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <a class="fphone" href="tel:{TEL}">{PHONE}</a><p>{HOURS}</p></div>
 <div><h2>Services</h2><ul>{foot_svcs}</ul></div>
 <div><h2>Service Areas</h2><ul>{foot_areas}</ul></div>
-<div><h2>Quick Links</h2><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/services">All Services</a></li><li><a href="/service-areas">Areas We Serve</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
+<div><h2>Quick Links</h2><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/services">All Services</a></li><li><a href="/service-areas">Areas We Serve</a></li><li><a href="/blog">Junk Removal Blog</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
 </div>
 <div class="wrap fbottom"><span>&copy; <span data-year>2026</span> {BRAND}. All rights reserved.</span><span>Junk removal and hauling in Homestead, FL 33030</span></div>
 </footer>

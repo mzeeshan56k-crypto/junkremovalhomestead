@@ -18,12 +18,12 @@ CONS = dict(
             "Doors, windows and frames", "Carpet, padding and underlayment", "Insulation and packaging", "Fixtures, tubs and toilets",
             "Fencing and deck boards", "Roofing scraps and shingles"])
   + "<h2>Remodel Debris Removal for Homeowners</h2>"
-  "<p>Doing a DIY kitchen or bathroom remodel? A typical kitchen tear out produces 3 to 5 cubic yards of cabinets, counters and drywall, while a full bathroom gut runs 2 to 4 yards. We pick up in one visit, from the garage, driveway or right from the room, and sweep the area when finished. If your project spans several weekends, a <a href=\"/service/dumpster-rental\">dumpster rental</a> may be a better fit.</p>"
+  "<p>Doing a DIY kitchen or bathroom remodel? A typical kitchen tear out produces 3 to 5 cubic yards of cabinets, counters and drywall, while a full bathroom gut runs 2 to 4 yards. We pick up in one visit, from the garage, driveway or right from the room, and sweep the area when finished. If your project spans several weekends, a dumpster rental may be a better fit.</p>"
   "<h2>Job Site Cleanup for Contractors</h2>"
   "<p>General contractors, flooring installers, painters and handymen across Homestead and Florida City use us for scheduled pickups between phases. We can meet a super on site at 7 AM, load quickly, and be gone before trades arrive. Final cleanouts before a certificate of occupancy walkthrough are a specialty.</p>"
   "<p>The EPA estimates that about 600 million tons of construction and demolition debris are generated in the United States each year, more than twice the amount of household trash. We separate clean wood, metal and cardboard for recycling whenever practical to keep more of it out of the South Dade Landfill.</p>"
   "<h2>Demolition Debris and Small Structure Removal</h2>"
-  "<p>We also tear down and haul small structures such as sheds, playsets, wooden decks and chain link fences. For concrete, pavers and dirt we quote by weight since these materials are dense. Storm damaged structures are covered by our <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> service.</p>",
+  "<p>We also tear down and haul small structures such as sheds, playsets, wooden decks and chain link fences. For concrete, pavers and dirt we quote by weight since these materials are dense. Storm damaged structures are covered by our hurricane debris removal service.</p>",
  steps_h2="How Construction Debris Pickup Works",
  steps_p="Built around contractor schedules and homeowner timelines.",
  steps=[("Send Site Photos", "Photos of the pile help us quote volume and weight fast.", "phone"),
@@ -84,12 +84,12 @@ YARD = dict(
             "Leaves and grass clippings", "Old sod and landscape rock", "Small stumps and roots", "Mulch and planter soil",
             "Landscape timbers and edging", "Fallen fruit tree debris"])
   + "<h2>Brush Pile Removal and Backyard Cleanups</h2>"
-  "<p>Overgrown lots and neglected backyards are common with rentals, estates and newly purchased homes. We clear brush piles, pull out dead plants and haul old landscaping so the yard is ready for new sod or a garden. Many cleanups also turn up old furniture, tires and junk, which we can remove at the same time through our <a href=\"/\">junk removal service</a>.</p>"
+  "<p>Overgrown lots and neglected backyards are common with rentals, estates and newly purchased homes. We clear brush piles, pull out dead plants and haul old landscaping so the yard is ready for new sod or a garden. Many cleanups also turn up old furniture, tires and junk, which we can remove at the same time through our junk removal service.</p>"
   "<h2>Palm Frond and Tree Trimming Debris Removal</h2>"
   "<p>Homeowners who trim their own palms or hire a trimmer who does not haul often end up with a mountain of fronds. Royal palm fronds can reach 10 to 15 feet long and weigh up to 50 pounds each, which makes them hard to bundle for curbside pickup. We cut and load them for you.</p>"
   "<p>According to the EPA, yard trimmings make up about 12 percent of all municipal solid waste in the United States, roughly 35 million tons a year. Clean vegetation is much easier to recycle than mixed trash, so we keep yard waste separate whenever possible.</p>"
   "<h2>Storm Debris From the Yard</h2>"
-  "<p>After a tropical storm or hurricane, limbs and fallen trees can block driveways and damage fences. Our crews respond quickly for yard storm cleanup. For larger storm jobs involving damaged structures or contents, see our <a href=\"/service/hurricane-debris-removal\">hurricane debris removal</a> page.</p>",
+  "<p>After a tropical storm or hurricane, limbs and fallen trees can block driveways and damage fences. Our crews respond quickly for yard storm cleanup. For larger storm jobs involving damaged structures or contents, see our hurricane debris removal page.</p>",
  steps_h2="How Yard Waste Pickup Works",
  steps_p="From overgrown to clean in a single visit.",
  steps=[("Show Us the Pile", "Send photos or describe the size of the yard debris.", "phone"),
@@ -154,7 +154,7 @@ GAR = dict(
   "<h2>Hazardous Items Found in Garages</h2>"
   "<p>Garages often contain old paint, pool chemicals, motor oil, pesticides and propane tanks. We cannot haul those in our trucks, but we will set them aside and point you to Miami-Dade County Home Chemical Collection options. The Moody Drive Trash and Recycling Center also accepts used motor oil.</p>"
   "<h2>Garage Cleanouts for Moves, Sales and Rentals</h2>"
-  "<p>Preparing to sell? A clean, empty garage helps listing photos and buyer showings. Moving out of a rental near Homestead Air Reserve Base? We clear the garage before your final walkthrough. For whole house jobs, see our <a href=\"/service/estate-cleanout\">estate cleanout service</a>, and for single bulky items like a spare fridge, our <a href=\"/service/appliance-removal\">appliance removal</a> team can help.</p>",
+  "<p>Preparing to sell? A clean, empty garage helps listing photos and buyer showings. Moving out of a rental near Homestead Air Reserve Base? We clear the garage before your final walkthrough. For whole house jobs, see our estate cleanout service, and for single bulky items like a spare fridge, our appliance removal team can help.</p>",
  steps_h2="How a Garage Cleanout Works",
  steps_p="A simple process that respects your belongings and your time.",
  steps=[("Walkthrough and Quote", "Send photos or have us look on site for an exact price.", "phone"),

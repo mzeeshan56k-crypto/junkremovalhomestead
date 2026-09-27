@@ -1,6 +1,6 @@
 import os, json, datetime
 from lib import *
-import home, svc_a, svc_b, svc_c, hubs, locations
+import home, svc_a, svc_b, svc_c, hubs, locations, blogs
 from svc_builder import build_service
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -19,6 +19,11 @@ for build_fn in (hubs.services_page, hubs.areas_page):
 for s in svc_a.PAGES + svc_b.PAGES + svc_c.PAGES:
     path, html = build_service(s)
     write(path.lstrip("/") + ".html", html); urls.append((path, "0.8"))
+path, html = blogs.blog_index()
+write("blog.html", html); urls.append((path, "0.7"))
+for p in blogs.POSTS:
+    path, html = blogs.build_post(p)
+    write(path.lstrip("/") + ".html", html); urls.append((path, "0.7"))
 for l in locations.PAGES:
     path, html = locations.build_location(l)
     write(path.lstrip("/") + ".html", html); urls.append((path, "0.8"))
