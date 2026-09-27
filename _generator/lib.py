@@ -13,9 +13,6 @@ IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets
 
 SERVICES = [
     # slug, nav name, card title, card blurb, image
-    ("junk-removal", "Junk Removal", "Junk Removal in Homestead, FL",
-     "Full service junk pickup for homes, condos and rentals. We lift, load, haul and sweep up so you never touch a thing.",
-     "junk-removal-truck-homestead-fl"),
     ("furniture-removal", "Furniture Removal", "Furniture Removal Homestead",
      "Couches, sectionals, mattresses, dressers and patio sets hauled from any room, any floor, the same day you call.",
      "furniture-junk-pickup-homestead"),
@@ -45,6 +42,21 @@ SERVICES = [
      "storm-debris-lumber-pile-homestead"),
 ]
 SVC = {s[0]: s for s in SERVICES}
+# The core "junk removal" keyword is targeted by the homepage, so links to it point to "/".
+HOME_SVC = ("junk-removal", "Junk Removal", "Junk Removal in Homestead, FL")
+
+def svc_url(slug):
+    return "/" if slug == HOME_SVC[0] else f"/service/{slug}"
+
+def svc_title(slug):
+    return HOME_SVC[2] if slug == HOME_SVC[0] else SVC[slug][2]
+
+# Areas that have their own location page, in menu order: name -> slug
+LOC_PAGES = {"Florida City": "florida-city", "Cutler Bay": "cutler-bay", "Leisure City": "leisure-city",
+             "Princeton": "princeton", "Redland": "redland"}
+
+def loc_url(name):
+    return f"/service-areas/{LOC_PAGES[name]}"
 
 AREAS = [
     ("Homestead", "33030, 33033, 33035"),
@@ -128,8 +140,12 @@ def sec_head(h2, p="", eyebrow=None):
     pp = f"<p>{p}</p>" if p else ""
     return f'<div class="sec-head reveal">{e}<h2>{h2}</h2>{pp}</div>'
 
-def service_cards(h2, p, exclude=None, alt_bg=False, sid="services"):
+def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_home=False):
     cards = []
+    if include_home:
+        cards.append(f'''<article class="card">
+<figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>Full service junk pickup for homes, condos and rentals. We lift, load, haul and sweep up so you never touch a thing.</p></div></article>''')
     for slug, nav, title, blurb, image in SERVICES:
         if slug == exclude:
             continue
@@ -168,12 +184,16 @@ def gallery(h2, p, alt_bg=True):
             f'<div class="ba-grid stagger">{"".join(figs)}</div>'
             f'<div class="ba-cta reveal"><p>Want results like these at your property?</p>{call_btn("btn btn-primary pulse")}</div></div></section>')
 
-def areas(h2, p, alt_bg=False):
-    lis = "".join(f'<li>{icon("pin")}<div><b>{n}</b><span>ZIP {z}</span></div></li>' for n, z in AREAS)
-    mp = ('<div class="map reveal"><iframe title="Junk removal service area map for Homestead, Florida" '
-          'src="https://www.google.com/maps?q=Homestead,+FL+33030&z=11&output=embed" loading="lazy" '
+def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead, Florida", sid="service-areas", show_all=True):
+    lis = []
+    for n, z in AREAS:
+        name = f'<a href="{loc_url(n)}">{n}</a>' if n in LOC_PAGES else n
+        lis.append(f'<li>{icon("pin")}<div><b>{name}</b><span>ZIP {z}</span></div></li>')
+    mp = (f'<div class="map reveal"><iframe title="Junk removal service area map for {map_title}" '
+          f'src="https://www.google.com/maps?q={map_q}&z=12&output=embed" loading="lazy" '
           'referrerpolicy="no-referrer-when-downgrade"></iframe></div>')
-    return f'<section class="section{" alt" if alt_bg else ""}" id="service-areas"><div class="wrap">{sec_head(h2, p, "Service Areas")}<ul class="areas stagger">{lis}</ul>{mp}</div></section>'
+    more = '<p class="areas-more reveal"><a class="btn btn-outline-dark" href="/service-areas">View All Service Areas</a></p>' if show_all else ""
+    return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Service Areas")}<ul class="areas stagger">{"".join(lis)}</ul>{more}{mp}</div></section>'
 
 def faq(h2, p, faqs, alt_bg=True):
     items = "".join(f'<details><summary><h3>{q}</h3></summary><div class="ans"><p>{a}</p></div></details>' for q, a in faqs)
@@ -186,7 +206,7 @@ def cta(h2, p):
 </div></div></section>'''
 
 def related(h2, p, items, alt_bg=True):
-    arts = "".join(f'<article><h3><a href="/service/{s}">{SVC[s][2]}</a></h3><p>{t}</p></article>' for s, t in items)
+    arts = "".join(f'<article><h3><a href="{svc_url(s)}">{svc_title(s)}</a></h3><p>{t}</p></article>' for s, t in items)
     return f'<section class="section{" alt" if alt_bg else ""}"><div class="wrap">{sec_head(h2, p, "Related Services")}<div class="related stagger">{arts}</div></div></section>'
 
 def call_card(selected=None):
@@ -246,7 +266,8 @@ def business_schema():
         "areaServed": [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS] +
                       [{"@type": "AdministrativeArea", "name": "Miami-Dade County, FL"}],
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Junk Removal Services",
-            "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[2], "url": f"{SITE}/service/{s[0]}"}} for s in SERVICES]},
+            "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": HOME_SVC[2], "url": SITE + "/"}}] +
+                [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[2], "url": f"{SITE}/service/{s[0]}"}} for s in SERVICES]},
     }
 
 def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-removal-homestead.jpg"):
@@ -265,15 +286,23 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
     if service:
         graph.append({"@type": "Service", "@id": url + "#service", "name": service["name"], "serviceType": service["type"],
                       "description": desc, "url": url, "provider": {"@id": f"{SITE}/#business"},
-                      "areaServed": [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS],
+                      "areaServed": service.get("area") or [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS],
                       "offers": {"@type": "Offer", "priceCurrency": "USD", "availability": "https://schema.org/InStock",
                                  "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": service["min"]}}})
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(",", ":"))
 
     CUR = ' aria-current="page"'
-    nav_svcs = "".join(f'<li><a href="/service/{s[0]}"{CUR if path == "/service/" + s[0] else ""}>{s[1]}</a></li>' for s in SERVICES)
-    foot_svcs = "".join(f'<li><a href="/service/{s[0]}">{s[1]} Homestead</a></li>' for s in SERVICES)
-    foot_areas = "".join(f"<li>{n}, FL</li>" for n, _ in AREAS[:8])
+    cur = lambda u: CUR if path == u else ""
+    nav_svcs = (f'<li><a href="/services"{cur("/services")}><b>All Services</b></a></li>' +
+                "".join(f'<li><a href="/service/{s[0]}"{cur("/service/" + s[0])}>{s[1]}</a></li>' for s in SERVICES))
+    nav_areas = (f'<li><a href="/service-areas"{cur("/service-areas")}><b>All Service Areas</b></a></li>' +
+                 f'<li><a href="/">Homestead</a></li>' +
+                 "".join(f'<li><a href="{loc_url(n)}"{cur(loc_url(n))}>{n}</a></li>' for n in LOC_PAGES))
+    foot_svcs = ('<li><a href="/">Junk Removal Homestead</a></li>' +
+                 "".join(f'<li><a href="/service/{s[0]}">{s[1]} Homestead</a></li>' for s in SERVICES))
+    foot_areas = ('<li><a href="/">Homestead, FL</a></li>' +
+                  "".join(f'<li><a href="{loc_url(n)}">{n}, FL</a></li>' for n in LOC_PAGES) +
+                  '<li><a href="/service-areas">All Service Areas</a></li>')
     home_cur = ' aria-current="page"' if path == "/" else ""
     return f'''<!doctype html>
 <html lang="en-US">
@@ -316,7 +345,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <ul class="menu">
 <li><a href="/"{home_cur}>Home</a></li>
 <li class="has-dd"><button class="dd-toggle" aria-expanded="false">Services</button><ul class="dropdown">{nav_svcs}</ul></li>
-<li><a href="/#service-areas">Service Areas</a></li>
+<li class="has-dd"><button class="dd-toggle" aria-expanded="false">Service Areas</button><ul class="dropdown">{nav_areas}</ul></li>
 <li><a href="/#pricing">Pricing</a></li>
 <li><a href="#faq">FAQs</a></li>
 <li>{call_btn("btn btn-primary")}</li>
@@ -335,7 +364,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <a class="fphone" href="tel:{TEL}">{PHONE}</a><p>{HOURS}</p></div>
 <div><h2>Services</h2><ul>{foot_svcs}</ul></div>
 <div><h2>Service Areas</h2><ul>{foot_areas}</ul></div>
-<div><h2>Quick Links</h2><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/#service-areas">Areas We Serve</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
+<div><h2>Quick Links</h2><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/services">All Services</a></li><li><a href="/service-areas">Areas We Serve</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
 </div>
 <div class="wrap fbottom"><span>&copy; <span data-year>2026</span> {BRAND}. All rights reserved.</span><span>Junk removal and hauling in Homestead, FL 33030</span></div>
 </footer>

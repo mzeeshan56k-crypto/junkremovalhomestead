@@ -2,7 +2,7 @@ from lib import *
 
 def build_service(s):
     path = f"/service/{s['slug']}"
-    crumbs = [("Home", "/"), ("Services", "/#services"), (SVC[s['slug']][1], None)]
+    crumbs = [("Home", "/"), ("Services", "/services"), (SVC[s['slug']][1], None)]
     b = [
         hero(s["h1"], s["lead"], s["points"], s["hero_img"], s["hero_alt"], crumbs=crumbs, eyebrow=s.get("eyebrow", "Homestead, FL"), selected=SVC[s["slug"]][1]),
         trust(),

@@ -302,3 +302,12 @@ td:first-child{font-weight:600;color:var(--g900)}
 .ba-cta{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:36px;text-align:center}
 .ba-cta p{margin:0;font-weight:600;color:var(--g900);font-size:1.1rem}
 @media (max-width:960px){.ba-grid{grid-template-columns:1fr}.ba-1{grid-row:auto}}
+/* Service area links and parent pages */
+.btn-outline-dark{border-color:var(--g600);color:var(--g700);background:#fff}
+.btn-outline-dark:hover{background:var(--g50);color:var(--g900);transform:translateY(-2px)}
+.areas-more{text-align:center;margin:0 0 30px}
+.areas b a{color:var(--g700);text-decoration:underline;text-underline-offset:3px}
+.areas b a:hover{color:var(--g900)}
+.card .more{display:inline-block;margin-top:12px;font-weight:700;color:var(--g700);text-decoration:none}
+.card .more:hover{color:var(--g900)}
+.dropdown b{font-weight:700}

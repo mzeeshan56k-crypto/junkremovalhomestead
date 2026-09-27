@@ -20,7 +20,7 @@ EST = dict(
   "<p>When a home is headed to market, time matters. Empty homes photograph better, show better and let inspectors see walls and floors clearly. We coordinate with realtors to meet listing dates, and we can provide photos and itemized receipts for executors who need to document the process for probate.</p>"
   "<p>If an estate sale company is handling valuables first, we come in afterward to clear everything that did not sell. That combination often recovers the most value for the estate.</p>"
   "<h2>Hoarding and Heavy Clutter Cleanouts</h2>"
-  "<p>Some homes need more than a standard cleanout. We handle hoarding situations with discretion, working at a pace that respects the homeowner or family. Unmarked vehicles can be arranged on request, and our crews treat every home with patience. For single rooms or smaller projects, our standard <a href=\"/service/junk-removal\">junk removal service</a> may be all you need.</p>"
+  "<p>Some homes need more than a standard cleanout. We handle hoarding situations with discretion, working at a pace that respects the homeowner or family. Unmarked vehicles can be arranged on request, and our crews treat every home with patience. For single rooms or smaller projects, our standard <a href=\"/\">junk removal service</a> may be all you need.</p>"
   "<h2>Donation First Approach</h2>"
   "<p>Furniture, kitchenware, linens and clothing in good condition go to charities and resale partners in South Miami-Dade. Many families find comfort knowing a parent's belongings will help others locally. Metal and electronics are recycled, and only what is left goes to disposal.</p>",
  steps_h2="How an Estate Cleanout Works",

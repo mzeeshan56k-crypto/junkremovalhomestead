@@ -84,7 +84,7 @@ YARD = dict(
             "Leaves and grass clippings", "Old sod and landscape rock", "Small stumps and roots", "Mulch and planter soil",
             "Landscape timbers and edging", "Fallen fruit tree debris"])
   + "<h2>Brush Pile Removal and Backyard Cleanups</h2>"
-  "<p>Overgrown lots and neglected backyards are common with rentals, estates and newly purchased homes. We clear brush piles, pull out dead plants and haul old landscaping so the yard is ready for new sod or a garden. Many cleanups also turn up old furniture, tires and junk, which we can remove at the same time through our <a href=\"/service/junk-removal\">junk removal service</a>.</p>"
+  "<p>Overgrown lots and neglected backyards are common with rentals, estates and newly purchased homes. We clear brush piles, pull out dead plants and haul old landscaping so the yard is ready for new sod or a garden. Many cleanups also turn up old furniture, tires and junk, which we can remove at the same time through our <a href=\"/\">junk removal service</a>.</p>"
   "<h2>Palm Frond and Tree Trimming Debris Removal</h2>"
   "<p>Homeowners who trim their own palms or hire a trimmer who does not haul often end up with a mountain of fronds. Royal palm fronds can reach 10 to 15 feet long and weigh up to 50 pounds each, which makes them hard to bundle for curbside pickup. We cut and load them for you.</p>"
   "<p>According to the EPA, yard trimmings make up about 12 percent of all municipal solid waste in the United States, roughly 35 million tons a year. Clean vegetation is much easier to recycle than mixed trash, so we keep yard waste separate whenever possible.</p>"

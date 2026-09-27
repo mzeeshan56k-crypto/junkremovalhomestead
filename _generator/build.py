@@ -1,6 +1,6 @@
 import os, json, datetime
 from lib import *
-import home, svc_a, svc_b, svc_c
+import home, svc_a, svc_b, svc_c, hubs, locations
 from svc_builder import build_service
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -13,9 +13,20 @@ def write(rel, content):
 
 urls = []
 write("index.html", home.build()); urls.append(("/", "1.0"))
+for build_fn in (hubs.services_page, hubs.areas_page):
+    path, html = build_fn()
+    write(path.lstrip("/") + ".html", html); urls.append((path, "0.9"))
 for s in svc_a.PAGES + svc_b.PAGES + svc_c.PAGES:
     path, html = build_service(s)
-    write(path.lstrip("/") + ".html", html); urls.append((path, "0.9"))
+    write(path.lstrip("/") + ".html", html); urls.append((path, "0.8"))
+for l in locations.PAGES:
+    path, html = locations.build_location(l)
+    write(path.lstrip("/") + ".html", html); urls.append((path, "0.8"))
+
+# The junk removal service page was folded into the homepage
+old = os.path.join(OUT, "service", "junk-removal.html")
+if os.path.exists(old):
+    os.remove(old)
 
 # 404
 nf_body = f'''<section class="section"><div class="wrap"><div class="content" style="text-align:center">
@@ -36,8 +47,10 @@ vercel = {
   "cleanUrls": True,
   "trailingSlash": False,
   "redirects": [
-    {"source": "/service", "destination": "/#services", "permanent": False},
-    {"source": "/services", "destination": "/#services", "permanent": False},
+    {"source": "/service", "destination": "/services", "permanent": True},
+    {"source": "/service/junk-removal", "destination": "/", "permanent": True},
+    {"source": "/areas", "destination": "/service-areas", "permanent": True},
+    {"source": "/locations", "destination": "/service-areas", "permanent": True},
     {"source": "/index", "destination": "/", "permanent": True}
   ],
   "headers": [

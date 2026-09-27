@@ -2,72 +2,6 @@ from lib import *
 
 STD_STEPS = None
 
-JUNK = dict(
- slug="junk-removal", name="Junk Removal", schema_name="Junk Removal in Homestead, FL", min=95,
- title="Residential Junk Removal Homestead FL | Same Day Pickup",
- desc="Full service junk removal in Homestead, FL. Same day junk pickup and bulky item hauling with upfront prices from $95. Call 877-745-9845.",
- h1="Residential <em>Junk Removal</em> in Homestead, FL",
- lead="Clutter piling up in the house, carport or backyard? Our Homestead junk removal crew picks up, loads and hauls away almost anything, often the same day you call, with an upfront price before we lift a thing.",
- points=["Same day junk pickup", "Priced by truck volume", "We lift from any room", "Donate and recycle first"],
- hero_img="junk-removal-truck-homestead-fl", hero_alt="Junk removal truck at a home in Homestead, FL",
- intro_h2="Full Service Junk Removal Homestead Homeowners Rely On",
- intro_html="<p>Junk removal in Homestead should be simple. You show us what goes, and a two person crew does everything else: carrying items out of bedrooms, attics and sheds, loading the truck, and sweeping up afterward. There is no need to rent a truck, borrow a trailer or wait months for a curbside appointment.</p>"
-  "<p>We work in single family homes in Keys Gate and Waterstone, townhomes off Campbell Drive, older block homes near downtown Krome Avenue and farm properties in the Redland. Each truck carries about 15 cubic yards, enough for most household cleanouts in one trip, and we arrive with dollies, straps and floor protection.</p>"
-  "<p>If you searched for <strong>junk removal near me</strong> or <strong>junk haulers in Homestead FL</strong>, you have found a local team that answers the phone, shows up on time and quotes before starting.</p>",
- intro_img="junk-hauling-truck-homestead", intro_alt="Junk hauling truck loading household junk in Homestead",
- badge="<b>1 call</b>and your clutter is gone today",
- body_html="<h2>What Our Homestead Junk Removal Service Hauls Away</h2>"
-  "<p>We take nearly everything that is not hazardous. Common pickups in Homestead include:</p>"
-  + checks(["Couches, recliners and sectionals", "Mattresses and box springs", "Refrigerators, washers and dryers", "TVs, computers and electronics",
-            "Treadmills and exercise equipment", "Boxes, toys and household clutter", "Carpet, rugs and padding", "Patio furniture and grills",
-            "Sheds, playsets and hot tubs", "Yard waste and storm debris"])
-  + "<p>For heavy single items, see our dedicated pages for <a href=\"/service/furniture-removal\">furniture removal</a> and <a href=\"/service/appliance-removal\">appliance removal</a>. We cannot haul paint, pool chemicals, gasoline, propane tanks, asbestos or medical waste. Miami-Dade County accepts many of those at its Home Chemical Collection events.</p>"
-  "<h2>Why Hire a Junk Hauling Company Instead of Curbside Pickup</h2>"
-  "<p>City of Homestead curbside collection does not accept construction debris, tires, concrete, roofing material, paint or liquids. In unincorporated neighborhoods like Leisure City and Naranja, Miami-Dade County limits residents to two bulky waste pickups per year of up to 25 cubic yards each and rejects any single item over 150 pounds. Items also cannot go to the curb more than 3 days before the appointment, or owners risk a code citation.</p>"
-  "<p>A private <strong>junk pickup service</strong> skips all of that. We carry items from inside, haul them the same day and handle disposal fees for you. For landlords, realtors and families on a deadline, that speed is often worth more than the savings of waiting weeks for a free slot.</p>"
-  "<h2>Affordable Junk Removal With Honest, Upfront Pricing</h2>"
-  "<p>Our price depends on how much truck space your items fill. Labor, loading, travel and dump fees are included. You get a range on the phone from photos, and the crew confirms the exact number on site. If you remove items or add more, the price adjusts before work starts, never after.</p>",
- steps_h2="How to Book Junk Pickup in Homestead",
- steps_p="Four quick steps take you from a cluttered space to a clean one.",
- steps=[("Send Photos or Call", "Call 877-745-9845 or text pictures for a quick price range.", "phone"),
-        ("Choose Your Window", "Pick same day or a two hour arrival window later in the week.", "calendar"),
-        ("Point and Relax", "Our crew confirms the price, then lifts and loads everything.", "truck"),
-        ("Clean Sweep", "We sweep the area and sort items for donation and recycling.", "broom")],
- price_h2="Junk Removal Prices in Homestead, FL",
- price_intro="Typical costs for household junk removal in Homestead and surrounding ZIP codes, based on truck volume.",
- headers=["Load Size", "Example", "Typical Cost"],
- rows=[["Minimum load", "One chair or a few bags", "$95"], ["1/8 truck", "Loveseat and boxes", "$130 to $175"],
-       ["1/4 truck", "Bedroom set", "$180 to $280"], ["1/2 truck", "One car garage", "$300 to $425"], ["Full truck", "Whole house", "$560 to $650"]],
- note="Heavy materials such as dirt, concrete and shingles are priced by weight. Tires and mattresses may carry small recycling fees. Prices confirmed on site.",
- local_h2="Junk Removal That Knows Homestead Streets and Rules",
- local_html="<p>Many Homestead communities have HOA rules about curbside piles, and the heat and summer rain from May through October make leaving junk outside a bad idea. We schedule pickups early in the day when possible and load straight from the garage or house so nothing sits on the lawn.</p>"
-  "<p>We know the Moody Drive Trash and Recycling Center at 12970 SW 268th Street, the South Dade Landfill and the scrap yards along US 1, so each load goes to the right place quickly. That local routing keeps our prices lower than national franchises that dispatch from farther north in Miami.</p>",
- local_img="dumpster-trailer-loaded-homestead", local_alt="Trailer loaded with bagged junk in a Homestead backyard",
- related_h2="More Junk Hauling Services in Homestead",
- related_p="Pair junk removal with any of these services for a complete cleanup.",
- related=[("garage-cleanout", "Clear a packed garage in one visit so you can park inside again."),
-          ("estate-cleanout", "Whole home cleanouts handled with care for families and executors."),
-          ("dumpster-rental", "Prefer to load at your own pace? Rent a driveway friendly dumpster.")],
- areas_h2="Junk Removal Near You in South Miami-Dade",
- areas_p="Same day junk removal is available across these Homestead area communities and ZIP codes.",
- faq_h2="Junk Removal Homestead FAQs",
- faq_p="Straight answers about junk pickup costs, timing and rules in Homestead.",
- faqs=[
-  ("What is the minimum charge for junk removal in Homestead?", "Our minimum charge is $95, which covers a single item such as a recliner or a few bags of household trash. It includes the two person crew, loading, travel inside our Homestead service area and disposal."),
-  ("How fast can you pick up junk in Homestead, FL?", "Calls received before 12 PM usually get same day service. Most other jobs are completed within 24 hours. We provide a two hour arrival window and call about 30 minutes before the crew arrives."),
-  ("How much junk fits in your truck?", "Each truck holds about 15 cubic yards, which equals roughly six standard pickup truck beds or the contents of a two to three bedroom home without the large appliances."),
-  ("Do you charge extra for stairs or carrying items from inside?", "No. Carrying items from any room, floor or attic is included in the volume price. Only extremely heavy items such as pianos, safes or concrete may carry an added fee, which we quote upfront."),
-  ("Can you take items that Homestead curbside pickup refuses?", "Yes. We haul construction debris, tires, roofing scraps and oversized items that the City of Homestead Solid Waste Division and the county bulky program do not collect. Hazardous chemicals and paint are the main exceptions."),
-  ("Will you donate usable items?", "Yes. Furniture, housewares and clothing in good condition go to local charities and resale partners in South Miami-Dade. Metal goes to scrap recyclers and cardboard is recycled, so less of every load reaches the landfill."),
-  ("Do I need to move junk to the curb first?", "No. We pick up from wherever items sit, whether that is a bedroom, attic, pool deck or backyard shed. Keeping items inside also avoids Miami-Dade rules that limit curbside placement to 3 days before pickup."),
-  ("Is junk removal available on weekends?", "Yes. We operate 7 days a week from 7 AM to 7 PM, and Saturday mornings are our most popular slot in Homestead, so booking a day or two ahead is recommended."),
-  ("What payment methods do you accept?", "We accept all major credit and debit cards, cash and digital payments. Payment is collected only after the work is done and you approve the cleaned space."),
-  ("Do you remove junk for renters and landlords?", "Yes. Property managers use us for move out cleanouts, evictions and unit turnovers across Homestead and Florida City. We can meet a manager on site or work from lockbox access with photo confirmation after the job."),
- ],
- cta_h2="Book Junk Removal in Homestead Today",
- cta_p="Upfront pricing, same day pickup and a clean sweep every time. Call now for your free quote.",
-)
-
 FURN = dict(
  slug="furniture-removal", name="Furniture Removal", schema_name="Furniture Removal in Homestead, FL", min=95,
  title="Furniture Removal Homestead FL | Couch and Mattress Pickup",
@@ -89,7 +23,7 @@ FURN = dict(
   "<p>The EPA reports that Americans discarded about 12.1 million tons of furniture and furnishings in 2018, and roughly 80 percent of it went to landfills. We sort each load so that clean, sturdy pieces go to local charities and resale shops in South Miami-Dade. Items that cannot be reused are broken down so wood and metal can be recycled where possible.</p>"
   "<p>Mattresses are a special case. More than 15 million mattresses are thrown away in the United States each year, and they take up enormous landfill space. When recycling is available we separate the steel springs, foam and fabric instead of dumping the whole mattress.</p>"
   "<h2>Mattress Disposal and Bed Removal Homestead</h2>"
-  "<p>Bed bug concerns, water damage after summer storms and simple upgrades all lead to mattress removal calls. We wrap damaged mattresses before carrying them through your home and haul them out the same day. Pair it with our <a href=\"/service/junk-removal\">junk removal service</a> to clear the rest of the bedroom at the same visit.</p>"
+  "<p>Bed bug concerns, water damage after summer storms and simple upgrades all lead to mattress removal calls. We wrap damaged mattresses before carrying them through your home and haul them out the same day. Pair it with our <a href=\"/\">junk removal service</a> to clear the rest of the bedroom at the same visit.</p>"
   "<h2>Office Furniture Removal for Homestead Businesses</h2>"
   "<p>Relocating or downsizing? We remove desks, filing cabinets, conference tables and cubicle panels from offices along Krome Avenue, Campbell Drive and the Homestead business parks. Larger jobs are covered under our <a href=\"/service/commercial-junk-removal\">commercial junk removal</a> service with after hours scheduling.</p>",
  steps_h2="How Furniture Pickup Works",
@@ -222,7 +156,7 @@ DUMP = dict(
   "<h2>What You Can and Cannot Put in the Dumpster</h2>"
   "<p>Household junk, furniture, drywall, lumber, flooring, cabinets, shingles and yard waste are all fine. Not allowed: paint, oil, chemicals, batteries, tires, propane tanks, asbestos and hazardous waste. Appliances with refrigerant should be booked separately through our <a href=\"/service/appliance-removal\">appliance removal service</a>.</p>"
   "<h2>Dumpster vs Full Service Junk Removal</h2>"
-  "<p>If you have a few days and people to help load, a dumpster usually wins on cost. If you would rather not lift anything, or the job is a single afternoon, <a href=\"/service/junk-removal\">full service junk removal</a> is often cheaper because labor is included and nothing sits in the driveway.</p>",
+  "<p>If you have a few days and people to help load, a dumpster usually wins on cost. If you would rather not lift anything, or the job is a single afternoon, <a href=\"/\">full service junk removal</a> is often cheaper because labor is included and nothing sits in the driveway.</p>",
  steps_h2="How Dumpster Rental Works in Homestead",
  steps_p="Simple scheduling from delivery to pickup.",
  steps=[("Choose a Size", "Tell us your project and we recommend a 10, 15 or 20 yard dumpster.", "list"),
@@ -264,4 +198,4 @@ DUMP = dict(
  cta_p="Next day delivery, flat rate pricing and driveway safe placement. Call to book your size.",
 )
 
-PAGES = [JUNK, FURN, APPL, DUMP]
+PAGES = [FURN, APPL, DUMP]
