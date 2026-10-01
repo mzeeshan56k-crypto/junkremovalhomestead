@@ -1,12 +1,12 @@
-# Junk Removal Homestead (junkremovalhomestead.com)
+# Junk Removal Homestead (junkremovalhomesteadfl.com)
 
 Static, fast loading rank and rent site for junk removal in Homestead, FL. Plain HTML, CSS and JS with no build step.
 
 ## Deploy on Vercel
 1. Create a new GitHub repo and upload the contents of this folder (index.html must be at the repo root).
 2. In Vercel: Add New Project > Import the repo > Framework Preset: **Other** > leave Build Command and Output Directory empty > Deploy.
-3. Add the domain `junkremovalhomestead.com` under Project Settings > Domains.
-4. Submit `https://junkremovalhomestead.com/sitemap.xml` in Google Search Console.
+3. Add the domain `junkremovalhomesteadfl.com` under Project Settings > Domains.
+4. Submit `https://junkremovalhomesteadfl.com/sitemap.xml` in Google Search Console.
 
 `vercel.json` enables clean URLs, so `/service/junk-removal.html` is served at `/service/junk-removal`.
 

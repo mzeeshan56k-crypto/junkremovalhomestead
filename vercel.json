@@ -36,6 +36,39 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.junkremovalhomesteadfl.com"
+        }
+      ],
+      "destination": "https://junkremovalhomesteadfl.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "junkremovalhomestead.com"
+        }
+      ],
+      "destination": "https://junkremovalhomesteadfl.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.junkremovalhomestead.com"
+        }
+      ],
+      "destination": "https://junkremovalhomesteadfl.com/:path*",
+      "permanent": true
     }
   ],
   "headers": [

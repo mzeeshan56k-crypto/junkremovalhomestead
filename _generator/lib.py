@@ -2,7 +2,7 @@
 import json, os, html as H
 from PIL import Image
 
-SITE = "https://junkremovalhomestead.com"
+SITE = "https://junkremovalhomesteadfl.com"
 BRAND = "Junk Removal Homestead"
 PHONE = "877-745-9845"
 TEL = "+18777459845"
@@ -379,7 +379,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <div class="topbar"><div class="wrap"><span>{icon("pin", "sr-only")}Serving Homestead, Florida City and all of South Miami-Dade</span><span class="hide-sm">{HOURS} &middot; <a href="tel:{TEL}">{PHONE}</a></span></div></div>
 <header class="site-header">
 <div class="wrap nav">
-<a class="brand" href="/" aria-label="{BRAND} home"><img src="/assets/img/junk-removal-homestead-logo-160.webp" width="160" height="160" alt="{BRAND} logo"><span>Junk Removal<br>Homestead<small>PROFESSIONAL &amp; RELIABLE</small></span></a>
+<a class="brand" href="/"><img src="/assets/img/junk-removal-homestead-logo-160.webp" srcset="/assets/img/junk-removal-homestead-logo-96.webp 96w, /assets/img/junk-removal-homestead-logo-160.webp 160w" sizes="(max-width: 640px) 48px, 58px" width="160" height="160" alt="{BRAND} logo"><span>Junk Removal<br>Homestead<small>PROFESSIONAL &amp; RELIABLE</small></span></a>
 <nav aria-label="Main">
 <ul class="menu">
 <li><a href="/"{home_cur}>Home</a></li>
@@ -398,7 +398,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 </main>
 <footer class="site-footer">
 <div class="wrap fgrid">
-<div><div class="flogo"><img src="/assets/img/junk-removal-homestead-logo-160.webp" width="160" height="160" alt="" loading="lazy"><span>Junk Removal<br>Homestead</span></div>
+<div><div class="flogo"><img src="/assets/img/junk-removal-homestead-logo-96.webp" srcset="/assets/img/junk-removal-homestead-logo-96.webp 96w, /assets/img/junk-removal-homestead-logo-160.webp 160w" sizes="70px" width="96" height="96" alt="" loading="lazy"><span>Junk Removal<br>Homestead</span></div>
 <p>Locally focused junk removal, dumpster rental and property cleanouts for Homestead, Florida City, the Redland, Leisure City and the rest of South Miami-Dade County.</p>
 <a class="fphone" href="tel:{TEL}">{PHONE}</a><p>{HOURS}</p></div>
 <div><h2>Services</h2><ul>{foot_svcs}</ul></div>

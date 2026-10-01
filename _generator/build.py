@@ -79,7 +79,10 @@ vercel = {
     {"source": "/fl", "destination": "/service-areas", "permanent": False},
     {"source": "/areas", "destination": "/service-areas", "permanent": True},
     {"source": "/locations", "destination": "/service-areas", "permanent": True},
-    {"source": "/index", "destination": "/", "permanent": True}
+    {"source": "/index", "destination": "/", "permanent": True},
+    {"source": "/:path*", "has": [{"type": "host", "value": "www.junkremovalhomesteadfl.com"}], "destination": "https://junkremovalhomesteadfl.com/:path*", "permanent": True},
+    {"source": "/:path*", "has": [{"type": "host", "value": "junkremovalhomestead.com"}], "destination": "https://junkremovalhomesteadfl.com/:path*", "permanent": True},
+    {"source": "/:path*", "has": [{"type": "host", "value": "www.junkremovalhomestead.com"}], "destination": "https://junkremovalhomesteadfl.com/:path*", "permanent": True}
   ],
   "headers": [
     {"source": "/assets/img/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},

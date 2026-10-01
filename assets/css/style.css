@@ -372,3 +372,13 @@ td:first-child{font-weight:600;color:var(--g900)}
 @media (max-width:640px){.est-items{grid-template-columns:1fr;padding:14px 16px}.facts div{grid-template-columns:110px 1fr}.cta-band-in{justify-content:center;text-align:center}}
 .answer-grid>*,.estimator>*{min-width:0}
 .answer-cta .btn span,.est-result .btn span{white-space:normal;text-align:center}
+/* Mobile polish: 44px tap targets, legible small text, no overflow on 320px screens */
+.big-phone{display:inline-flex;align-items:center;min-height:48px}
+.facts a,.topbar a{display:inline-block;padding:12px 2px;margin:-12px 0}
+.burger{min-width:48px;min-height:48px}
+.est-step{width:44px;height:44px}
+.brand small{font-size:12px}
+.areas li>div{min-width:0}
+.areas span{overflow-wrap:anywhere}
+@media (max-width:400px){.areas{grid-template-columns:1fr}}
+@media (max-width:640px){.topbar{display:none}.brand small{letter-spacing:.6px}}
