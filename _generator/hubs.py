@@ -14,7 +14,7 @@ SVC_FAQS = [
  ("Should I rent a dumpster or book junk removal?",
   "If you have a multi-day project and people to load, a dumpster usually costs less. If you want the work done in one visit with no lifting, full-service junk removal is often cheaper. Labor is included, and nothing sits in your driveway."),
  ("Do you serve businesses as well as homes?",
-  "Yes. We work with property managers, realtors, contractors, offices, retailers and hotels, with early-morning, after-hours and recurring pickups available."),
+  "Yes. We work with property managers, realtors, contractors, offices, retailers and hotels, with early-morning, weekend and recurring pickups available."),
  ("What items can you not take?",
   "We cannot haul hazardous materials such as paint, solvents, fuel, pool chemicals, propane tanks, asbestos or medical waste. "
   "Miami-Dade County accepts many of these at its Home Chemical Collection events."),
@@ -73,7 +73,7 @@ def services_page():
 # ---------- /service-areas ----------
 AREA_FAQS = [
  ("What areas do you serve for junk removal?",
-  "We serve Homestead and all of South Miami-Dade. That includes Florida City, Leisure City, Princeton, Naranja, Modello, the Redland, Goulds, Cutler Bay, South Miami Heights, Homestead Base and Keys Gate."),
+  "We serve Homestead and all of South Miami-Dade. That includes Florida City, Leisure City, Princeton, Naranja, Modello, the Redland, Goulds, Cutler Bay, South Miami Heights, Homestead Air Reserve Base and Keys Gate."),
  ("Do you charge a travel fee outside Homestead?",
   "No. Our core service radius is about 20 miles from downtown Homestead, and travel is included in your price anywhere inside it. "
   "For jobs farther out, such as the upper Keys, call, and we will let you know if a small travel charge applies."),
@@ -117,8 +117,7 @@ def areas_page():
              crumbs=crumbs, eyebrow="Service Areas"),
         trust(),
         split("Local Junk Removal From Cutler Bay to Florida City",
-              "<p>Our trucks start every day in Homestead. That puts us minutes from Florida City, Leisure City, Naranja and Princeton, and a short drive from the Redland, Goulds and Cutler Bay. Being close means shorter arrival windows, more same-day openings and lower prices than companies "
-              "dispatching from farther north in Miami.</p>"
+              "<p>We are based in Homestead. That puts us minutes from Florida City, Leisure City, Naranja and Princeton, and a short drive from the Redland, Goulds and Cutler Bay. Being close means shorter arrival windows and more same-day openings.</p>"
               "<p>Each community has its own mix of homes, rentals, farms and businesses, and its own trash rules. The City of Homestead and Florida City run "
               "their own collection, while unincorporated areas follow Miami-Dade County bulky waste limits. We know the differences and the disposal sites, "
               "so every load goes to the right place.</p>",
@@ -139,8 +138,8 @@ def areas_page():
                 "Typical price ranges. Very heavy loads such as concrete, dirt or roofing may be priced by weight. Your final price is confirmed on site.",
                 alt_bg=True),
         areas("All Communities and ZIP Codes We Serve",
-              "Linked communities have their own local page. Every area listed gets the same crews, prices and same-day scheduling.",
-              map_q="Homestead,+FL", show_all=False),
+              "Linked communities have their own local page. Every area listed gets the same crews, prices and fast scheduling.",
+              map_q="Homestead,+FL", show_all=False, show_zip=True),
         faq("Service Area FAQs", "Questions about where we work, travel fees and local rules.", AREA_FAQS),
         cta("Junk Removal Wherever You Are in South Dade", "Call for a free, upfront quote. Same-day pickup is available across our service area."),
     ]

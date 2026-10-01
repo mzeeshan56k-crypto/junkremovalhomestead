@@ -13,14 +13,14 @@
       "permanent": true
     },
     {
-      "source": "/service-areas/:city",
+      "source": "/service-areas/:city(florida-city|cutler-bay|leisure-city|princeton|redland)",
       "destination": "/fl/:city",
       "permanent": true
     },
     {
       "source": "/fl",
       "destination": "/service-areas",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/areas",

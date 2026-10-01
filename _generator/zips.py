@@ -31,7 +31,10 @@ ZIPS = [
   "Southern Cutler Bay toward Black Point Marina and Biscayne Bay. After heavy storms, we often remove water-damaged carpet, drywall and furniture here."),
 ]
 ZIP = {z: (a, d) for z, a, d in ZIPS}
-HOMESTEAD_ZIPS = ["33030", "33031", "33032", "33033", "33034", "33035", "33039"]
+HOMESTEAD_ZIPS = ["33030", "33033", "33035", "33039"]
+# Labels for the City of Homestead's own ZIP codes (neighboring communities have their own pages)
+HOME_LABEL = {"33030": "Downtown Homestead", "33033": "Northeast Homestead", "33035": "Keys Gate and Southeast Homestead",
+              "33039": "Homestead Air Reserve Base"}
 
 def zip_list(zs):
     zs = list(zs)
@@ -65,12 +68,11 @@ def hub_section():
 def home_section():
     rows = []
     for z in HOMESTEAD_ZIPS:
-        a, _ = ZIP[z]
+        a = HOME_LABEL[z]
         pickup = "Call ahead for base access" if z == "33039" else "Same day when you call before noon"
         rows.append([f"<b>{z}</b>", a, pickup, "None"])
-    intro = ("Searching for junk removal near you in Homestead, FL 33030, 33033 or 33035? We cover every Homestead ZIP code, "
-             "including the Redland (33031), Princeton and Naranja (33032), Florida City (33034) and Homestead Air Reserve Base (33039).")
-    body = ("<p>Prices are the same in every ZIP code, and travel is always included. "
+    intro = ("We cover every part of Homestead, from downtown and Keys Gate to the neighborhoods near Homestead Air Reserve Base.")
+    body = ("<p>Prices are the same in every ZIP code, and there is no travel fee anywhere in our service area. "
             "Tell us your ZIP code when you call, and we will give you the earliest arrival window for your street.</p>")
     return (f'<section class="section" id="zip-codes"><div class="wrap">'
             f'{sec_head("Junk Removal in Every Homestead ZIP Code", intro, "ZIP Codes")}'
@@ -99,7 +101,7 @@ SVC_ZIP = {
  "estate-cleanout": ("estate and whole-house cleanouts", "Scheduled within days",
    "We handle estate cleanouts for families, executors and realtors in each of these ZIP codes, including homes with sheds and outbuildings."),
  "commercial-junk-removal": ("commercial junk removal", "Within 24 to 48 hours",
-   "We serve offices, stores, restaurants and rental properties in each of these ZIP codes, with after-hours scheduling available."),
+   "We serve offices, stores, restaurants and rental properties in each of these ZIP codes, with early-morning and weekend scheduling available."),
  "hurricane-debris-removal": ("hurricane and storm debris removal", "Priority after storms",
    "After storms, we send crews to each of these ZIP codes as soon as roads are safe, starting with water-damaged homes."),
 }
@@ -107,9 +109,9 @@ SVC_ZIPS = ["33030", "33031", "33032", "33033", "33034", "33035", "33170", "3317
 
 def service_section(slug, name):
     what, avail, _ = SVC_ZIP[slug]
-    rows = [[f"<b>{z}</b>", ZIP[z][0], avail] for z in SVC_ZIPS]
-    intro = (f"Looking for {what} near me in Homestead? We provide {what} in every ZIP code below, from downtown Homestead (33030) to Cutler Bay (33190). "
-             "Prices are the same in each one, and travel is always included.")
+    rows = [[f"<b>{z}</b>", HOME_LABEL[z], "Call ahead for base access" if z == "33039" else avail] for z in HOMESTEAD_ZIPS]
+    intro = (f"We provide {what} across Homestead. Prices are the same in every ZIP code, "
+             "and there is no travel fee anywhere in our service area.")
     return (f'<section class="section alt" id="zip-codes"><div class="wrap">'
             f'{sec_head(f"{name} by ZIP Code", intro, "ZIP Codes")}'
             f'{_table(["ZIP Code", "Area", "Availability"], rows)}</div></section>')

@@ -442,7 +442,7 @@ td:first-child{font-weight:600;color:var(--g900)}
   .est-price{font-size:1.7rem}
   .est-load{font-size:.85rem}
   .est-result small{display:none}
-  .est-result .btn{padding:12px 18px;font-size:1rem}
+  .est-result .btn{display:none}
   /* Quick answer, CTA, related */
   .answer-cta .btn{width:100%}
   .facts{padding:4px 16px}
@@ -466,3 +466,9 @@ td:first-child{font-weight:600;color:var(--g900)}
 [id]{scroll-margin-top:88px}
 @media (max-width:640px){.trust-item span,.areas span{font-size:13px}}
 @media (max-width:960px){.hero-bg img{animation:none;transform:none}.hero-anim>*{animation:none}}
+/* Labels that look like headings but are not part of the page outline */
+.call-title{font-family:var(--head);font-weight:700;font-size:1.9rem;line-height:1.1;color:var(--g900);margin:0 0 6px}
+.fhead{font-family:var(--head);font-weight:700;color:#fff;font-size:1.4rem;line-height:1.1;margin:0 0 16px}
+/* Visible focus ring with 3:1 contrast on light backgrounds */
+:focus-visible{outline:3px solid var(--g700);outline-offset:3px}
+.hero :focus-visible,.cta :focus-visible,.est-result :focus-visible,.site-footer :focus-visible,.cta-band :focus-visible{outline-color:#fff}

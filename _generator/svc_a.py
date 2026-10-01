@@ -4,7 +4,7 @@ STD_STEPS = None
 
 FURN = dict(
  slug="furniture-removal", name="Furniture Removal", schema_name="Furniture Removal in Homestead, FL", min=95,
- title="Furniture Removal in Homestead, FL | Couch and Mattress Pickup",
+ title="Furniture Removal in Homestead, FL | Couch Pickup",
  desc="Furniture removal in Homestead, FL 33030. Couch, sectional, mattress and dresser pickup from any room, often the same day. From $95. Call 877-745-9845.",
  h1="Furniture Removal and <em>Couch Pickup</em> in Homestead, FL",
  lead="Old sofa, broken bed frame or a whole room of furniture? We carry it out of any room in your Homestead home, load it and haul it away the same day, donating whatever still has life left in it.",
@@ -19,16 +19,16 @@ FURN = dict(
   + checks(["Sofas, sectionals and sleeper sofas", "Recliners and lift chairs", "Mattresses and box springs", "Bed frames and headboards",
             "Dressers, armoires and wardrobes", "Dining tables and chairs", "Entertainment centers", "Office desks and cubicles",
             "Patio and outdoor furniture", "Cribs, bunk beds and kids' furniture"])
-  + "<h2>Old Couch Removal Near Me: Why Donation Matters</h2>"
+  + "<h2>Why We Donate Your Old Couch</h2>"
   "<p>The EPA reports that Americans discarded about 12.1 million tons of furniture and furnishings in 2018, and roughly 80 percent of it went to landfills. We sort each load so that clean, sturdy pieces go to local charities and resale shops in South Miami-Dade. Items that cannot be reused are broken down so wood and metal can be recycled where possible.</p>"
   "<p>Mattresses are a special case. More than 15 million mattresses are thrown away in the United States each year, and they take up enormous landfill space. When recycling is available, we separate the steel springs, foam and fabric instead of dumping the whole mattress.</p>"
   "<h2>Mattress Disposal and Bed Removal in Homestead</h2>"
   "<p>Bed bug concerns, water damage after summer storms and simple upgrades all lead to mattress removal calls. We wrap damaged mattresses before carrying them through your home and haul them out the same day. Pair it with our junk removal service to clear the rest of the bedroom during the same visit.</p>"
   "<h2>Office Furniture Removal for Homestead Businesses</h2>"
-  "<p>Relocating or downsizing? We remove desks, filing cabinets, conference tables and cubicle panels from offices along Krome Avenue, Campbell Drive and the Homestead business parks. Larger jobs are covered under our commercial junk removal service with after-hours scheduling.</p>",
+  "<p>Relocating or downsizing? We remove desks, filing cabinets, conference tables and cubicle panels from offices along Krome Avenue, Campbell Drive and the Homestead business parks. Larger jobs are covered under our commercial junk removal service, with early-morning and weekend scheduling.</p>",
  steps_h2="How Furniture Pickup Works",
  steps_p="From quote to empty room in four easy steps.",
- steps=[("Snap a Photo", "Send pictures of the furniture for a fast, accurate price.", "phone"),
+ steps=[("Call for a Price", "Describe the furniture on the phone for a fast, accurate price range.", "phone"),
         ("Book a Slot", "Same-day or scheduled pickup with a two-hour window.", "calendar"),
         ("We Carry It Out", "Pads and dollies protect floors, walls and door frames.", "truck"),
         ("Donate or Recycle", "Usable pieces are donated, and the rest is recycled or disposed of properly.", "recycle")],
@@ -54,14 +54,14 @@ FURN = dict(
  faq_p="Answers about couch removal, mattress disposal and furniture donation in Homestead.",
  faqs=[
   ("How much does couch removal cost in Homestead?", "A standard three-seat sofa typically costs $120 to $160 to remove, and a large sectional runs $175 to $250. The price covers carrying it out, loading, hauling and donation or disposal."),
-  ("Can you take a sofa out of an upstairs apartment?", "Yes. Our two-person crews carry furniture down stairways and through narrow halls every day. If a piece does not fit through a doorway, we can disassemble it with your permission."),
+  ("Can you take a sofa out of an upstairs apartment?", "Yes. Our two-person crews carry furniture down stairways and through narrow halls on most jobs. If a piece does not fit through a doorway, we can disassemble it with your permission."),
   ("Do you donate furniture you pick up?", "Yes. Clean, structurally sound furniture goes to charities and resale partners in South Miami-Dade. Items with stains, tears, pet damage or bed bugs cannot be donated and are recycled or disposed of properly."),
   ("Will Miami-Dade bulky pickup take my furniture for free?", "Unincorporated Miami-Dade residents get two free bulky pickups per year, up to 25 cubic yards each. However, single items over 150 pounds are refused, and you must drag everything to the curb yourself. We carry items from inside the same day."),
   ("How do you dispose of mattresses?", "When recycling capacity is available, mattresses are separated into steel, foam and fabric for recycling. Otherwise, they go to a licensed disposal facility. Nationally, more than 15 million mattresses are discarded each year."),
   ("Can you remove furniture the day my new furniture is delivered?", "Yes. Tell us your delivery window, and we will schedule the removal right after it. The old pieces leave the same day, so you never have two sets in the room."),
   ("Do you remove heavy items like pianos or pool tables?", "We remove upright pianos, pool tables and gun safes with advance notice. These carry an extra fee based on weight and access, which we quote before scheduling."),
   ("Do I have to be home for furniture pickup?", "If the furniture is in a garage, in a carport or on a patio, you do not need to be home. For pickups inside the home, an adult or property manager should be present to give access."),
-  ("How much furniture fits in one truck?", "Our 15-cubic-yard truck holds about the furniture from a three-bedroom home, roughly two sofas, three bedroom sets, a dining set and a few accent pieces."),
+  ("How much furniture fits in one truck?", "Our 15-cubic-yard truck holds roughly two sofas, three bedroom sets, a dining set and a few accent pieces."),
   ("Do you remove office furniture in Homestead?", "Yes. We remove desks, chairs, filing cabinets and cubicles from offices and medical suites around Homestead. Evening and weekend times are available, so your business hours are not disrupted."),
  ],
  cta_h2="Get Rid of That Old Couch Today",
@@ -70,17 +70,17 @@ FURN = dict(
 
 APPL = dict(
  slug="appliance-removal", name="Appliance Removal", schema_name="Appliance Removal and Disposal in Homestead, FL", min=95,
- title="Appliance Removal in Homestead, FL | Fridge and Washer Pickup",
+ title="Appliance Removal in Homestead, FL | Fridge Pickup",
  desc="Appliance removal in Homestead, FL 33030. Refrigerator, washer, dryer, stove, AC and water heater pickup and recycling from $95. Call 877-745-9845.",
  h1="Appliance Removal and <em>Disposal</em> in Homestead, FL",
  lead="Old refrigerator, dead washer or rusted water heater? We disconnect where safe, carry it out, and recycle it responsibly so you do not have to rent a truck or wrestle it to the curb.",
  points=["Fridges, freezers and AC units", "Washers, dryers and stoves", "Recycled at licensed facilities", "Same-day appliance pickup"],
  hero_img="junk-hauling-truck-homestead", hero_alt="Appliance removal truck in Homestead, FL",
  intro_h2="Old Appliance Removal That Homestead Homeowners Can Count On",
- intro_html="<p>Appliances are heavy, bulky and full of materials that should not go to a landfill. A typical refrigerator weighs 200 to 300 pounds, which is more than double the 150-pound single-item limit on Miami-Dade County bulky waste pickups. That is why so many Homestead residents call a professional <strong>appliance removal service</strong>.</p>"
+ intro_html="<p>Appliances are heavy, bulky and full of materials that should not go to a landfill. A typical refrigerator weighs 200 to 300 pounds, which is more than double the 150-pound single-item limit on Miami-Dade County bulky waste pickups. That is why so many residents call for help.</p>"
   "<p>Our crew uses appliance dollies and straps to move units safely down steps and across tile floors. We remove appliances from kitchens, laundry rooms, garages and utility closets throughout Homestead, Florida City, Naranja and Leisure City. We handle every step, from the moment we arrive to the drop-off at the recycling yard.</p>",
  intro_img="junk-removal-truck-homestead-fl", intro_alt="Crew ready to remove appliances from a Homestead home",
- badge="<b>200+ lbs</b>typical fridge weight we carry for you",
+ badge="<b>2 movers</b>carry every appliance for you",
  body_html="<h2>Appliances We Pick Up and Recycle</h2>"
   + checks(["Refrigerators and freezers", "Washing machines and dryers", "Stoves, ranges and ovens", "Dishwashers and microwaves",
             "Water heaters", "Window and central AC units", "Chest freezers and ice makers", "Pool pumps and pressure washers",
@@ -96,7 +96,7 @@ APPL = dict(
  steps=[("Tell Us What It Is", "Share the appliance type, location and any stairs involved.", "phone"),
         ("Disconnect Check", "Make sure water, gas or hardwired power is shut off before we arrive.", "shield"),
         ("We Haul It Out", "Dollies and straps move the unit safely out of your home.", "truck"),
-        ("Certified Recycling", "Refrigerant recovered and metals recycled by licensed facilities.", "recycle")],
+        ("Responsible Recycling", "Refrigerant recovered and metals recycled by licensed facilities.", "recycle")],
  price_h2="Appliance Removal Cost in Homestead",
  price_intro="Typical Homestead prices for appliance pickup and recycling. Multiple appliances in one visit are discounted.",
  headers=["Appliance", "Notes", "Typical Price"],

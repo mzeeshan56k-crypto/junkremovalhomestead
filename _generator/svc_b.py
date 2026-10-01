@@ -2,7 +2,7 @@ from lib import *
 
 CONS = dict(
  slug="construction-debris-removal", name="Construction Debris Removal", schema_name="Construction Debris Removal in Homestead, FL", min=150,
- title="Construction Debris Removal in Homestead, FL | Remodel Waste",
+ title="Construction Debris Removal in Homestead, FL | Job Sites",
  desc="Construction debris removal in Homestead, FL 33030. Drywall, lumber, tile and remodel waste hauled from homes and job sites. Call 877-745-9845.",
  h1="Construction <em>Debris Removal</em> in Homestead, FL",
  lead="Remodel finished, but the mess is not? We load and haul drywall, lumber, tile, cabinets and packaging from homes and job sites across Homestead, leaving the space broom-clean and ready for inspection.",
@@ -10,7 +10,7 @@ CONS = dict(
  hero_img="construction-dumpster-homestead-fl", hero_alt="Construction site debris removal in Homestead, FL",
  intro_h2="Renovation and Construction Cleanup That Homestead Builders Trust",
  intro_html="<p>Homestead has been one of the fastest-growing cities in Miami-Dade County, with new subdivisions, additions and remodels going up every month. Every one of those projects leaves behind debris, and most of it cannot go in a regular trash can. City of Homestead curbside collection does not accept construction debris. Miami-Dade Trash and Recycling Centers cap construction and demolition waste at 3 cubic yards per visit.</p>"
-  "<p>That is where our <strong>construction debris removal service</strong> helps. Our crew arrives with a 15-cubic-yard truck, loads everything by hand and hauls it away the same day. You do not need a dumpster sitting in the driveway for a week, and you do not need to pull your workers off the job to load it.</p>",
+  "<p>That is where we come in. Our crew arrives with a 15-cubic-yard truck, loads everything by hand and hauls it away the same day. You do not need a dumpster sitting in the driveway for a week, and you do not need to pull your workers off the job to load it.</p>",
  intro_img="construction-debris-removal-before-after", intro_alt="Drywall and debris pile before and after removal in a Homestead garage",
  badge="<b>3 yd</b>county center limit. We haul 15 yards per trip.",
  body_html="<h2>Construction Waste We Haul Away</h2>"
@@ -20,13 +20,13 @@ CONS = dict(
   + "<h2>Remodel Debris Removal for Homeowners</h2>"
   "<p>Doing a DIY kitchen or bathroom remodel? A typical kitchen tear-out produces 3 to 5 cubic yards of cabinets, counters and drywall, while a full bathroom gut runs 2 to 4 yards. We pick up in one visit, from the garage, driveway or right from the room, and sweep the area when finished. If your project spans several weekends, a dumpster rental may be a better fit.</p>"
   "<h2>Job Site Cleanup for Contractors</h2>"
-  "<p>General contractors, flooring installers, painters and handymen across Homestead and Florida City use us for scheduled pickups between phases. We can meet your site supervisor at 7 AM, load quickly, and be gone before trades arrive. Final cleanouts before a certificate of occupancy walk-through are a specialty.</p>"
+  "<p>General contractors, flooring installers, painters and handymen across Homestead and Florida City use us for scheduled pickups between phases. We can meet your site supervisor at 7 AM, load quickly, and be gone before trades arrive. We also handle final cleanouts before inspections.</p>"
   "<p>The EPA estimates that the United States generates about 600 million tons of construction and demolition debris each year. That is more than twice the amount of household trash. We separate clean wood, metal and cardboard for recycling whenever practical to keep more of it out of the South Dade Landfill.</p>"
   "<h2>Demolition Debris and Small Structure Removal</h2>"
   "<p>We also tear down and haul small structures such as sheds, playsets, wooden decks and chain-link fences. For concrete, pavers and dirt, we quote by weight because these materials are dense. Storm-damaged structures are covered by our hurricane debris removal service.</p>",
  steps_h2="How Construction Debris Pickup Works",
  steps_p="Built around contractor schedules and homeowner timelines.",
- steps=[("Send Site Photos", "Photos of the pile help us quote volume and weight fast.", "phone"),
+ steps=[("Describe the Job", "Tell us what the pile contains so we can quote volume and weight fast.", "phone"),
         ("Schedule Pickup", "Early-morning, same-day or recurring pickups between phases.", "calendar"),
         ("We Load Everything", "Our crew hand-loads the debris so your team can stay on task.", "truck"),
         ("Broom-Clean Site", "We sweep up and recycle wood, metal and cardboard.", "broom")],
@@ -58,7 +58,7 @@ CONS = dict(
   ("Can you pick up debris the same day?", "Yes. Same-day construction debris pickup is available in Homestead when you call before noon, and early-morning pickups can be scheduled for contractors."),
   ("Do you haul concrete and pavers?", "Yes. Concrete, pavers, brick and dirt are quoted by weight because they are very dense. A single cubic yard of concrete weighs about 4,000 pounds."),
   ("Do you recycle construction waste?", "Whenever practical, we separate clean wood, metal and cardboard for recycling. The EPA estimates the US generates about 600 million tons of construction and demolition debris each year."),
-  ("Can you remove a shed or deck?", "Yes. We dismantle and haul sheds, playsets, decks and fences. Pricing depends on size and materials, and we quote after reviewing photos."),
+  ("Can you remove a shed or deck?", "Yes. We dismantle and haul sheds, playsets, decks and fences. Pricing depends on size and materials, and we confirm it on site."),
   ("Do you offer recurring pickups for contractors?", "Yes. We schedule weekly or phase-based pickups for builders and remodelers in Homestead, Florida City and Cutler Bay, with simple monthly invoicing."),
   ("Will you clean up after the debris is loaded?", "Yes. Every job ends with a sweep of the work area, and we can blow off driveways so the site is ready for inspection or the homeowner walk-through."),
  ],
@@ -68,7 +68,7 @@ CONS = dict(
 
 YARD = dict(
  slug="yard-waste-removal", name="Yard Waste Removal", schema_name="Yard Waste Removal in Homestead, FL", min=95,
- title="Yard Waste Removal in Homestead, FL | Brush and Frond Hauling",
+ title="Yard Waste Removal in Homestead, FL | Brush Hauling",
  desc="Yard waste removal in Homestead, FL 33030. Branches, palm fronds, brush piles and landscaping debris hauled the same day, from $95. Call 877-745-9845.",
  h1="<em>Yard Waste Removal</em> and Brush Hauling in Homestead, FL",
  lead="Palm fronds piling up, overgrown brush or a heap of branches after a trim? We bag, load and haul yard debris of any size so your Homestead property looks clean again.",
@@ -76,9 +76,9 @@ YARD = dict(
  hero_img="dumpster-trailer-loaded-homestead", hero_alt="Trailer loaded with yard waste in Homestead",
  intro_h2="Year-Round Yard Debris Removal for Homestead Properties",
  intro_html="<p>Homestead's tropical climate means plants never really stop growing. The area gets nearly 60 inches of rain a year and stays warm in every month. As a result, palms, hedges and trees produce a steady flow of fronds, clippings and branches. Most of it piles up behind the shed or along the fence line until it becomes a real project.</p>"
-  "<p>Our <strong>yard waste removal service</strong> clears that pile in one visit. We rake up loose debris, bag small material, load branches and haul it all to a facility that processes vegetation into mulch whenever possible. Farms and nurseries in the Redland and larger lots off Krome Avenue are regular customers too.</p>",
+  "<p>We clear that pile in one visit. We rake up loose debris, bag small material, load branches and haul it all to a facility that processes vegetation into mulch whenever possible. Farms and nurseries in the Redland and larger lots off Krome Avenue are regular customers too.</p>",
  intro_img="yard-waste-removal-before-after-homestead", intro_alt="Backyard brush pile removal before and after in Homestead",
- badge="<b>60 in</b>of yearly rain keeps Homestead yards growing",
+ badge="<b>60 inches</b>of yearly rain keeps Homestead yards growing",
  body_html="<h2>Yard Waste We Haul Away</h2>"
   + checks(["Palm fronds and coconuts", "Tree limbs and branches", "Hedge and shrub clippings", "Brush and vine piles",
             "Leaves and grass clippings", "Old sod and landscape rock", "Small stumps and roots", "Mulch and planter soil",
@@ -92,7 +92,7 @@ YARD = dict(
   "<p>After a tropical storm or hurricane, limbs and fallen trees can block driveways and damage fences. Our crews respond quickly for yard storm cleanup. For larger storm jobs involving damaged structures or contents, see our hurricane debris removal page.</p>",
  steps_h2="How Yard Waste Pickup Works",
  steps_p="From overgrown to clean in a single visit.",
- steps=[("Show Us the Pile", "Send photos or describe the size of the yard debris.", "phone"),
+ steps=[("Show Us the Pile", "Call and describe the size of the yard debris.", "phone"),
         ("Pick a Time", "Same-day or scheduled, including weekend mornings.", "calendar"),
         ("Rake, Bag and Load", "We gather loose material and load branches by hand.", "truck"),
         ("Mulch and Recycle", "Clean vegetation goes to processors for mulch and compost.", "recycle")],
@@ -142,7 +142,7 @@ GAR = dict(
  hero_img="garage-junk-pickup-carport-homestead", hero_alt="Junk hauling trailer at a Homestead garage and carport",
  intro_h2="Garage Junk Removal That Gives You the Space Back",
  intro_html="<p>In South Florida, where most homes lack basements and attics are too hot for storage, the garage becomes the catch-all. A packed two-car garage can hold 8 to 15 cubic yards of stuff, the equivalent of half to a full truckload. Many Homestead homeowners have not parked inside in years.</p>"
-  "<p>Our <strong>garage cleanout service</strong> is built for exactly that. We work alongside you to decide what stays, then remove everything else in one visit. Keepers get moved to one side, donations go to local charities, recyclables get separated, and the rest is hauled away. Most garage cleanouts in Homestead take 2 to 4 hours from start to finish.</p>",
+  "<p>Our garage cleanouts are built for exactly that. We work alongside you to decide what stays, then remove everything else in one visit. Keepers get moved to one side, donations go to local charities, recyclables get separated, and the rest is hauled away. Most garage cleanouts in Homestead take 2 to 4 hours from start to finish.</p>",
  intro_img="garage-cleanout-before-after-homestead", intro_alt="Cluttered garage cleared out in Homestead",
  badge="<b>2 to 4 hrs</b>for most complete garage cleanouts",
  body_html="<h2>What We Clear From Homestead Garages</h2>"
@@ -157,7 +157,7 @@ GAR = dict(
   "<p>Preparing to sell? A clean, empty garage improves listing photos and buyer showings. Moving out of a rental near Homestead Air Reserve Base? We clear the garage before your final walk-through. For whole-house jobs, see our estate cleanout service, and for single bulky items like a spare fridge, our appliance removal team can help.</p>",
  steps_h2="How a Garage Cleanout Works",
  steps_p="A simple process that respects your belongings and your time.",
- steps=[("Walk-through and Quote", "Send photos or have us look on site for an exact price.", "phone"),
+ steps=[("Walk-through and Quote", "Describe the garage on the phone or have us look on site for an exact price.", "phone"),
         ("Sort Together", "Tell us what stays and what goes. We handle the lifting.", "list"),
         ("Load and Haul", "Donations, recyclables and trash are loaded separately.", "truck"),
         ("Sweep the Floor", "We sweep out the garage so it is ready to use again.", "broom")],
@@ -182,7 +182,7 @@ GAR = dict(
  faq_h2="Garage Cleanout FAQs",
  faq_p="Common questions about clearing a garage in Homestead.",
  faqs=[
-  ("How much does a garage cleanout cost in Homestead?", "Most garage cleanouts in Homestead cost between $280 and $650. A full two-car garage usually fills most of our 15-cubic-yard truck and runs $520 to $650."),
+  ("How much does a garage cleanout cost in Homestead?", "Most garage cleanouts in Homestead cost between $150 and $650. A full two-car garage usually fills most of our 15-cubic-yard truck and runs $520 to $650."),
   ("How long does a garage cleanout take?", "Most garage cleanouts take 2 to 4 hours, including sorting, loading and sweeping. Heavily packed garages may take longer, and we give a time estimate with the quote."),
   ("Will you help me sort what to keep?", "Yes. Our crew works with you to separate keep, donate, recycle and dispose items. You make the calls, and we do the lifting."),
   ("Can you take old paint and chemicals?", "No. Paint, pool chemicals, oil and pesticides are hazardous. We set them aside and point you to Miami-Dade Home Chemical Collection options."),
@@ -190,7 +190,7 @@ GAR = dict(
   ("Can you remove a garage refrigerator?", "Yes. Spare refrigerators and freezers are common garage items. We haul them to recyclers that recover refrigerant as required by the Clean Air Act."),
   ("Do you remove shelving and workbenches?", "Yes. We dismantle shelving units, cabinets and workbenches and remove them along with the rest of the garage contents."),
   ("Can you do a garage cleanout the same day?", "Yes. Same-day garage cleanouts are often possible when you call before noon. Larger garages may be scheduled for the next morning."),
-  ("Do I need to be there during the cleanout?", "For sorting, it helps to be present. If everything goes, you can provide access, and we will send before-and-after photos."),
+  ("Do I need to be there during the cleanout?", "For sorting, it helps to be present. If everything goes, you can provide access and confirm the price by phone."),
   ("Can you clean out a storage unit too?", "Yes. We clear storage units around Homestead and Florida City using the same volume-based pricing as garage cleanouts."),
  ],
  cta_h2="Park in Your Garage Again",

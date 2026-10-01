@@ -22,6 +22,16 @@
   d.querySelectorAll('.menu a').forEach(function (a) {
     a.addEventListener('click', function () { d.body.classList.remove('nav-open'); });
   });
+  // Close the mobile menu with Escape or a tap outside it
+  var closeNav = function () {
+    if (!d.body.classList.contains('nav-open')) return;
+    d.body.classList.remove('nav-open');
+    if (burger) { burger.setAttribute('aria-expanded', 'false'); burger.focus(); }
+  };
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+  d.addEventListener('click', function (e) {
+    if (d.body.classList.contains('nav-open') && !e.target.closest('.menu') && !e.target.closest('.burger')) closeNav();
+  });
 
   // Scroll reveal
   var els = d.querySelectorAll('.reveal, .stagger');

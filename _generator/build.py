@@ -1,6 +1,6 @@
 import os, re, json, datetime
 from lib import *
-import home, svc_a, svc_b, svc_c, hubs, locations, blogs
+import home, svc_a, svc_b, svc_c, hubs, locations, blogs, seo
 from svc_builder import build_service
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -47,13 +47,13 @@ if os.path.exists(old):
 nf_body = f'''<section class="section"><div class="wrap"><div class="content" style="text-align:center">
 <h1>Page Not Found</h1><p>The page you are looking for has moved. Try one of our Homestead junk removal services below or call {PHONE}.</p>
 <p>{call_btn()}</p></div></div></section>''' + service_cards("Popular Junk Removal Services in Homestead", "", alt_bg=True)
-nf = page("/404", "Page Not Found | " + BRAND, "Page not found.", nf_body, [], [("Home", "/"), ("404", None)])
-nf = nf.replace('content="index, follow, max-image-preview:large"', 'content="noindex, follow"')
+nf = page("/404", "Page Not Found | " + BRAND, "Page not found.", nf_body, [], [("Home", "/"), ("404", None)], noindex=True)
 write("404.html", nf)
 
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, pr in urls:
-    sm.append(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>")
+    # lastmod reflects when page content last changed, not the build date
+    sm.append(f"<url><loc>{SITE}{u}</loc><lastmod>{blogs.UPDATED if u.startswith('/blog/') else seo.UPDATED_ISO}</lastmod></url>")
 sm.append("</urlset>")
 write("sitemap.xml", "\n".join(sm))
 AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "Claude-SearchBot", "PerplexityBot", "Google-Extended", "Applebot-Extended", "Bingbot"]
@@ -81,8 +81,8 @@ vercel = {
   "redirects": [
     {"source": "/service", "destination": "/services", "permanent": True},
     {"source": "/service/junk-removal", "destination": "/", "permanent": True},
-    {"source": "/service-areas/:city", "destination": "/fl/:city", "permanent": True},
-    {"source": "/fl", "destination": "/service-areas", "permanent": False},
+    {"source": "/service-areas/:city(florida-city|cutler-bay|leisure-city|princeton|redland)", "destination": "/fl/:city", "permanent": True},
+    {"source": "/fl", "destination": "/service-areas", "permanent": True},
     {"source": "/areas", "destination": "/service-areas", "permanent": True},
     {"source": "/locations", "destination": "/service-areas", "permanent": True},
     {"source": "/index", "destination": "/", "permanent": True},

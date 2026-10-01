@@ -18,7 +18,7 @@ COST = dict(
  slug="junk-removal-cost-homestead-fl",
  takeaways=['Most junk removal jobs in Homestead cost $95 to $650, based on how much of a 15-cubic-yard truck your items fill.', 'Single items start around $95, and a half truckload usually runs $300 to $425.', 'Concrete, dirt, roofing and tile are usually priced by weight instead of volume.', 'City and county bulk pickup is free but has size limits and banned items, including appliances inside Homestead city limits.'],
  faq_h2="Junk Removal Pricing FAQs",
- title="How Junk Removal Pricing Works in Homestead (and How to Save)",
+ title="How Junk Removal Pricing Works in Homestead and How to Save",
  desc="Learn how junk removal companies in Homestead, FL set prices, what raises or lowers your bill, the free city and county options and nine ways to save.",
  h1="How Junk Removal Pricing Works in <em>Homestead</em> and How to Save",
  lead="Real junk removal prices for Homestead and South Miami-Dade, from a single couch to a full 15-cubic-yard truckload. Plus the free options and money-saving tips most homeowners never hear about.",
@@ -49,8 +49,8 @@ COST = dict(
              ["1/8 truck (about 2 yards)", "Loveseat plus a few boxes", "$130 to $175"],
              ["1/4 truck (about 4 yards)", "Bedroom set or a small garage corner", "$180 to $280"],
              ["1/2 truck (about 7.5 yards)", "One-car garage or a small apartment", "$300 to $425"],
-             ["3/4 truck (about 11 yards)", "Two-bedroom home cleanout", "$440 to $560"],
-             ["Full truck (about 15 yards)", "Whole house or large estate", "$560 to $650"]]) + """
+             ["3/4 truck (about 11 yards)", "Packed one-car garage or several rooms", "$440 to $560"],
+             ["Full truck (about 15 yards)", "Two-car garage or a small home's contents", "$560 to $650"]]) + """
 <p>If your pile falls between two sizes, you only pay for the space you use. A reputable crew will show you the loaded truck and explain the fraction before charging.</p>
 
 <h2>Typical Prices for Single Items</h2>
@@ -71,7 +71,7 @@ COST = dict(
 <h3>Weight and Material</h3>
 <p>Heavy loads fill the truck's weight allowance before they fill its space. A pile of broken concrete pavers the size of a loveseat can weigh more than a whole bedroom of furniture. Expect weight-based pricing for concrete, dirt, rock, roofing and large amounts of tile.</p>
 <h3>Special Handling Items</h3>
-<p>Under EPA Section 608 rules, refrigerators and freezers must have their refrigerant recovered before they are scrapped. Tires carry disposal fees, and mattresses are bulky and hard to recycle. These items can carry small surcharges of roughly $10 to $40 each.</p>
+<p>Under EPA Section 608 rules, refrigerators and freezers must have their refrigerant recovered before they are scrapped. Tires carry disposal fees, and mattresses are bulky and hard to recycle. Some companies add surcharges for these items, so ask whether your quote includes them.</p>
 <h3>Access and Location on the Property</h3>
 <p>Most Homestead junk haulers include stairs, long carries and attic work in the volume price. Extremely heavy single items such as pianos, gun safes or cast-iron tubs may add a fee because they need extra people or equipment.</p>
 <h3>Timing</h3>
@@ -103,10 +103,10 @@ COST = dict(
 <h2>9 Ways to Save Money on Your Junk Pickup</h2>
 <ol>
 <li><strong>Book everything at once.</strong> One half-truck load costs less than two quarter-truck visits.</li>
-<li><strong>Send photos first.</strong> A photo-based estimate lets you adjust the job before the truck rolls.</li>
+<li><strong>Describe everything on the first call.</strong> A complete list gives you an accurate range and lets you adjust the job before the truck rolls.</li>
 <li><strong>Break down what you can.</strong> Flattened boxes and disassembled bed frames stack tighter and take less space.</li>
 <li><strong>Separate heavy material.</strong> Keep concrete or dirt apart so it does not push a whole load into weight pricing.</li>
-<li><strong>Use free pickup for the easy stuff.</strong> Put allowed yard waste out for city or county collection and hire help for everything else.</li>
+<li><strong>Use free pickup for the easy stuff.</strong> Put allowed yard waste out for public collection and hire help for everything else.</li>
 <li><strong>Sell or give away usable items.</strong> Local marketplace groups move good furniture quickly.</li>
 <li><strong>Ask about donation.</strong> Items that can be donated sometimes reduce disposal costs.</li>
 <li><strong>Avoid peak days.</strong> Midweek slots are easier to get than Saturday mornings or the days after a storm.</li>
@@ -346,7 +346,7 @@ HURR = dict(
 <p>After every major hurricane, out-of-area crews arrive in South Florida looking for quick cash. Protect yourself with a few simple steps. Get a written price and ask for proof of general liability insurance. Avoid anyone who wants full payment upfront in cash. Make sure tree work near power lines is done by qualified professionals. Local companies with a physical presence and a phone number that works after the storm are always the safer choice.</p>
 
 <h2>Book Storm Cleanup With <a href="/">Junk Removal Homestead</a></h2>
-<p>Our crews live and work in South Miami-Dade, so we are here before, during and after storm season. We clear downed limbs, broken fencing, damaged sheds and water-damaged contents, sort debris as it is loaded and document each job for your insurance records.</p>
+<p>Our crews live and work in South Miami-Dade, so we are here before, during and after storm season. We clear downed limbs, broken fencing, damaged sheds and water-damaged contents, sort debris as it is loaded and provide an itemized invoice for your insurance records on request.</p>
 <h3>Green Waste and Fallen Limbs: <a href="/service/yard-waste-removal">Yard Waste Removal</a></h3>
 <p>For fronds, branches and brush piles after a storm, or before one, yard waste removal clears the whole pile without size limits or bag counts.</p>
 <h3>Storm Cleanup on Acreage: <a href="/fl/redland">Junk Removal in the Redland</a></h3>
@@ -583,7 +583,7 @@ DVJ = dict(
 <h2>Using Both Services Together</h2>
 <p>Large projects sometimes benefit from both. Picture a family renovating a house they just inherited. They might book junk removal on day one to clear the furniture and appliances, then rent a dumpster for demolition. That combination keeps the container free for heavy debris and avoids paying for dumpster space taken up by bulky couches.</p>
 <h2>Compare Both Options With <a href="/">Junk Removal Homestead</a></h2>
-<p>Because we offer both services across South Miami-Dade, we can recommend the cheapest option for your specific project instead of pushing one. Call with a description or photos, and we will price both side by side.</p>
+<p>Because we offer both services across South Miami-Dade, we can recommend the cheapest option for your specific project instead of pushing one. Call with a description, and we will price both side by side.</p>
 <h3>Multi-Day Projects: <a href="/service/dumpster-rental">Dumpster Rental in Homestead</a></h3>
 <p>Rent a driveway-friendly 10-, 15- or 20-yard dumpster set on boards to protect your pavers. Flat-rate pricing includes delivery, pickup and a 7-day rental.</p>
 <h3>Remodel and Job Site Waste: <a href="/service/construction-debris-removal">Construction Debris Removal</a></h3>
@@ -593,7 +593,6 @@ DVJ = dict(
 """,
  faqs=[
   ("Is it cheaper to rent a dumpster or hire junk removal in Homestead?", "For one-day jobs, junk removal is often cheaper once you count labor and rental time. For multi-day remodels and roofing, a dumpster starting around $295 usually costs less per cubic yard."),
-  ("Do I need a permit for a dumpster in Homestead?", "Usually not if it sits entirely on your driveway or private property. Placement on a public street or right-of-way may require a permit from the City of Homestead or Miami-Dade County."),
   ("What size dumpster do I need?", "A 10-yard dumpster fits a bathroom remodel or small cleanout. A 15-yard container handles a kitchen remodel or garage cleanout. A 20-yard container suits large renovations, roofing jobs and whole-home cleanouts."),
   ("Can a dumpster damage my paver driveway?", "It can if placed directly on pavers. Reputable companies set containers on boards to spread the weight and protect the surface."),
   ("What cannot go in a dumpster?", "Hazardous materials such as paint, solvents, fuel, batteries, pool chemicals and asbestos are prohibited. Tires, mattresses and appliances may carry surcharges, and concrete or dirt usually needs a special container."),
@@ -635,7 +634,7 @@ def build_post(p):
            "image": f"{SITE}/assets/img/{p['hero_img']}-1200.webp" if os.path.exists(os.path.join(IMG_DIR, p['hero_img'] + "-1200.webp")) else f"{SITE}/assets/img/{p['hero_img']}-640.webp",
            "author": {"@id": f"{SITE}/#business"}, "publisher": {"@id": f"{SITE}/#business"},
            "mainEntityOfPage": {"@id": SITE + path + "#webpage"}, "inLanguage": "en-US"}
-    return path, page(path, p["title"], p["desc"], "\n".join(body), p["faqs"], crumbs, extra=[art], og_type="article")
+    return path, page(path, p["title"], p["desc"], "\n".join(body), p["faqs"], crumbs, extra=[art], og_type="article", published=PUBLISHED)
 
 BLOG_FAQS = [
  ("What topics does the Junk Removal Homestead blog cover?", "Our guides cover junk removal costs, local bulk trash rules and hurricane debris cleanup. They also explain how to dispose of appliances, mattresses and furniture, and how to choose between a dumpster and junk removal."),
@@ -654,7 +653,7 @@ def blog_index():
     crumbs = [("Home", "/"), ("Blog", None)]
     body = [
         hero("Junk Removal <em>Guides</em> for Homestead, FL",
-             "Practical local advice on junk removal costs, bulk trash rules, storm cleanup and disposal in Homestead and South Miami-Dade. Written by the crew that does this work every day.",
+             "Practical local advice on junk removal costs, bulk trash rules, storm cleanup and disposal in Homestead and South Miami-Dade. Written by our local team.",
              ["Local rules and prices", "Storm season checklists", "Disposal and donation tips", "Updated for 2026"],
              "junk-hauling-truck-homestead", "Junk hauling truck in Homestead, FL", crumbs=crumbs, eyebrow="Blog", second=("Browse Guides", "#guides")),
         guide_cards("Latest Junk Removal Guides", "Start with any guide below. Each one links to related guides so you can plan your whole cleanup."),

@@ -13,7 +13,8 @@ UPDATED_ISO = "2026-10-01"
 # ---------- Price helpers ----------
 def price_range(rows, floor):
     """Lowest and highest dollar amounts in a price table's last column."""
-    nums = [int(n.replace(",", "")) for r in rows for n in re.findall(r"\$([\d,]+)", r[-1])]
+    nums = [int(n.replace(",", "")) for r in rows if not strip(r[0]).startswith("Extra")   # add-on fees are not the service price
+            for n in re.findall(r"\$([\d,]+)", r[-1])]
     nums = [n for n in nums if n >= floor]
     return floor, max(nums) if nums else floor
 
@@ -60,11 +61,12 @@ def service_qa(s, lo, hi):
 
 def location_qa(place, zip_text):
     cap = place[0].upper() + place[1:]
-    q = f"How much does junk removal cost in {place}, FL?"
-    a = (f"Junk removal in {place}, FL typically costs $95 to $650. A single item starts at $95, a half truckload runs "
-         f"$300 to $425 and a full 15-cubic-yard truck costs $560 to $650. {cap} jobs in {zip_text} include labor, "
-         "loading and disposal, with no travel fee and same-day pickup when you call before noon.")
-    return quick_answer(q, a, facts("$95 to $650", "Same day when you call before noon", f"{cap}, {zip_text}"))
+    where = place if place.startswith("the ") else f"{place}, FL"
+    q = f"How much does junk removal cost in {where}?"
+    a = (f"Junk removal in {where} typically costs $95 to $650. A single item starts at $95, a half truckload runs "
+         "$300 to $425 and a full 15-cubic-yard truck costs $560 to $650. Labor, loading and disposal are included, "
+         "there is no travel fee, and same-day pickup is often available when you call before noon.")
+    return quick_answer(q, a, facts("$95 to $650", "Same day when you call before noon", f"All of {place} ({zip_text})"))
 
 # ---------- Price estimator (lead tool) ----------
 EST_ITEMS = [  # key, label, cubic yards
@@ -74,12 +76,14 @@ EST_ITEMS = [  # key, label, cubic yards
  ("treadmill", "Treadmill or gym equipment", 1.5), ("bags", "Bags of trash (per 5 bags)", 0.75), ("boxes", "Boxes (per 10 boxes)", 1),
 ]
 
+EST_UNIT = {"bags": "5 bags of trash", "boxes": "10 boxes"}
+
 def estimator(place="Homestead"):
     rows = "".join(
         f'<div class="est-row"><label for="est-{k}">{label}</label>'
-        f'<div class="stepper"><button type="button" class="est-step" data-step="-1" aria-label="Remove one {label.lower()}">&minus;</button>'
+        f'<div class="stepper"><button type="button" class="est-step" data-step="-1" aria-label="Remove {EST_UNIT.get(k, "one " + label.lower())}">&minus;</button>'
         f'<input id="est-{k}" type="number" min="0" max="20" value="0" inputmode="numeric" data-yards="{yd}">'
-        f'<button type="button" class="est-step" data-step="1" aria-label="Add one {label.lower()}">+</button></div></div>'
+        f'<button type="button" class="est-step" data-step="1" aria-label="Add {EST_UNIT.get(k, "one " + label.lower())}">+</button></div></div>'
         for k, label, yd in EST_ITEMS)
     intro = (f"Add the items you want removed to see a typical price range for junk removal in {place}. "
              "Your exact price is confirmed on site before any work begins.")
@@ -153,7 +157,7 @@ def offer_catalog(name, url, rows):
         if len(nums) > 1:
             spec["maxPrice"] = max(nums)
         items.append({"@type": "Offer", "name": strip(r[0]), "description": strip(r[1]) if len(r) > 2 else None,
-                      "priceSpecification": spec, "url": url, "areaServed": entity("Homestead")})
+                      "priceSpecification": spec, "url": url})
     for i in items:
         if i["description"] is None:
             del i["description"]
