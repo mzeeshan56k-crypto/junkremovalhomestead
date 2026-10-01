@@ -21,7 +21,7 @@ FAQS = [
   "We sort every load. Usable furniture and household goods go to local donation partners. Metal and appliances go to scrap recyclers, and cardboard is recycled. Only what is left goes to a licensed Miami-Dade disposal facility. The EPA reports that about 80 percent "
   "of discarded furniture ends up in landfills nationally, so sorting makes a real difference."),
  ("Do I need to be home for the junk pickup?",
-  "Not always. For curbside, driveway, carport or yard pickups, you can leave the items out, text us photos and pay by card over the phone. "
+  "Not always. For curbside, driveway, carport or yard pickups, you can leave the items out and text us photos. "
   "For anything inside the home, we ask that an adult be present or that a property manager or realtor provide access."),
  ("How far outside Homestead do you travel?",
   "We cover every ZIP code in and around Homestead, including 33030, 33031, 33032, 33033, 33034, 33035 and 33039. We also work north to Cutler Bay and South Miami Heights. Our core service radius extends about 20 miles from downtown Homestead, with no travel fee inside it."),

@@ -130,7 +130,7 @@ COST = dict(
   ("Do junk removal companies charge extra for stairs?", "Most Homestead crews include stairs, attics and long carries in the volume price. Very heavy single items like pianos, safes or cast-iron tubs may carry an added fee that is quoted upfront."),
   ("Why do refrigerators cost more to remove?", "Refrigerators and freezers contain refrigerant. Under EPA Section 608 rules, certified technicians must recover it before the unit can be scrapped. That handling adds a small cost."),
   ("Can I use the Moody Drive drop-off center if I live in Homestead?", "Usually not. County Trash and Recycling Centers serve unincorporated Miami-Dade and a list of eligible cities. Cutler Bay is on that list, but the City of Homestead is not."),
-  ("Do I need to be home for a junk removal pickup?", "Not for curbside, driveway or yard pickups. You can leave items out, confirm the price by phone and pay by card. For items inside the home, an adult or property manager needs to provide access."),
+  ("Do I need to be home for a junk removal pickup?", "Not for curbside, driveway or yard pickups. You can leave items out and confirm the price by phone. For items inside the home, an adult or property manager needs to provide access."),
  ],
  related=["homestead-bulk-trash-pickup-rules", "dumpster-rental-vs-junk-removal-homestead", "appliance-mattress-furniture-disposal-homestead"],
 )

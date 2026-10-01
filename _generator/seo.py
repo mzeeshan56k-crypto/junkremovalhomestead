@@ -47,7 +47,7 @@ SVC_QA = {
  "garage-cleanout": "A garage cleanout in Homestead, FL typically costs $150 to $650. A partial cleanout starts around $150, a full one-car garage runs $400 to $520 and a full two-car garage costs $520 to $650. Sorting, donation drop-offs and a final sweep are included.",
  "estate-cleanout": "An estate cleanout in Homestead, FL typically costs $450 to $2,600, depending on home size. An apartment runs $450 to $650, a three-bedroom home costs $1,100 to $1,750 and a four-bedroom home with a garage costs $1,750 to $2,600. Sorting and donation are included.",
  "commercial-junk-removal": "Commercial junk removal in Homestead, FL typically costs $250 to $650 per job. A small office cleanout runs $250 to $450, an apartment turnover costs $300 to $560 and a retail fixture removal costs $400 to $650. Larger and recurring jobs are quoted individually.",
- "hurricane-debris-removal": "Hurricane debris removal in Homestead, FL typically costs $150 to $700. A small limb pile runs $150 to $280, water-damaged room contents cost $350 to $520 and a full truck of mixed storm debris costs $560 to $700. Our storm pricing never goes up after a hurricane.",
+ "hurricane-debris-removal": "Hurricane debris removal in Homestead, FL typically costs $150 to $700. A small limb pile runs $150 to $280, water-damaged room contents cost $350 to $520 and a full truck of mixed storm debris costs $560 to $700. Wet materials weigh more, so storm loads often fall toward the upper end of each range.",
 }
 SVC_TIMING = {"dumpster-rental": "Next-day delivery", "estate-cleanout": "Scheduled within days",
               "commercial-junk-removal": "Within 24 to 48 hours", "hurricane-debris-removal": "Priority after storms"}
@@ -167,8 +167,6 @@ def business_extras():
     """Fields merged into the LocalBusiness node on every page."""
     return {
         "slogan": "Same-day junk removal with upfront pricing",
-        "paymentAccepted": "Cash, Credit Card, Debit Card",
-        "currenciesAccepted": "USD",
         "areaServed_geo": {"@type": "GeoCircle",
                            "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 25.4687, "longitude": -80.4776},
                            "geoRadius": "32000"},

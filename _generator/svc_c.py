@@ -37,7 +37,7 @@ EST = dict(
        ["Hoarding cleanouts", "Varies widely", "Quoted after walk-through"]],
  note="Estimates include labor, sorting, donation delivery, hauling and disposal. Final price confirmed after a walk-through or detailed photos.",
  local_h2="Serving Homestead Families and Out-of-Town Heirs",
- local_html="<p>Homestead has a large community of longtime residents. Many have lived in the same home since rebuilding after Hurricane Andrew in 1992. When those homes change hands, heirs often live out of state. We make remote cleanouts easy with lockbox access, video walk-throughs, photo updates and card payment by phone.</p>"
+ local_html="<p>Homestead has a large community of longtime residents. Many have lived in the same home since rebuilding after Hurricane Andrew in 1992. When those homes change hands, heirs often live out of state. We make remote cleanouts easy with lockbox access, video walk-throughs and photo updates.</p>"
   "<p>We also know the local realtors, estate sale companies and donation centers, which keeps each project moving smoothly.</p>",
  local_img="junk-hauling-truck-homestead", local_alt="Hauling truck at a Homestead estate cleanout",
  related_h2="Services Often Paired With Estate Cleanouts",
@@ -53,7 +53,7 @@ EST = dict(
   ("How much does an estate cleanout cost in Homestead?", "Most estate cleanouts in Homestead cost $650 to $2,600, depending on home size. A typical three-bedroom home with 25 to 40 cubic yards of contents runs about $1,100 to $1,750."),
   ("How long does an estate cleanout take?", "Most three-bedroom homes are cleared in one to two days. Larger homes, hoarding situations or homes with sheds and outbuildings may take longer."),
   ("What happens to valuables or documents you find?", "Any cash, jewelry, photos, documents or items that look personal are set aside for the family. We never discard papers without your approval."),
-  ("Do I need to be present for the cleanout?", "No. Many heirs live out of state. We can work from lockbox access and provide video walk-throughs, photo updates and payment by phone."),
+  ("Do I need to be present for the cleanout?", "No. Many heirs live out of state. We can work from lockbox access and provide video walk-throughs and photo updates."),
   ("Do you work with estate sale companies?", "Yes. We often clear homes after an estate sale, removing everything that did not sell so the house is ready to list."),
   ("Will you donate my parent's belongings?", "Yes. Usable furniture, clothing and household goods go to charities and resale partners in South Miami-Dade. We can provide donation receipts when available."),
   ("Can you provide receipts for probate?", "Yes. We provide itemized invoices and before-and-after photos, which executors often need to document estate expenses."),
@@ -71,7 +71,7 @@ COM = dict(
  desc="Commercial junk removal in Homestead, FL 33030. Office furniture, retail fixtures and property turnovers with after-hours service. Call 877-745-9845.",
  h1="Commercial <em>Junk Removal</em> in Homestead, FL",
  lead="Offices, retail stores, restaurants, warehouses and rental properties across Homestead count on us to clear junk fast, on their schedule, without disrupting business.",
- points=["After-hours and weekend service", "Office and retail cleanouts", "Property manager turnovers", "Invoicing and COI available"],
+ points=["After-hours and weekend service", "Office and retail cleanouts", "Property manager turnovers", "Simple invoicing"],
  hero_img="construction-dumpster-homestead-fl", hero_alt="Commercial debris removal at a Homestead property",
  intro_h2="Business Junk Removal Built Around Your Hours",
  intro_html="<p>Downtime costs money. Our commercial crews work early mornings, evenings and weekends so stores stay open and offices stay productive. From a single conference table to an entire floor of cubicles, we remove it, haul it and leave the space clean.</p>"
@@ -99,7 +99,7 @@ COM = dict(
  rows=[["Small office cleanout", "4 to 8 cubic yards", "$250 to $450"], ["Apartment turnover", "5 to 12 cubic yards", "$300 to $560"],
        ["Retail fixture removal", "8 to 15 cubic yards", "$400 to $650"], ["Warehouse or multi-truck job", "Over 15 cubic yards", "Quoted per job"],
        ["Recurring service", "Weekly or monthly", "Custom contract pricing"]],
- note="After-hours service, elevator buildings and heavy equipment may affect pricing. Certificates of insurance can be provided on request.",
+ note="After-hours service, elevator buildings and heavy equipment may affect pricing.",
  local_h2="A Local Partner for Homestead Businesses",
  local_html="<p>National junk franchises often dispatch from Miami or beyond, adding travel time and cost. Our Homestead focus means faster response times and pricing that reflects local disposal costs. We know the loading docks, the business parks and the traffic patterns on US 1 and Krome Avenue, so jobs start on time.</p>"
   "<p>We also help businesses prepare for hurricane season by clearing loose outdoor items and debris that could become hazards in high winds.</p>",
@@ -116,7 +116,6 @@ COM = dict(
  faqs=[
   ("How much does commercial junk removal cost in Homestead?", "Small office cleanouts typically cost $250 to $450, apartment turnovers $300 to $560, and retail fixture removals $400 to $650. Larger or recurring jobs are quoted individually."),
   ("Do you offer after-hours service?", "Yes. We work early mornings, evenings and weekends so your business can stay open. After-hours scheduling is available 7 days a week."),
-  ("Can you provide a certificate of insurance?", "Yes. Certificates of insurance can be provided on request for property managers, landlords and commercial buildings that require them before work begins."),
   ("Do you handle eviction cleanouts?", "Yes. We clear eviction contents for landlords and property managers in Homestead once the legal process is complete and the property is released to the owner."),
   ("Do you recycle office electronics?", "Yes. Computers, monitors, printers and IT equipment go to certified electronics recyclers. We can document drop-offs for your records."),
   ("Can you set up recurring pickups?", "Yes. Businesses and property managers can schedule weekly, biweekly or monthly pickups with contract pricing and simple monthly invoicing."),
@@ -167,7 +166,7 @@ HURR = dict(
  rows=[["Small limb and debris pile", "2 to 4 cubic yards", "$150 to $280"], ["Fence and yard cleanup", "5 to 8 cubic yards", "$300 to $450"],
        ["Water-damaged room contents", "6 to 10 cubic yards", "$350 to $520"], ["Full truck of mixed storm debris", "15 cubic yards", "$560 to $700"],
        ["Whole home flood cleanout", "Multiple loads", "Quoted per job"]],
- note="Wet materials are heavier than dry debris, so storm loads often price toward the upper range. We never price gouge after storms. Prices confirmed on site.",
+ note="Wet materials are heavier than dry debris, so storm loads often price toward the upper range. Prices confirmed on site.",
  local_h2="Know the County Storm Debris Rules",
  local_html="<p>After declared disasters, Miami-Dade County and the City of Homestead may run special storm debris collection. These programs usually require vegetative debris to be kept separate from construction debris at the curb. Collection can take weeks to reach every street after a major storm.</p>"
   "<p>We work alongside those programs. Many homeowners use us for debris the county will not take, for items inside the home, or simply to get the property cleared faster so repairs can start.</p>",
@@ -189,7 +188,6 @@ HURR = dict(
   ("Can you help with my insurance claim?", "We provide before-and-after photos and itemized invoices listing debris removed. These records help support insurance claims for debris removal costs."),
   ("Do you cut down damaged trees?", "We cut and haul fallen limbs and trees already on the ground. Standing or leaning trees near structures should be handled by a licensed tree service first."),
   ("Do you remove damaged fencing and screen enclosures?", "Yes. We dismantle and haul damaged wood, vinyl and chain-link fencing, as well as pool cage and screen enclosure debris."),
-  ("Do you raise prices after hurricanes?", "No. Our standard volume pricing stays in place after storms. Florida law prohibits price gouging during declared states of emergency."),
   ("Can you clear debris before a storm arrives?", "Yes. Pre-storm pickups remove loose junk, yard piles and construction materials that could become dangerous in high winds."),
   ("When is hurricane season in Homestead?", "Atlantic hurricane season runs from June 1 through November 30, with peak activity from mid-August through early October."),
  ],
