@@ -37,6 +37,9 @@ for l in locations.PAGES:
 # Location pages moved from /service-areas/<slug> to /fl/<slug>
 import shutil
 shutil.rmtree(os.path.join(OUT, "service-areas"), ignore_errors=True)
+# The service areas hub moved from /service-areas to /fl
+if os.path.exists(os.path.join(OUT, "service-areas.html")):
+    os.remove(os.path.join(OUT, "service-areas.html"))
 
 # The junk removal service page was folded into the homepage
 old = os.path.join(OUT, "service", "junk-removal.html")
@@ -82,9 +85,9 @@ vercel = {
     {"source": "/service", "destination": "/services", "permanent": True},
     {"source": "/service/junk-removal", "destination": "/", "permanent": True},
     {"source": "/service-areas/:city(florida-city|cutler-bay|leisure-city|princeton|redland)", "destination": "/fl/:city", "permanent": True},
-    {"source": "/fl", "destination": "/service-areas", "permanent": True},
-    {"source": "/areas", "destination": "/service-areas", "permanent": True},
-    {"source": "/locations", "destination": "/service-areas", "permanent": True},
+    {"source": "/service-areas", "destination": "/fl", "permanent": True},
+    {"source": "/areas", "destination": "/fl", "permanent": True},
+    {"source": "/locations", "destination": "/fl", "permanent": True},
     {"source": "/index", "destination": "/", "permanent": True},
     {"source": "/:path*", "has": [{"type": "host", "value": "www.junkremovalhomesteadfl.com"}], "destination": "https://junkremovalhomesteadfl.com/:path*", "permanent": True},
     {"source": "/:path*", "has": [{"type": "host", "value": "junkremovalhomestead.com"}], "destination": "https://junkremovalhomesteadfl.com/:path*", "permanent": True},

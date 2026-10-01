@@ -240,7 +240,7 @@ def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead
         zip_line = f"<span>ZIP {z}</span>" if show_zip else ""
         lis.append(f'<li>{icon("pin")}<div>{label}{zip_line}</div></li>')
     mp = map_facade(map_q, map_title)
-    more = '<div class="areas-more reveal"><a class="btn btn-outline-dark" href="/service-areas">View All Service Areas</a></div>' if show_all else ""
+    more = '<div class="areas-more reveal"><a class="btn btn-outline-dark" href="/fl">View All Service Areas</a></div>' if show_all else ""
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Service Areas")}<ul class="areas stagger">{"".join(lis)}</ul>{more}{mp}</div></section>'
 
 def map_facade(q, title, style=""):
@@ -337,7 +337,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
          "isPartOf": {"@id": f"{SITE}/#website"}, "about": {"@id": f"{SITE}/#business"}, "inLanguage": "en-US",
          **({"breadcrumb": {"@id": url + "#breadcrumb"}} if len(crumbs) > 1 else {}), "dateModified": __import__("seo").UPDATED_ISO,
          "primaryImageOfPage": {"@type": "ImageObject", "url": f"{SITE}/assets/img/{og_image}"},
-         "significantLink": [SITE + "/services", SITE + "/service-areas"]},
+         "significantLink": [SITE + "/services", SITE + "/fl"]},
     ]
     if len(crumbs) > 1:       # a breadcrumb needs at least two items
         graph.append({"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
@@ -365,14 +365,14 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
     cur = lambda u: CUR if path == u else ""
     nav_svcs = (f'<li><a href="/services"{cur("/services")}><b>All Services</b></a></li>' +
                 "".join(f'<li><a href="/service/{s[0]}"{cur("/service/" + s[0])}>{s[1]}</a></li>' for s in SERVICES))
-    nav_areas = (f'<li><a href="/service-areas"{cur("/service-areas")}><b>All Service Areas</b></a></li>' +
+    nav_areas = (f'<li><a href="/fl"{cur("/fl")}><b>All Service Areas</b></a></li>' +
                  f'<li><a href="/">Homestead</a></li>' +
                  "".join(f'<li><a href="{loc_url(n)}"{cur(loc_url(n))}>{n}</a></li>' for n in LOC_PAGES))
     foot_svcs = ('<li><a href="/">Junk Removal Homestead</a></li>' +
                  "".join(f'<li><a href="/service/{s[0]}">{s[1]}</a></li>' for s in SERVICES))
     foot_areas = ('<li><a href="/">Homestead, FL</a></li>' +
                   "".join(f'<li><a href="{loc_url(n)}">{n}, FL</a></li>' for n in LOC_PAGES) +
-                  '<li><a href="/service-areas">All Service Areas</a></li>')
+                  '<li><a href="/fl">All Service Areas</a></li>')
     home_cur = ' aria-current="page"' if path == "/" else ""
     return f'''<!doctype html>
 <html lang="en-US">
@@ -434,7 +434,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <a class="fphone" href="tel:{TEL}">{PHONE}</a><p>{HOURS}</p></div>
 <div><p class="fhead">Services</p><ul>{foot_svcs}</ul></div>
 <div><p class="fhead">Service Areas</p><ul>{foot_areas}</ul></div>
-<div><p class="fhead">Quick Links</p><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/services">All Services</a></li><li><a href="/service-areas">Areas We Serve</a></li><li><a href="/blog">Junk Removal Blog</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
+<div><p class="fhead">Quick Links</p><ul><li><a href="/">Home</a></li><li><a href="/#pricing">Junk Removal Prices</a></li><li><a href="/services">All Services</a></li><li><a href="/fl">Areas We Serve</a></li><li><a href="/blog">Junk Removal Blog</a></li><li><a href="/#faq">Homestead Junk Removal FAQs</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
 </div>
 <div class="wrap fbottom"><span>&copy; <span data-year>2026</span> {BRAND}. All rights reserved.</span><span>Serving Homestead and South Miami-Dade</span></div>
 </footer>

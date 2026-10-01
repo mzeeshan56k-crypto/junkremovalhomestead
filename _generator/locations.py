@@ -244,7 +244,7 @@ def build_location(l):
     n = l["name"]
     p = place(n)
     zs = [z.strip() for z in l["zips"].split(",")]
-    crumbs = [("Home", "/"), ("Service Areas", "/service-areas"), (n, None)]
+    crumbs = [("Home", "/"), ("Service Areas", "/fl"), (n, None)]
     b = [
         hero(l["h1"], l["lead"], l["points"], l["hero_img"], l["hero_alt"], crumbs=crumbs, eyebrow=f"{n}, FL {l['zips']}", area=p),
         trust(),

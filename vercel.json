@@ -18,18 +18,18 @@
       "permanent": true
     },
     {
-      "source": "/fl",
-      "destination": "/service-areas",
+      "source": "/service-areas",
+      "destination": "/fl",
       "permanent": true
     },
     {
       "source": "/areas",
-      "destination": "/service-areas",
+      "destination": "/fl",
       "permanent": true
     },
     {
       "source": "/locations",
-      "destination": "/service-areas",
+      "destination": "/fl",
       "permanent": true
     },
     {

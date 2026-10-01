@@ -70,7 +70,7 @@ def services_page():
                       "Compare every service we offer, from furniture and appliance removal to dumpster rental and cleanouts, with typical item prices. Call 877-745-9845.",
                       "\n".join(b), SVC_FAQS, crumbs)
 
-# ---------- /service-areas ----------
+# ---------- /fl (service areas hub) ----------
 AREA_FAQS = [
  ("What areas do you serve for junk removal?",
   "We serve Homestead and all of South Miami-Dade. That includes Florida City, Leisure City, Princeton, Naranja, Modello, the Redland, Goulds, Cutler Bay, South Miami Heights, Homestead Air Reserve Base and Keys Gate."),
@@ -106,7 +106,7 @@ def area_cards():
             f'<div class="cards stagger">{"".join(cards)}</div></div></section>')
 
 def areas_page():
-    path = "/service-areas"
+    path = "/fl"
     crumbs = [("Home", "/"), ("Service Areas", None)]
     b = [
         hero("Junk Removal <em>Service Areas</em> in South Miami-Dade",
