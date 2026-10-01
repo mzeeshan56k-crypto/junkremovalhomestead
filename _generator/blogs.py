@@ -7,8 +7,8 @@ UPDATED = "2026-10-01"
 
 def table(headers, rows):
     th = "".join(f'<th scope="col">{h}</th>' for h in headers)
-    tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
-    return f'<div class="table-wrap"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
+    tr = "".join("<tr>" + "".join(f'<td data-label="{headers[i]}">{c}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
+    return f'<div class="table-wrap"><table class="stack"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
 def callout(html):
     return f'<div class="callout">{html}</div>'
@@ -645,7 +645,7 @@ BLOG_FAQS = [
 
 def guide_cards(h2, p, alt_bg=False, sid="guides"):
     cards = "".join(f'''<article class="card">
-<figure>{img(o["hero_img"], strip(o["h1"]), sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<figure>{img(o["hero_img"], strip(o["h1"]), sizes="(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw")}</figure>
 <div class="body"><h3><a href="{post_url(o["slug"])}">{short_title(o)}</a></h3><p>{o["desc"]}</p></div></article>''' for o in POSTS)
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Guides")}<div class="cards stagger">{cards}</div></div></section>'
 

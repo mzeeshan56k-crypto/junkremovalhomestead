@@ -94,12 +94,12 @@ AREA_FAQS = [
 
 def area_cards():
     cards = [f'''<article class="card">
-<figure>{img("junk-removal-truck-homestead-fl", "Junk removal in Homestead, FL", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<figure>{img("junk-removal-truck-homestead-fl", "Junk removal in Homestead, FL", sizes="(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw")}</figure>
 <div class="body"><h3><a href="/">Junk Removal in Homestead</a></h3><p>Homestead is our home base. We offer same-day junk pickup across ZIP codes 33030, 33033 and 33035, from downtown Krome Avenue to Keys Gate.</p></div></article>''']
     for l in locations.PAGES:
         blurb = strip(l["lead"])
         cards.append(f'''<article class="card">
-<figure>{img(l["hero_img"], f"Junk removal in {l['name']}, FL", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<figure>{img(l["hero_img"], f"Junk removal in {l['name']}, FL", sizes="(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw")}</figure>
 <div class="body"><h3><a href="{loc_url(l["name"])}">Junk Removal in {locations.place(l["name"])}</a></h3><p>{blurb}</p><p><b>ZIP {l["zips"]}</b></p></div></article>''')
     return (f'<section class="section alt" id="locations"><div class="wrap">'
             f'{sec_head("Junk Removal by Location", "Choose your community for local details, pricing and answers to common questions.", "Locations")}'

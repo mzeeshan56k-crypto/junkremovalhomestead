@@ -146,6 +146,4 @@ def location_section(l, place):
     return (f'<section class="section" id="zip-codes"><div class="wrap">'
             f'{sec_head(h2, intro, "ZIP Codes")}'
             f'{_table(["ZIP Code", "Area", "What to Know"], rows)}'
-            f'<div class="map reveal" style="margin-top:30px"><iframe title="Junk removal service map for {place}, Florida" '
-            f'src="https://www.google.com/maps?q={l["map_q"]}&z=12&output=embed" loading="lazy" '
-            'referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>')
+            f'{map_facade(l["map_q"], place + ", Florida", "margin-top:30px")}</div></section>')

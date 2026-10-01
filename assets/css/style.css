@@ -1,3 +1,8 @@
+/* Self-hosted fonts (Latin subset) */
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/barlow-600.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/barlow-700.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/barlow-condensed-700.woff2) format('woff2')}
 :root{
   --g950:#0a2914;--g900:#0f3d1e;--g800:#16502a;--g700:#1e6b34;--g600:#26803f;--g500:#2f9a4c;
   --g400:#5fae4e;--g300:#8fcb7e;--g100:#dcefdc;--g50:#f1f8f1;
@@ -7,7 +12,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
-body{margin:0;font-family:var(--body);font-size:17.5px;line-height:1.7;color:var(--ink);background:var(--white);overflow-x:hidden}
+body{margin:0;font-family:var(--body);font-size:17.5px;line-height:1.7;color:var(--ink);background:var(--white);overflow-x:hidden;overflow-x:clip}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--g700);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--g500)}
@@ -380,5 +385,84 @@ td:first-child{font-weight:600;color:var(--g900)}
 .brand small{font-size:12px}
 .areas li>div{min-width:0}
 .areas span{overflow-wrap:anywhere}
-@media (max-width:400px){.areas{grid-template-columns:1fr}}
 @media (max-width:640px){.topbar{display:none}.brand small{letter-spacing:.6px}}
+
+/* ---------- Speed ---------- */
+/* Click-to-load map placeholder */
+.map-facade{display:grid;place-items:center;background:var(--g50) radial-gradient(circle at 30% 40%,var(--g100) 0 18%,transparent 19%) ,var(--g50);background-image:linear-gradient(0deg,rgba(38,128,63,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(38,128,63,.06) 1px,transparent 1px);background-size:28px 28px;min-height:220px}
+.map-facade .btn{box-shadow:var(--shadow)}
+.map iframe{display:block}
+/* Stacked tables: label each value on phones */
+@media (max-width:640px){
+  table.stack td[data-label]:not(:first-child)::before{content:attr(data-label) ": ";font-weight:600;color:var(--muted)}
+  table.stack td:first-child{font-weight:700;color:var(--g900)}
+  table.stack caption+thead,table.stack thead{display:none}
+}
+/* ---------- Phone design ---------- */
+@media (max-width:640px){
+  .section{padding:48px 0}
+  .sec-head{margin-bottom:26px}
+  .hero .wrap{padding-top:34px;padding-bottom:40px;gap:0}
+  .hero .call-card{display:none}
+  .hero-lead{font-size:1.02rem}
+  .hero-points{margin:16px 0 22px;gap:8px}
+  .trust .wrap{grid-template-columns:1fr 1fr;gap:14px 12px;padding:18px 16px}
+  .trust-item{gap:10px;align-items:flex-start}
+  .trust-item .ic{width:40px;height:40px;border-radius:12px}
+  .trust-item .ic svg{width:20px;height:20px}
+  .trust-item b{font-size:1.05rem}
+  .trust-item span{font-size:.8rem;line-height:1.35;display:block}
+  /* Compact horizontal cards */
+  .cards{gap:12px}
+  .card{flex-direction:row;align-items:stretch}
+  .card:hover{transform:none}
+  .card figure{flex:0 0 112px;aspect-ratio:auto;min-height:112px}
+  .card .body{padding:12px 14px}
+  .card h3{font-size:1.15rem;margin-bottom:4px}
+  .card p{font-size:.88rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .card p+p{display:none}
+  /* Compact steps */
+  .steps{gap:12px}
+  .step{padding:16px 16px 16px 78px;min-height:80px}
+  .step .ic{position:absolute;left:16px;top:16px;width:46px;height:46px;margin:0}
+  .step::before{font-size:1.7rem;top:10px;right:12px}
+  .step h3{font-size:1.15rem;margin-bottom:2px}
+  .step p{font-size:.9rem}
+  /* Service areas: two compact columns */
+  .areas{grid-template-columns:1fr 1fr;gap:8px}
+  .areas li{padding:10px 12px;gap:0}
+  .areas li:hover{transform:none}
+  .areas svg{display:none}
+  .areas h3{font-size:.95rem}
+  .areas span{font-size:.78rem}
+  /* Estimator: live price sticks above the call bar while tapping items */
+  .est-items{gap:0}
+  .est-row{padding:4px 0}
+  .est-result{position:sticky;top:auto;bottom:78px;z-index:5;padding:14px 18px;gap:4px;border-radius:16px}
+  .est-price{font-size:1.7rem}
+  .est-load{font-size:.85rem}
+  .est-result small{display:none}
+  .est-result .btn{padding:12px 18px;font-size:1rem}
+  /* Quick answer, CTA, related */
+  .answer-cta .btn{width:100%}
+  .facts{padding:4px 16px}
+  .facts div{padding:9px 0}
+  .media .badge{font-size:1.05rem;padding:12px 14px;bottom:-14px}
+  .related{gap:12px}
+  .related article{padding:16px 18px}
+  .cta{padding:30px 20px;border-radius:20px}
+  .cta .big-phone{font-size:2rem}
+  .cta-band p{font-size:1rem}
+  /* Footer: two columns of links */
+  .site-footer{padding-top:44px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:26px 18px}
+  .fgrid>div:first-child{grid-column:1/-1}
+  .fgrid ul{font-size:.9rem}
+  .fgrid li{margin-bottom:6px}
+  .ba figcaption{padding:12px 16px}
+  .map{aspect-ratio:4/3}
+}
+@media (max-width:360px){.trust .wrap{grid-template-columns:1fr}.card figure{flex-basis:96px}}
+[id]{scroll-margin-top:88px}
+@media (max-width:640px){.trust-item span,.areas span{font-size:13px}}
+@media (max-width:960px){.hero-bg img{animation:none;transform:none}.hero-anim>*{animation:none}}

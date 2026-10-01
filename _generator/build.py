@@ -1,4 +1,4 @@
-import os, json, datetime
+import os, re, json, datetime
 from lib import *
 import home, svc_a, svc_b, svc_c, hubs, locations, blogs
 from svc_builder import build_service
@@ -6,7 +6,13 @@ from svc_builder import build_service
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 TODAY = datetime.date.today().isoformat()
 
+def minify_html(s):
+    # Drop indentation and blank lines; inline spacing between words and tags is left untouched
+    return re.sub(r"\n[ \t]+", "\n", re.sub(r"\n{2,}", "\n", s))
+
 def write(rel, content):
+    if rel.endswith(".html"):
+        content = minify_html(content)
     fp = os.path.join(OUT, rel)
     os.makedirs(os.path.dirname(fp), exist_ok=True)
     open(fp, "w", encoding="utf-8").write(content)
@@ -86,7 +92,8 @@ vercel = {
   ],
   "headers": [
     {"source": "/assets/img/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
-    {"source": "/assets/(css|js)/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800"}]},
+    {"source": "/assets/fonts/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/assets/(css|js)/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
     {"source": "/(.*)", "headers": [
       {"key": "X-Content-Type-Options", "value": "nosniff"},
       {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
@@ -94,4 +101,8 @@ vercel = {
   ]
 }
 write("vercel.json", json.dumps(vercel, indent=2))
+
+# Minified script (edit main.js; main.min.js is generated). CSS is minified and inlined by lib.py
+import rjsmin
+write("assets/js/main.min.js", rjsmin.jsmin(open(os.path.join(OUT, "assets/js/main.js")).read()))
 print("\n".join(u for u, _ in urls))

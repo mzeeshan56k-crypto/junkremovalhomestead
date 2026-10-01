@@ -78,6 +78,18 @@
     if (typeof window.gtag === 'function') window.gtag('event', 'phone_call_click', { page_path: location.pathname });
   });
 
+  // Click-to-load maps
+  d.querySelectorAll('[data-map-src]').forEach(function (m) {
+    var b = m.querySelector('.map-load'); if (!b) return;
+    b.addEventListener('click', function () {
+      var f = d.createElement('iframe');
+      f.src = m.getAttribute('data-map-src'); f.title = m.getAttribute('data-map-title');
+      f.setAttribute('loading', 'lazy'); f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade'); f.setAttribute('allowfullscreen', '');
+      f.style.width = '100%'; f.style.height = '100%'; f.style.border = '0';
+      m.innerHTML = ''; m.classList.remove('map-facade'); m.appendChild(f);
+    });
+  });
+
   // Current year
   d.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();

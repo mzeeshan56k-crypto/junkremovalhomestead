@@ -1,5 +1,5 @@
 """Shared templates and helpers for the static site generator."""
-import json, os, html as H
+import json, os, hashlib, html as H
 from PIL import Image
 
 SITE = "https://junkremovalhomesteadfl.com"
@@ -9,6 +9,12 @@ TEL = "+18777459845"
 CITY = "Homestead"
 STATE = "FL"
 HOURS = "Open 7 days, 7 AM to 7 PM"
+_ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
+# Cache-busting version: changes whenever the CSS or JS source changes
+ASSET_V = hashlib.md5(b"".join(open(os.path.join(_ASSETS, p), "rb").read() for p in ("css/style.css", "js/main.js"))).hexdigest()[:8]
+# The whole stylesheet is small (about 7 KB compressed), so it is inlined to remove a render-blocking request
+import rcssmin
+INLINE_CSS = rcssmin.cssmin(open(os.path.join(_ASSETS, "css/style.css")).read())
 IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "img")
 
 SERVICES = [
@@ -99,13 +105,13 @@ def dims(fn):
     return _dims[fn]
 
 def img(base, alt, sizes="(max-width: 960px) 100vw, 50vw", eager=False, cls=""):
-    """Responsive webp image. Uses the 1200 and 640 variants when present."""
+    """Responsive webp image using every available width (400, 640, 800, 1200)."""
     srcs = []
-    for w in (640, 1200):
+    for w in (240, 400, 640, 800, 1200):
         fn = f"{base}-{w}.webp"
         if os.path.exists(os.path.join(IMG_DIR, fn)):
             srcs.append((fn, dims(fn)[0]))
-    main = srcs[-1][0]
+    main = ([f for f, wd in srcs if wd <= 800] or [srcs[-1][0]])[-1]
     w, h = dims(main)
     srcset = ", ".join(f"/assets/img/{f} {wd}w" for f, wd in srcs)
     load = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
@@ -157,7 +163,7 @@ LOC_CARD = {
 
 def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_home=False, place=None, zip_text=None):
     cards = []
-    sizes = "(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw"
+    sizes = "(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw"
     if place:
         items = [("junk-removal", "/", "Junk Removal", "junk-removal-truck-homestead-fl")] + \
                 [(s, f"/service/{s}", nav, image) for s, nav, _, _, image in SERVICES]
@@ -169,13 +175,13 @@ def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_hom
         return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Our Services")}<div class="cards stagger">{"".join(cards)}</div></div></section>'
     if include_home:
         cards.append(f'''<article class="card">
-<figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<figure>{img("junk-removal-truck-homestead-fl", f"Junk removal in Homestead, FL by {BRAND}", sizes="(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw")}</figure>
 <div class="body"><h3><a href="/">Junk Removal in Homestead, FL</a></h3><p>We provide full-service junk removal in Homestead, FL for homes, condos, rentals and businesses. Our two-person crew lifts, loads and hauls furniture, appliances, mattresses, electronics, yard waste and clutter from any room. Same-day pickup is often available, and we donate and recycle first across South Miami-Dade.</p></div></article>''')
     for slug, nav, title, blurb, image in SERVICES:
         if slug == exclude:
             continue
         cards.append(f'''<article class="card">
-<figure>{img(image, f"{title} by {BRAND}", sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw")}</figure>
+<figure>{img(image, f"{title} by {BRAND}", sizes="(max-width: 640px) 112px, (max-width: 1080px) 50vw, 33vw")}</figure>
 <div class="body"><h3><a href="/service/{slug}">{title}</a></h3><p>{blurb}</p></div></article>''')
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Our Services")}<div class="cards stagger">{"".join(cards)}</div></div></section>'
 
@@ -187,9 +193,9 @@ def steps(h2, p, items, alt_bg=True):
 
 def pricing(h2, intro, headers, rows, note, alt_bg=False, sid="pricing"):
     th = "".join(f"<th scope=\"col\">{h}</th>" for h in headers)
-    tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    tr = "".join("<tr>" + "".join(f'<td data-label="{headers[i]}">{c}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
     return f'''<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, intro, "Pricing")}
-<div class="table-wrap reveal zoom"><table><caption class="sr-only">{h2}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>
+<div class="table-wrap reveal zoom"><table class="stack"><caption class="sr-only">{h2}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>
 <p class="table-note reveal">{note}</p></div></section>'''
 
 GALLERY = [
@@ -219,11 +225,16 @@ def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead
         else:
             name = n
         lis.append(f'<li>{icon("pin")}<div><h3>{name}</h3><span>ZIP {z}</span></div></li>')
-    mp = (f'<div class="map reveal"><iframe title="Junk removal service area map for {map_title}" '
-          f'src="https://www.google.com/maps?q={map_q}&z=12&output=embed" loading="lazy" '
-          'referrerpolicy="no-referrer-when-downgrade"></iframe></div>')
+    mp = map_facade(map_q, map_title)
     more = '<p class="areas-more reveal"><a class="btn btn-outline-dark" href="/service-areas">View All Service Areas</a></p>' if show_all else ""
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Service Areas")}<ul class="areas stagger">{"".join(lis)}</ul>{more}{mp}</div></section>'
+
+def map_facade(q, title, style=""):
+    """Click-to-load map: no Google Maps code is downloaded until the visitor asks for it."""
+    st = f' style="{style}"' if style else ""
+    return (f'<div class="map map-facade reveal"{st} data-map-src="https://www.google.com/maps?q={q}&amp;z=12&amp;output=embed" '
+            f'data-map-title="Junk removal service area map for {H.escape(title)}">'
+            f'<button type="button" class="btn btn-primary map-load">{icon("pin")}<span>Show Map of {H.escape(title)}</span></button></div>')
 
 def faq(h2, p, faqs, alt_bg=True):
     items = "".join(f'<details><summary><h3>{q}</h3></summary><div class="ans"><p>{a}</p></div></details>' for q, a in faqs)
@@ -368,10 +379,9 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+<style>{INLINE_CSS}</style>
 <script type="application/ld+json">{ld}</script>
 </head>
 <body>
@@ -408,7 +418,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <div class="wrap fbottom"><span>&copy; <span data-year>2026</span> {BRAND}. All rights reserved.</span><span>Junk removal and hauling in Homestead, FL 33030</span></div>
 </footer>
 <div class="callbar">{call_btn("btn btn-primary", f"Call Now {PHONE}")}</div>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.min.js?v={ASSET_V}" defer></script>
 </body>
 </html>'''
 

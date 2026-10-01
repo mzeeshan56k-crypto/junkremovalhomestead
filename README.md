@@ -31,6 +31,14 @@ Static, fast loading rank and rent site for junk removal in Homestead, FL. Plain
 - Phone clicks push a `phone_call_click` event to `dataLayer` and `gtag`, ready for GA4 or Google Tag Manager.
 - Prices and content dates live in `_generator/seo.py` (`UPDATED`). Update them whenever prices change.
 
+## Performance
+- Fonts are self-hosted (`assets/fonts`, Latin subset) and the two main weights are preloaded. No Google Fonts requests.
+- The stylesheet is minified and inlined into every page at build time (edit `assets/css/style.css`, then rebuild).
+- `assets/js/main.min.js` is generated from `main.js` at build time, with a version query for long-term caching.
+- Images come in 240, 400, 640, 800 and 1200 px widths; the browser picks the smallest that looks sharp.
+- Maps load only when a visitor taps "Show Map", so no Google Maps code loads with the page.
+- Lighthouse (local run): mobile performance 96-98, desktop 100; accessibility, best practices and SEO 100.
+
 ## Calls only
 There is no contact form. Every call to action dials 877-745-9845 (set in `_generator/lib.py`).
 
