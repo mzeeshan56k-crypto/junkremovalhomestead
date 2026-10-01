@@ -379,6 +379,7 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="WQWwxpETV1ZedcbTP-AcmKWNDf_G7zbuPNEqLABQPaI">
 <title>{title}</title>
 <meta name="description" content="{H.escape(desc)}">
 {"" if noindex else f'<link rel="canonical" href="{url}">'}
