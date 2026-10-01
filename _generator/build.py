@@ -50,7 +50,24 @@ for u, pr in urls:
     sm.append(f"<url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>")
 sm.append("</urlset>")
 write("sitemap.xml", "\n".join(sm))
-write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "Claude-SearchBot", "PerplexityBot", "Google-Extended", "Applebot-Extended", "Bingbot"]
+write("robots.txt", "User-agent: *\nAllow: /\n\n" + "".join(f"User-agent: {b}\nAllow: /\n\n" for b in AI_BOTS) + f"Sitemap: {SITE}/sitemap.xml\n")
+
+# llms.txt: a plain summary that AI assistants can read when answering local questions
+import seo
+llms = [f"# {BRAND}", "",
+        f"> Local junk removal, dumpster rental and cleanout company serving Homestead, Florida (ZIP codes 33030 to 33035) and South Miami-Dade County. Phone: {PHONE}. {HOURS}.", "",
+        "## Key facts",
+        "- Junk removal in Homestead, FL typically costs $95 to $650, priced by how much of a 15-cubic-yard truck your items fill.",
+        "- Same-day pickup is available when you call before noon. Labor, loading, travel and disposal are included.",
+        "- Dumpster rentals: 10-yard $295 to $375, 15-yard $365 to $450, 20-yard $425 to $525, including 7 days.",
+        f"- Prices last updated {seo.UPDATED}. Final prices are confirmed on site before work begins.", "",
+        "## Services"] + \
+       [f"- [{SVC[s['slug']][2]}]({SITE}/service/{s['slug']}): {seo.SVC_QA[s['slug']]}" for s in svc_a.PAGES + svc_b.PAGES + svc_c.PAGES] + \
+       ["", "## Service areas", f"- [Homestead, FL]({SITE}/): ZIP codes 33030, 33031, 33032, 33033, 33035 and 33039"] + \
+       [f"- [{locations.place(l['name'])[0].upper() + locations.place(l['name'])[1:]}, FL]({SITE}{loc_url(l['name'])}): ZIP {l['zips']}" for l in locations.PAGES] + \
+       ["", "## Guides"] + [f"- [{strip(p['title'])}]({SITE}/blog/{p['slug']}): {p['desc']}" for p in blogs.POSTS]
+write("llms.txt", "\n".join(llms) + "\n")
 
 vercel = {
   "cleanUrls": True,

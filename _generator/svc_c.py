@@ -1,7 +1,7 @@
 from lib import *
 
 EST = dict(
- slug="estate-cleanout", name="Estate Cleanout", schema_name="Estate Cleanout in Homestead, FL", min=300,
+ slug="estate-cleanout", name="Estate Cleanout", schema_name="Estate Cleanout in Homestead, FL", min=450,
  title="Estate Cleanout in Homestead, FL | Whole-House Cleanouts",
  desc="Estate cleanouts in Homestead, FL 33030. Respectful whole-house cleanouts for families, executors and realtors, with sorting and donation. Call 877-745-9845.",
  h1="<em>Estate Cleanout</em> Services in Homestead, FL",
@@ -66,7 +66,7 @@ EST = dict(
 )
 
 COM = dict(
- slug="commercial-junk-removal", name="Commercial Junk Removal", schema_name="Commercial Junk Removal in Homestead, FL", min=150,
+ slug="commercial-junk-removal", name="Commercial Junk Removal", schema_name="Commercial Junk Removal in Homestead, FL", min=250,
  title="Commercial Junk Removal in Homestead, FL | Office Cleanouts",
  desc="Commercial junk removal in Homestead, FL 33030. Office furniture, retail fixtures and property turnovers with after-hours service. Call 877-745-9845.",
  h1="Commercial <em>Junk Removal</em> in Homestead, FL",

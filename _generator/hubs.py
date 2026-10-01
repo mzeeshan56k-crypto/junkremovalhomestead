@@ -1,5 +1,5 @@
 from lib import *
-import svc_a, svc_b, svc_c, locations, zips
+import svc_a, svc_b, svc_c, locations, zips, seo
 
 # ---------- /services ----------
 SVC_FAQS = [
@@ -51,7 +51,10 @@ def services_page():
         pricing("Starting Prices by Service",
                 "Here is where each service starts. Most jobs are quoted by truck volume, and your exact price is confirmed on site before any lifting begins.",
                 ["Service", "Best For", "Starting At"], rows,
-                "Starting prices are typical minimums for Homestead and nearby ZIP codes. Heavy materials may be priced by weight. Call for an exact quote."),
+                "Starting prices are typical minimums for Homestead and nearby ZIP codes. Heavy materials may be priced by weight. "
+                f"Call for an exact quote. Prices updated {seo.UPDATED}."),
+        seo.item_guide(),
+        seo.estimator(),
         steps("How Booking Works for Any Service",
               "Whatever the job, the process follows the same four simple steps.",
               [("Call for a Price", f"Call {PHONE}, describe the job and get a fast price range.", "phone"),

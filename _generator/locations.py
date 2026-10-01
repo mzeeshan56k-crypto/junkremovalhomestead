@@ -1,5 +1,5 @@
 from lib import *
-import zips
+import zips, seo
 
 # Standard volume pricing shared by the homepage, hubs and location pages
 PRICE_HEADERS = ["Load Size", "What It Usually Holds", "Typical Price Range"]
@@ -250,17 +250,21 @@ def build_location(l):
     b = [
         hero(l["h1"], l["lead"], l["points"], l["hero_img"], l["hero_alt"], crumbs=crumbs, eyebrow=f"{n}, FL {l['zips']}", area=p),
         trust(),
+        seo.location_qa(p, ("ZIP code " if len(zs) == 1 else "ZIP codes ") + zips.zip_list(zs)),
         split(l["intro_h2"], l["intro_html"], l["intro_img"], l["intro_alt"], badge=l["badge"], eyebrow=f"Serving {n}"),
         service_cards(f"Junk Removal Services in {p}", f"Every service below is available in {p} for homes, rentals and businesses.", alt_bg=True,
                       place=p, zip_text=("ZIP code " if len(zs) == 1 else "ZIP codes ") + zips.zip_list(zs)),
         prose(l["body_html"]),
         steps(f"How Junk Pickup Works in {p}", "Booking takes about two minutes. Here is what to expect from first call to clean floor.", STEPS(p), alt_bg=True),
         pricing(l["price_h2"], l["price_intro"], PRICE_HEADERS, PRICE_ROWS,
-                "Typical price ranges. Very heavy loads such as concrete, dirt or roofing may be priced by weight. Your final price is confirmed on site before work begins."),
+                "Typical price ranges. Very heavy loads such as concrete, dirt or roofing may be priced by weight. "
+                f"Your final price is confirmed on site before work begins. Prices updated {seo.UPDATED}."),
+        seo.estimator(p),
         split(l["local_h2"], l["local_html"], l["local_img"], l["local_alt"], rev=True, alt_bg=True, eyebrow="Local Know How"),
         zips.location_section(l, p),
         faq(l["faq_h2"], l["faq_p"], l["faqs"]),
         cta(l["cta_h2"], l["cta_p"]),
     ]
-    svc = {"name": f"Junk Removal in {n}, FL", "type": "Junk Removal", "min": 95, "area": [{"@type": "City", "name": f"{p}, FL"}] + zips.zip_schema([z.strip() for z in l["zips"].split(",")])}
+    svc = {"name": f"Junk Removal in {n}, FL", "type": "Junk Removal", "min": 95, "max": 650, "catalog": seo.offer_catalog(f"Junk Removal in {p}", SITE + path, PRICE_ROWS),
+           "area": [seo.entity(n)] + zips.zip_schema(zs)}
     return path, page(path, l["title"], l["desc"], "\n".join(b), l["faqs"], crumbs, service=svc)

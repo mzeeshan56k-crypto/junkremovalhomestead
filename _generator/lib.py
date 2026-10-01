@@ -296,7 +296,8 @@ def business_schema():
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
             "opens": "07:00", "closes": "19:00"}],
         "areaServed": [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS] + __import__("zips").zip_schema() +
-                      [{"@type": "AdministrativeArea", "name": "Miami-Dade County, FL"}],
+                      [__import__("seo").entity("Miami-Dade County"), __import__("seo").business_extras()["areaServed_geo"]],
+        **{k: v for k, v in __import__("seo").business_extras().items() if k != "areaServed_geo"},
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Junk Removal Services",
             "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": HOME_SVC[2], "url": SITE + "/"}}] +
                 [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[2], "url": f"{SITE}/service/{s[0]}"}} for s in SERVICES]},
@@ -309,7 +310,9 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
         {"@type": "WebSite", "@id": f"{SITE}/#website", "url": SITE + "/", "name": BRAND, "publisher": {"@id": f"{SITE}/#business"}, "inLanguage": "en-US"},
         {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "description": desc,
          "isPartOf": {"@id": f"{SITE}/#website"}, "about": {"@id": f"{SITE}/#business"}, "inLanguage": "en-US",
-         "breadcrumb": {"@id": url + "#breadcrumb"}},
+         "breadcrumb": {"@id": url + "#breadcrumb"}, "dateModified": __import__("seo").UPDATED_ISO,
+         "primaryImageOfPage": {"@type": "ImageObject", "url": f"{SITE}/assets/img/{og_image}"},
+         "significantLink": [SITE + "/services", SITE + "/service-areas"]},
         {"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": n, "item": SITE + (u if u else path)} for i, (n, u) in enumerate(crumbs)]},
         {"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [
@@ -319,8 +322,11 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
         graph.append({"@type": "Service", "@id": url + "#service", "name": service["name"], "serviceType": service["type"],
                       "description": desc, "url": url, "provider": {"@id": f"{SITE}/#business"},
                       "areaServed": service.get("area") or [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS],
-                      "offers": {"@type": "Offer", "priceCurrency": "USD", "availability": "https://schema.org/InStock",
-                                 "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": service["min"]}}})
+                      "offers": __import__("seo").aggregate_offer(service["min"], service.get("max", service["min"])),
+                      **({"hasOfferCatalog": service["catalog"]} if service.get("catalog") else {}),
+                      "hoursAvailable": {"@type": "OpeningHoursSpecification",
+                          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                          "opens": "07:00", "closes": "19:00"}})
     graph += extra or []
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(",", ":"))
 

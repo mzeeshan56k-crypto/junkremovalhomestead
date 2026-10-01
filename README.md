@@ -22,6 +22,15 @@ Static, fast loading rank and rent site for junk removal in Homestead, FL. Plain
 - `/blog` and `/blog/<slug>` guides (content in `_generator/blogs.py`)
 - Internal links sit only in headings (H2/H3 and card titles), never inside paragraphs.
 
+## SEO and lead features
+- Quick Answer blocks (question H2, a 40 to 60 word answer and a key facts panel) near the top of the homepage, service and location pages, written to be quoted by Google AI Overviews and featured snippets.
+- Price estimator on the homepage, the services hub and every location page (`assets/js/main.js`). Tiers match the published price tables.
+- Item price guide on `/services` for long-tail searches such as "hot tub removal cost".
+- Structured data: LocalBusiness with GeoCircle service area, contact point and ZIP-level areaServed; Service nodes with AggregateOffer and an OfferCatalog built from each price table; BlogPosting with key takeaways and entity links.
+- `llms.txt` and an AI-crawler-friendly `robots.txt`.
+- Phone clicks push a `phone_call_click` event to `dataLayer` and `gtag`, ready for GA4 or Google Tag Manager.
+- Prices and content dates live in `_generator/seo.py` (`UPDATED`). Update them whenever prices change.
+
 ## Calls only
 There is no contact form. Every call to action dials 877-745-9845 (set in `_generator/lib.py`).
 

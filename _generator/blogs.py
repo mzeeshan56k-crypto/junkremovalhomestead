@@ -1,7 +1,9 @@
 """Blog posts. Internal links live only in headings (H2/H3), never inside paragraphs."""
 from lib import *
+import seo
 
 PUBLISHED = "2026-09-27"
+UPDATED = "2026-10-01"
 
 def table(headers, rows):
     th = "".join(f'<th scope="col">{h}</th>' for h in headers)
@@ -14,6 +16,7 @@ def callout(html):
 # ---------------------------------------------------------------- 1. Cost guide
 COST = dict(
  slug="junk-removal-cost-homestead-fl",
+ takeaways=['Most junk removal jobs in Homestead cost $95 to $650, based on how much of a 15-cubic-yard truck your items fill.', 'Single items start around $95, and a half truckload usually runs $300 to $425.', 'Concrete, dirt, roofing and tile are usually priced by weight instead of volume.', 'City and county bulk pickup is free but has size limits and banned items, including appliances inside Homestead city limits.'],
  faq_h2="Junk Removal Cost FAQs",
  title="Junk Removal Cost in Homestead, FL: 2026 Price Guide",
  desc="How much does junk removal cost in Homestead, FL? 2026 prices by truckload and by item, what changes the price, free city and county options and ways to save.",
@@ -135,6 +138,7 @@ COST = dict(
 # ---------------------------------------------------------------- 2. Bulk trash rules
 BULK = dict(
  slug="homestead-bulk-trash-pickup-rules",
+ takeaways=['City of Homestead residents get bulk pickup every other week, with a 10-cubic-yard limit per pile.', 'Miami-Dade County customers get two bulky pickups per year, up to 25 cubic yards each.', 'The City of Homestead does not collect appliances, tires, construction debris, paint or liquids.', 'County piles placed at the curb more than 3 days early can bring a warning or a civil citation.'],
  faq_h2="Bulk Trash Pickup FAQs",
  title="Homestead Bulk Trash Pickup Rules: City vs Miami-Dade (2026)",
  desc="Homestead bulk trash pickup rules explained: City of Homestead limits, Miami-Dade bulky waste pickups, drop-off centers, banned items and avoiding citations.",
@@ -246,6 +250,7 @@ BULK = dict(
 # ---------------------------------------------------------------- 3. Hurricane debris
 HURR = dict(
  slug="hurricane-debris-cleanup-guide-homestead",
+ takeaways=['Trim trees and clear loose junk early in the season, before any storm is in the forecast.', 'Once a watch or warning is issued, do not prune trees or put bulk trash at the curb.', 'After a storm, sort debris into vegetative, construction, appliance, electronics and hazardous piles.', 'Remove wet carpet, drywall and furniture within 24 to 48 hours to limit mold growth.'],
  faq_h2="Hurricane Debris Cleanup FAQs",
  title="Hurricane Debris Cleanup Guide for Homestead, FL Homeowners",
  desc="Hurricane debris cleanup in Homestead, FL: what to do before, during and after a storm, how to sort debris for Miami-Dade pickup and when to hire help.",
@@ -361,6 +366,7 @@ HURR = dict(
 # ---------------------------------------------------------------- 4. Appliance, mattress, furniture disposal
 DISP = dict(
  slug="appliance-mattress-furniture-disposal-homestead",
+ takeaways=['City of Homestead bulk pickup does not accept appliances, but Miami-Dade County bulky pickup does.', 'Federal Section 608 rules require refrigerant to be recovered before a fridge or freezer is scrapped.', 'Many charities will not accept used mattresses, so call ahead before donating one.', 'Paint, chemicals and electronics go to the South Dade Home Chemical Collection Center at 23707 SW 97th Avenue.'],
  faq_h2="Appliance and Furniture Disposal FAQs",
  title="Appliance, Mattress and Furniture Disposal in Homestead, FL",
  desc="How to get rid of old appliances, mattresses and furniture in Homestead, FL: city and county rules, EPA refrigerant rules, donation tips and drop-off sites.",
@@ -478,6 +484,7 @@ DISP = dict(
 # ---------------------------------------------------------------- 5. Dumpster vs junk removal
 DVJ = dict(
  slug="dumpster-rental-vs-junk-removal-homestead",
+ takeaways=['Rent a dumpster for multi-day projects such as remodels and roof replacements.', 'Book junk removal for one-day jobs, heavy lifting, tight driveways or deadlines.', 'Dumpsters start around $295 for 10 yards, while a quarter truck of junk removal runs $180 to $280.', 'A dumpster on your own driveway usually needs no permit, but street placement may.'],
  faq_h2="Dumpster Rental vs Junk Removal FAQs",
  title="Dumpster Rental vs Junk Removal in Homestead: Which Is Better?",
  desc="Dumpster rental vs junk removal in Homestead, FL: compare cost, labor, timing, permits, HOA rules and weight limits, with advice for every project type.",
@@ -615,14 +622,16 @@ def build_post(p):
     body = [
         hero(p["h1"], p["lead"], p["points"], p["hero_img"], p["hero_alt"], crumbs=crumbs, eyebrow="Junk Removal Guide", second=("Read the Guide", "#article")),
         f'<section class="section" id="article"><div class="wrap"><article class="article content reveal">'
-        f'<p class="meta">By {BRAND} &middot; Updated <time datetime="{PUBLISHED}">September 27, 2026</time></p>{p["body"]}</article></div></section>',
+        f'<p class="meta">By {BRAND} &middot; Updated <time datetime="{UPDATED}">October 1, 2026</time></p>'
+        f'<div class="takeaways"><h2>Key Takeaways</h2><ul>{"".join(f"<li>{t}</li>" for t in p["takeaways"])}</ul></div>{p["body"]}</article></div></section>',
         related_guides(p),
         faq(p["faq_h2"], "Quick answers to the questions Homestead residents ask most about this topic.", p["faqs"], alt_bg=False),
         cta("Ready to Get Rid of Your Junk?", "Call for a free, upfront quote. Same-day junk removal is available across Homestead and South Miami-Dade."),
     ]
     words = len(strip(p["body"]).split())
     art = {"@type": "BlogPosting", "@id": SITE + path + "#article", "headline": strip(p["title"]), "description": p["desc"],
-           "datePublished": PUBLISHED, "dateModified": PUBLISHED, "wordCount": words, "keywords": p["keyword"],
+           "datePublished": PUBLISHED, "dateModified": UPDATED,
+           "about": [seo.entity("Homestead"), seo.entity("Miami-Dade County")], "abstract": " ".join(p["takeaways"]), "wordCount": words, "keywords": p["keyword"],
            "image": f"{SITE}/assets/img/{p['hero_img']}-1200.webp" if os.path.exists(os.path.join(IMG_DIR, p['hero_img'] + "-1200.webp")) else f"{SITE}/assets/img/{p['hero_img']}-640.webp",
            "author": {"@id": f"{SITE}/#business"}, "publisher": {"@id": f"{SITE}/#business"},
            "mainEntityOfPage": {"@id": SITE + path + "#webpage"}, "inLanguage": "en-US"}

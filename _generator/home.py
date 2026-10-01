@@ -1,5 +1,5 @@
 from lib import *
-import blogs, zips
+import blogs, zips, seo
 
 TITLE = "Junk Removal in Homestead, FL | Same-Day Junk Hauling"
 DESC = ("Affordable junk removal in Homestead, FL 33030. Same-day junk pickup, furniture and appliance removal, dumpster rental and cleanouts. Call 877-745-9845.")
@@ -44,6 +44,8 @@ def body():
         "junk-removal-truck-homestead-fl", "Junk removal truck parked at a home in Homestead, Florida",
         eyebrow="Homestead, FL 33030 Junk Removal"))
     b.append(trust())
+    b.append(seo.quick_answer(*seo.HOME_QA, seo.facts("$95 to $650", "Same day when you call before noon",
+                                                     "Homestead, FL 33030 to 33035 and South Miami-Dade")))
 
     b.append(split(
         "Your Local Junk Removal Company in Homestead, Florida",
@@ -101,7 +103,9 @@ def body():
          ["3/4 truck (about 11 yards)", "Two-bedroom home cleanout", "$440 to $560"],
          ["Full truck (about 15 yards)", "Whole house or large estate", "$560 to $650"]],
         "Prices are typical ranges for Homestead and nearby ZIP codes. Very heavy loads such as concrete, dirt or roofing shingles may be priced by weight. "
-        "Your final price is confirmed on site before any work begins.", alt_bg=True))
+        "Your final price is confirmed on site before any work begins. Prices updated " + seo.UPDATED + ".", alt_bg=True))
+
+    b.append(seo.estimator())
 
     b.append(split(
         "Dumpster Rental and Debris Hauling for Bigger Projects",
