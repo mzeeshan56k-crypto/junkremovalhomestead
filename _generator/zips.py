@@ -108,7 +108,7 @@ SVC_ZIPS = ["33030", "33031", "33032", "33033", "33034", "33035", "33170", "3317
 def service_section(slug, name):
     what, avail, _ = SVC_ZIP[slug]
     rows = [[f"<b>{z}</b>", ZIP[z][0], avail] for z in SVC_ZIPS]
-    intro = (f"We provide {what} in every ZIP code below, from downtown Homestead (33030) to Cutler Bay (33190). "
+    intro = (f"Looking for {what} near me in Homestead? We provide {what} in every ZIP code below, from downtown Homestead (33030) to Cutler Bay (33190). "
              "Prices are the same in each one, and travel is always included.")
     return (f'<section class="section alt" id="zip-codes"><div class="wrap">'
             f'{sec_head(f"{name} by ZIP Code", intro, "ZIP Codes")}'

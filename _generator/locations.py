@@ -31,7 +31,7 @@ FC = dict(
   "<h2>Why Florida City Residents Call a Junk Removal Company</h2>"
   "<p>Florida City is its own municipality, so it sets its own trash and bulk pickup schedule. Bulk collection also has limits on what goes to the curb and how much. Construction debris, tires, concrete and large piles often do not qualify. You also have to drag everything to the street yourself in the South Florida heat.</p>"
   "<p>A private <strong>junk pickup service in Florida City</strong> skips the waiting and the heavy lifting. We carry items from inside the home, garage or unit, haul them away the same day and pay the disposal fees. Landlords and property managers use us between tenants so units can be cleaned, painted and rented without a pile of old furniture sitting in the parking lot.</p>"
-  "<h2>Commercial Junk Removal Along US 1 and Palm Drive</h2>"
+  "<h2>Business Cleanouts Along US 1 and Palm Drive</h2>"
   "<p>Hotels, restaurants, shops and offices along US 1 and Palm Drive rely on us for commercial junk removal. Typical jobs include mattress and furniture swaps, kitchen equipment, display fixtures, pallets and cardboard. We schedule early mornings or after closing, so guests and customers never see the work. For businesses that generate junk every month, we can return on a recurring schedule.</p>",
  price_h2="Junk Removal Cost in Florida City, FL",
  price_intro="Florida City pricing is simple. You pay for the space your items take up in our 15-cubic-yard truck, with labor, travel and disposal included.",
@@ -252,7 +252,7 @@ def build_location(l):
         trust(),
         seo.location_qa(p, ("ZIP code " if len(zs) == 1 else "ZIP codes ") + zips.zip_list(zs)),
         split(l["intro_h2"], l["intro_html"], l["intro_img"], l["intro_alt"], badge=l["badge"], eyebrow=f"Serving {n}"),
-        service_cards(f"Junk Removal Services in {p}", f"Every service below is available in {p} for homes, rentals and businesses.", alt_bg=True,
+        service_cards(f"Junk Removal Services in {p}", f"Searching for junk removal or junk hauling near you in {p}? Every service below is available here for homes, rentals and businesses, with upfront pricing and same-day pickup.", alt_bg=True,
                       place=p, zip_text=("ZIP code " if len(zs) == 1 else "ZIP codes ") + zips.zip_list(zs)),
         prose(l["body_html"]),
         steps(f"How Junk Pickup Works in {p}", "Booking takes about two minutes. Here is what to expect from first call to clean floor.", STEPS(p), alt_bg=True),

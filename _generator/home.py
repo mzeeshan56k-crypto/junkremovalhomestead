@@ -82,7 +82,7 @@ def body():
         + "<p>Because we sort each load, many items end up reused instead of buried. That matters in South Florida, where landfill space is limited. "
         "The EPA estimates that each American generates about 4.9 pounds of trash per day. Choosing a <strong>junk removal company that recycles</strong> "
         "keeps more of that out of the ground.</p>"
-        "<h2>Residential and Commercial Junk Removal in Homestead</h2>"
+        "<h2>Junk Removal for Homes, Rentals and Businesses</h2>"
         "<p>On the residential side, we handle garage cleanouts, move-out junk, hoarding situations, shed demolition debris and backyard cleanups. "
         "On the commercial side, we serve property managers, realtors, contractors and small businesses along Krome Avenue and Campbell Drive. Our commercial junk removal runs on flexible schedules, including early mornings before stores open. "
         "Landlords turning over units near Homestead Air Reserve Base also rely on us. We clear out tenant leftovers in a single visit, so the unit can be cleaned and listed the same week.</p>"))
@@ -108,7 +108,7 @@ def body():
     b.append(seo.estimator())
 
     b.append(split(
-        "Dumpster Rental and Debris Hauling for Bigger Projects",
+        "Options for Bigger Cleanup Projects",
         "<p>Some projects are too big or too long for a single pickup. For roof replacements, kitchen remodels and multi-day cleanouts we offer "
         "dumpster rental in Homestead with 10-, 15- and 20-yard roll-off containers. Our trailer-mounted dumpsters "
         "roll gently onto boards to protect pavers and driveways, a common concern in newer communities around the Homestead-Miami Speedway.</p>"

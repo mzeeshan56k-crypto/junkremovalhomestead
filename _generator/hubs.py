@@ -33,7 +33,7 @@ def services_page():
     for s in all_pages:
         rows.append([s["name"], best[s["slug"]], f'${s["min"]}'])
     b = [
-        hero("Junk Removal <em>Services</em> in Homestead, FL",
+        hero("All Our Services and <em>Item Prices</em>",
              "Our junk removal services cover every kind of cleanup, from a single couch to a full estate, job site or storm mess. One local crew lifts, loads, hauls and sweeps across South Miami-Dade with upfront pricing.",
              ["10 services, one phone call", "Same-day pickup available", "Upfront volume pricing", "Donation and recycling first"],
              "junk-hauling-truck-homestead", "Junk hauling truck for Homestead junk removal services",
@@ -66,8 +66,8 @@ def services_page():
         faq("Junk Removal Services FAQs", "Common questions about choosing and combining our services.", SVC_FAQS),
         cta("Not Sure Which Service You Need?", "Call and describe the job. We will recommend the fastest, most affordable option and give you an upfront price."),
     ]
-    return path, page(path, "Junk Removal Services in Homestead, FL | All Services",
-                      "All junk removal services in Homestead, FL: furniture and appliance removal, dumpster rental, cleanouts, debris and yard waste removal. Call 877-745-9845.",
+    return path, page(path, "Services and Item Prices | Junk Removal Homestead",
+                      "Compare every service we offer, from furniture and appliance removal to dumpster rental and cleanouts, with typical item prices. Call 877-745-9845.",
                       "\n".join(b), SVC_FAQS, crumbs)
 
 # ---------- /service-areas ----------

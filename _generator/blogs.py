@@ -17,14 +17,14 @@ def callout(html):
 COST = dict(
  slug="junk-removal-cost-homestead-fl",
  takeaways=['Most junk removal jobs in Homestead cost $95 to $650, based on how much of a 15-cubic-yard truck your items fill.', 'Single items start around $95, and a half truckload usually runs $300 to $425.', 'Concrete, dirt, roofing and tile are usually priced by weight instead of volume.', 'City and county bulk pickup is free but has size limits and banned items, including appliances inside Homestead city limits.'],
- faq_h2="Junk Removal Cost FAQs",
- title="Junk Removal Cost in Homestead, FL: 2026 Price Guide",
- desc="How much does junk removal cost in Homestead, FL? 2026 prices by truckload and by item, what changes the price, free city and county options and ways to save.",
- h1="Junk Removal Cost in <em>Homestead, FL</em>: 2026 Price Guide",
+ faq_h2="Junk Removal Pricing FAQs",
+ title="How Junk Removal Pricing Works in Homestead (and How to Save)",
+ desc="Learn how junk removal companies in Homestead, FL set prices, what raises or lowers your bill, the free city and county options and nine ways to save.",
+ h1="How Junk Removal Pricing Works in <em>Homestead</em> and How to Save",
  lead="Real junk removal prices for Homestead and South Miami-Dade, from a single couch to a full 15-cubic-yard truckload. Plus the free options and money-saving tips most homeowners never hear about.",
  points=["Prices by load and by item", "What raises or lowers cost", "Free city and county options", "Ways to save on every job"],
  hero_img="junk-removal-truck-homestead-fl", hero_alt="Junk removal truck loaded in Homestead, FL",
- keyword="junk removal cost Homestead FL",
+ keyword="how junk removal pricing works",
  body="""
 <p>Maybe you are staring at an old sectional, a broken fridge or a garage that has not held a car in years. Your first question is probably the same as everyone else's: how much does junk removal cost in Homestead, FL? The honest answer is that it depends on how much space your items take up, what they are made of and how quickly you need them gone. The good news is that pricing in South Miami-Dade follows a simple, predictable pattern once you understand it.</p>
 <p>This 2026 guide breaks down typical junk removal prices in Homestead by truckload and by item. It explains what moves the price up or down and compares the free city and county options. It also shares practical ways to pay less. The ranges come from real jobs across Homestead, Florida City, Leisure City, Princeton, Cutler Bay and the Redland.</p>
@@ -42,7 +42,7 @@ COST = dict(
 </ul>
 <p>The main exception is heavy material. Concrete, brick, dirt, sod, roof shingles and tile weigh far more per cubic yard than furniture, and disposal sites charge by the ton. Those loads are usually priced by weight or quoted per job, because a truck can hit its legal weight limit while it is still half empty.</p>
 
-<h2>Junk Removal Prices in Homestead by Truckload</h2>
+<h2>Typical Price Tiers by Truckload</h2>
 <p>These are typical 2026 ranges for household junk in Homestead and nearby ZIP codes such as 33030, 33031, 33032, 33033, 33034 and 33035.</p>
 """ + table(["Load Size", "Roughly Equals", "Typical Homestead Price"],
             [["Minimum / single item", "One recliner, mattress or small appliance", "$95 to $150"],
@@ -53,7 +53,7 @@ COST = dict(
              ["Full truck (about 15 yards)", "Whole house or large estate", "$560 to $650"]]) + """
 <p>If your pile falls between two sizes, you only pay for the space you use. A reputable crew will show you the loaded truck and explain the fraction before charging.</p>
 
-<h2>Junk Removal Cost by Item</h2>
+<h2>Typical Prices for Single Items</h2>
 <p>Single-item pickups are the most common calls in Homestead. Here is what individual items usually cost to remove when they are the only thing on the truck.</p>
 """ + table(["Item", "Typical Price", "Notes"],
             [["Recliner or armchair", "$95 to $120", "Minimum charge usually applies"],
@@ -67,7 +67,7 @@ COST = dict(
              ["Shed teardown and removal", "$300 to $650", "Size and material drive the price"]]) + """
 <p>Adding a few extra items to a single-item pickup rarely doubles the cost. The truck and crew are already on site, so extra items mostly add volume. That is why grouping items is one of the easiest ways to save.</p>
 
-<h2>What Makes Junk Removal Cost More or Less in South Miami-Dade</h2>
+<h2>What Raises or Lowers the Price</h2>
 <h3>Weight and Material</h3>
 <p>Heavy loads fill the truck's weight allowance before they fill its space. A pile of broken concrete pavers the size of a loveseat can weigh more than a whole bedroom of furniture. Expect weight-based pricing for concrete, dirt, rock, roofing and large amounts of tile.</p>
 <h3>Special Handling Items</h3>
@@ -100,7 +100,7 @@ COST = dict(
              ["Donation and recycling", "Extra stops", "Included"],
              ["Typical total for a half load", "$150 to $310 plus your time", "$300 to $425, done in about an hour"]]) + """
 
-<h2>9 Ways to Save Money on Junk Removal in Homestead</h2>
+<h2>9 Ways to Save Money on Your Junk Pickup</h2>
 <ol>
 <li><strong>Book everything at once.</strong> One half-truck load costs less than two quarter-truck visits.</li>
 <li><strong>Send photos first.</strong> A photo-based estimate lets you adjust the job before the truck rolls.</li>
@@ -125,7 +125,7 @@ COST = dict(
 <p>Most one-car garages fall between a half and three-quarter truck, while packed two-car garages often fill a full truck or more.</p>
 """,
  faqs=[
-  ("What is the average cost of junk removal in Homestead, FL?", "Most Homestead jobs land between $180 and $425, which covers a quarter to half truckload such as a bedroom set, a few appliances or a one-car garage. Single items start around $95, and full 15-cubic-yard loads run $560 to $650."),
+  ("Why do junk removal quotes vary between companies?", "Companies estimate truck volume differently, and some quote low on the phone and raise the price on site. Ask what fraction of the truck is being priced, and make sure the final price is confirmed before loading starts."),
   ("Is junk removal cheaper than renting a dumpster?", "For one-day jobs, usually yes, because labor is included and there is no multi-day rental. For remodels and projects that last several days, a 10- to 20-yard dumpster starting around $295 is often cheaper."),
   ("Do junk removal companies charge extra for stairs?", "Most Homestead crews include stairs, attics and long carries in the volume price. Very heavy single items like pianos, safes or cast-iron tubs may carry an added fee that is quoted upfront."),
   ("Why do refrigerators cost more to remove?", "Refrigerators and freezers contain refrigerant. Under EPA Section 608 rules, certified technicians must recover it before the unit can be scrapped. That handling adds a small cost."),
@@ -367,14 +367,14 @@ HURR = dict(
 DISP = dict(
  slug="appliance-mattress-furniture-disposal-homestead",
  takeaways=['City of Homestead bulk pickup does not accept appliances, but Miami-Dade County bulky pickup does.', 'Federal Section 608 rules require refrigerant to be recovered before a fridge or freezer is scrapped.', 'Many charities will not accept used mattresses, so call ahead before donating one.', 'Paint, chemicals and electronics go to the South Dade Home Chemical Collection Center at 23707 SW 97th Avenue.'],
- faq_h2="Appliance and Furniture Disposal FAQs",
- title="Appliance, Mattress and Furniture Disposal in Homestead, FL",
+ faq_h2="Getting Rid of Appliances and Furniture: FAQs",
+ title="How to Get Rid of Old Appliances and Furniture in Homestead",
  desc="How to get rid of old appliances, mattresses and furniture in Homestead, FL: city and county rules, EPA refrigerant rules, donation tips and drop-off sites.",
- h1="How to Dispose of Appliances, Mattresses and <em>Furniture in Homestead</em>",
+ h1="How to Get Rid of Old Appliances, Mattresses and <em>Furniture in Homestead</em>",
  lead="Refrigerators, washers, mattresses and couches are the items Homestead residents struggle with most. Here is where each one can legally go, what the rules say and how to donate or recycle as much as possible.",
  points=["Appliance disposal rules", "Mattress removal options", "Furniture donation tips", "Drop-off sites near Homestead"],
  hero_img="furniture-junk-pickup-homestead", hero_alt="Old furniture and mattress ready for pickup in Homestead, FL",
- keyword="appliance and furniture disposal Homestead",
+ keyword="how to get rid of old appliances Homestead",
  body="""
 <p>Old appliances, mattresses and furniture are the three things Homestead homeowners most often get stuck with. They are too big for a garbage cart, too heavy to carry alone, and each comes with its own rules. A refrigerator cannot simply be tossed because of the refrigerant inside it. Many charities will not accept used mattresses. And the City of Homestead's bulk trash program does not take appliances at all.</p>
 <p>This guide explains how to dispose of each item legally and responsibly in Homestead, Florida City and South Miami-Dade. Your options range from free pickup and donation to retailer haul-away and private removal.</p>
@@ -485,14 +485,14 @@ DISP = dict(
 DVJ = dict(
  slug="dumpster-rental-vs-junk-removal-homestead",
  takeaways=['Rent a dumpster for multi-day projects such as remodels and roof replacements.', 'Book junk removal for one-day jobs, heavy lifting, tight driveways or deadlines.', 'Dumpsters start around $295 for 10 yards, while a quarter truck of junk removal runs $180 to $280.', 'A dumpster on your own driveway usually needs no permit, but street placement may.'],
- faq_h2="Dumpster Rental vs Junk Removal FAQs",
- title="Dumpster Rental vs Junk Removal in Homestead: Which Is Better?",
- desc="Dumpster rental vs junk removal in Homestead, FL: compare cost, labor, timing, permits, HOA rules and weight limits, with advice for every project type.",
- h1="Dumpster Rental vs Junk Removal in <em>Homestead</em>: Which Is Better?",
+ faq_h2="Dumpster or Junk Removal FAQs",
+ title="Dumpster or Junk Removal? How to Choose in Homestead",
+ desc="Should you rent a dumpster or hire junk removal in Homestead, FL? Compare cost, labor, timing, permits, HOA rules and weight limits for every project.",
+ h1="Dumpster or Junk Removal? <em>How to Choose in Homestead</em>",
  lead="Both get rid of junk, but they work very differently. This side-by-side guide compares cost, labor, timing, permits and HOA rules so you can pick the right option for your Homestead project.",
  points=["Side-by-side cost comparison", "Labor and timing differences", "Permits, HOAs and driveways", "Best choice by project"],
  hero_img="roll-off-dumpster-rental-homestead", hero_alt="Roll-off dumpster rental in a Homestead driveway",
- keyword="dumpster rental vs junk removal Homestead",
+ keyword="dumpster or junk removal",
  body="""
 <p>When a project creates more waste than your trash cart can handle, you have two main choices in Homestead. You can rent a roll-off dumpster and fill it yourself. Or you can hire a junk removal crew to load and haul everything away. Both are common in South Miami-Dade, and both can be the cheaper option depending on the job.</p>
 <p>This guide compares dumpster rental and junk removal side by side. It covers cost, labor, timing, space, permits, HOA rules and weight limits. It then recommends the best option for common Homestead projects, from kitchen remodels in Keys Gate to hurricane cleanups in the Redland.</p>
