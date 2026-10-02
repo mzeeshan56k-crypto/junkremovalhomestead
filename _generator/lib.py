@@ -92,6 +92,7 @@ ICONS = {
     "shield": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
     "home": '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>',
     "list": '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+    "arrow": '<path d="M7 17 17 7M8 7h9v9"/>',
 }
 
 def icon(name, cls=""):
@@ -197,15 +198,44 @@ def service_cards(h2, p, exclude=None, alt_bg=False, sid="services", include_hom
 <div class="body"><h3><a href="/service/{slug}">{title}</a></h3><p>{blurb}</p></div></article>''')
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Our Services")}<div class="cards stagger">{"".join(cards)}</div></div></section>'
 
+def service_feature(h2, p, featured=("furniture-removal", "appliance-removal", "dumpster-rental"), alt_bg=True, sid="services"):
+    """Homepage services: three large photo cards, then the rest as a compact numbered list."""
+    tags = {"furniture-removal": "Couches and mattresses", "appliance-removal": "Fridges and washers", "dumpster-rental": "10 to 20 yards"}
+    big, rest = [], []
+    for slug, nav, title, blurb, image in SERVICES:
+        if slug in featured:
+            big.append(f'''<article class="feat">
+<figure>{img(image, ALT.get(image, title), sizes="(max-width: 960px) 100vw, 33vw")}</figure>
+<div class="feat-body"><span class="feat-tag">{tags.get(slug, "")}</span><h3><a href="/service/{slug}">{title}</a></h3><p>{blurb}</p></div></article>''')
+        else:
+            rest.append(f'<article class="svc-row"><span class="num">{len(rest) + 4:02d}</span><div><h3><a href="/service/{slug}">{title}</a></h3><p>{blurb}</p></div></article>')
+    return (f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Our Services")}'
+            f'<div class="feats stagger">{"".join(big)}</div><div class="svc-list stagger">{"".join(rest)}</div></div></section>')
+
 def steps(h2, p, items, alt_bg=True):
     out = []
     for title, text, ic in items:
         out.append(f'<div class="step"><div class="ic">{icon(ic)}</div><h3>{title}</h3><p>{text}</p></div>')
     return f'<section class="section{" alt" if alt_bg else ""}"><div class="wrap">{sec_head(h2, p, "How It Works")}<div class="steps stagger">{"".join(out)}</div></div></section>'
 
-def pricing(h2, intro, headers, rows, note, alt_bg=False, sid="pricing"):
+def tier_cards(tiers):
+    out = []
+    for i, (label, price, upto, holds, points) in enumerate(tiers):
+        lis = "".join(f"<li>{icon('check')}{x}</li>" for x in points)
+        out.append(f'<div class="tier{" hot" if i == 1 else ""}"><span class="tier-label">{i + 1:02d} &middot; {label}</span>'
+                   f'<p class="tier-price"><b>{price}</b> <span>to {upto}</span></p><p class="tier-holds">{holds}</p><ul>{lis}</ul>'
+                   f'<a class="tier-call" href="tel:{TEL}">Call to book<span aria-hidden="true">&rarr;</span></a></div>')
+    return f'<div class="tiers stagger">{"".join(out)}</div>'
+
+def pricing(h2, intro, headers, rows, note, alt_bg=False, sid="pricing", tiers=None):
     th = "".join(f"<th scope=\"col\">{h}</th>" for h in headers)
     tr = "".join("<tr>" + "".join(f'<td data-label="{headers[i]}">{c}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
+    if tiers:
+        return f'''<section class="section dark price-dark" id="{sid}"><div class="wrap">
+<div class="price-top"><div class="price-intro reveal"><span class="eyebrow dark">Pricing</span><h2>{h2}</h2><p>{intro}</p>
+<a class="line-link" href="tel:{TEL}">Not sure of the size? Call {PHONE}</a></div>{tier_cards(tiers)}</div>
+<div class="table-wrap reveal"><table class="stack"><caption class="sr-only">{h2}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>
+<p class="table-note reveal">{note}</p></div></section>'''
     return f'''<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, intro, "Pricing")}
 <div class="table-wrap reveal zoom"><table class="stack"><caption class="sr-only">{h2}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>
 <p class="table-note reveal">{note}</p></div></section>'''
@@ -243,16 +273,32 @@ def areas(h2, p, alt_bg=False, map_q="Homestead,+FL+33030", map_title="Homestead
     more = '<div class="areas-more reveal"><a class="btn btn-outline-dark" href="/fl">View All Service Areas</a></div>' if show_all else ""
     return f'<section class="section{" alt" if alt_bg else ""}" id="{sid}"><div class="wrap">{sec_head(h2, p, "Service Areas")}<ul class="areas stagger">{"".join(lis)}</ul>{more}{mp}</div></section>'
 
+# Simplified drawing of South Miami-Dade (west at left, Biscayne Bay at right) shown until the real map loads
+_PINS = [("Cutler Bay", 590, 70), ("Princeton", 470, 150), ("Redland", 250, 175), ("Leisure City", 520, 215),
+         ("Homestead", 430, 275), ("Florida City", 380, 345)]
+MAP_ART = ('<svg class="map-art" viewBox="0 0 900 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">'
+           '<rect width="900" height="400" fill="#e6f1e3"/>'
+           '<path d="M720 0C690 90 760 170 700 250S760 360 740 400H900V0z" fill="#cfe6ee"/>'
+           '<g stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"><path d="M640 0 560 120 470 250 400 400"/>'
+           '<path d="M0 120H700M0 260H690M300 0V400M120 0 200 400"/></g>'
+           '<g stroke="#f2c9a0" stroke-width="3" fill="none"><path d="M700 0 600 130 500 260 430 400"/></g>'
+           + "".join(f'<g transform="translate({x} {y})"><circle r="9" fill="#1e6b34" stroke="#fff" stroke-width="3"/>'
+                     f'<text x="16" y="5" font-size="17" font-family="Barlow,Arial,sans-serif" font-weight="600" fill="#0f3d1e">{n}</text></g>'
+                     for n, x, y in _PINS)
+           + '<text x="800" y="210" font-size="15" font-family="Barlow,Arial,sans-serif" letter-spacing="3" fill="#5c8a9b" text-anchor="middle">BISCAYNE BAY</text></svg>')
+
 def map_facade(q, title, style=""):
     """Click-to-load map: no Google Maps code is downloaded until the visitor asks for it."""
     st = f' style="{style}"' if style else ""
     return (f'<div class="map map-facade reveal"{st} data-map-src="https://www.google.com/maps?q={q}&amp;z=12&amp;output=embed" '
             f'data-map-title="Junk removal service area map for {H.escape(title)}">'
-            f'<button type="button" class="btn btn-primary map-load">{icon("pin")}<span>Show Map of {H.escape(title)}</span></button></div>')
+            f'{MAP_ART}<button type="button" class="btn btn-primary map-load">{icon("pin")}<span>Show Map of {H.escape(title)}</span></button></div>')
 
 def faq(h2, p, faqs, alt_bg=True):
     items = "".join(f'<details><summary><h3>{q}</h3></summary><div class="ans"><p>{a}</p></div></details>' for q, a in faqs)
-    return f'<section class="section{" alt" if alt_bg else ""}" id="faq"><div class="wrap">{sec_head(h2, p, "FAQs")}<div class="faq stagger">{items}</div></div></section>'
+    head = (f'<div class="faq-head reveal"><span class="eyebrow dark">FAQs</span><h2>{h2}</h2><p>{p}</p>'
+            f'<a class="line-link" href="tel:{TEL}">Still have a question? Call {PHONE}</a></div>')
+    return f'<section class="section{" alt" if alt_bg else ""}" id="faq"><div class="wrap faq-split">{head}<div class="faq stagger">{items}</div></div></section>'
 
 def cta(h2, p):
     return f'''<section class="section"><div class="wrap"><div class="cta reveal zoom">
@@ -280,8 +326,12 @@ def call_card(selected=None, area=None):
 <li>{icon("check")}{served}</li>
 </ul></div>'''
 
-def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None, second=("See Prices", "#pricing"), area=None):
+def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk Removal", selected=None, second=("See Prices", "#pricing"), area=None, stats=None):
     pts = "".join(f'<li><span class="tick">{icon("check")}</span>{p}</li>' for p in points)
+    pts_html = f'<ul class="hero-points">{pts}</ul>' if pts else ""
+    st = ""
+    if stats:
+        st = '<div class="hero-stats">' + "".join(f'<p><b>{n}</b><span>{l}</span></p>' for n, l in stats) + '</div>'
     cr = ""
     if crumbs:
         lis = "".join((f'<li><a href="{u}">{n}</a></li>' if u else f'<li aria-current="page">{n}</li>') for n, u in crumbs)
@@ -290,8 +340,8 @@ def hero(h1, lead, points, image, alt, crumbs=None, eyebrow="Homestead, FL Junk 
 <div class="hero-bg">{img(image, alt, sizes="100vw", eager=True)}</div>
 <div class="wrap">
 <div class="hero-anim">{cr}<span class="eyebrow">{icon("pin")} {eyebrow}</span><h1>{h1}</h1><p class="hero-lead">{lead}</p>
-<ul class="hero-points">{pts}</ul>
-<div class="hero-ctas">{call_btn("btn btn-primary pulse")}<a class="btn btn-outline" href="{second[1]}">{second[0]}</a></div></div>
+{pts_html}
+<div class="hero-ctas">{call_btn("btn btn-primary pulse")}<a class="btn btn-outline" href="{second[1]}">{second[0]}</a></div>{st}</div>
 {call_card(selected=selected, area=area)}
 </div></section>'''
 

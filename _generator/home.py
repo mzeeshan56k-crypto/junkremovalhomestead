@@ -35,9 +35,10 @@ def body():
         "Same-Day Junk Removal in <em>Homestead, FL</em>",
         "Need junk gone fast? Our local crew handles junk hauling, furniture removal, appliance disposal and full cleanouts across Homestead "
         "and South Miami-Dade. You point, we lift, load, haul and sweep. One call gets you an upfront price with no hidden fees.",
-        ["Same-day and next-day junk pickup", "Upfront pricing by truck volume", "Donation and recycling first", "Homes, rentals and businesses"],
+        [],
         "junk-removal-truck-homestead-fl", "Junk removal truck parked at a home in Homestead, Florida",
-        eyebrow="Homestead, FL Junk Removal"))
+        eyebrow="Homestead, FL Junk Removal",
+        stats=[("$95", "Starting price"), ("2 hr", "Arrival windows"), ("7 days", "7 AM to 7 PM")]))
     b.append(trust())
     b.append(seo.quick_answer(*seo.HOME_QA, seo.facts("$95 to $650", "Same day when you call before noon",
                                                      "Homestead, FL 33030 to 33035 and South Miami-Dade")))
@@ -52,7 +53,7 @@ def body():
         "junk-hauling-truck-homestead", "Junk hauling truck backing into a Homestead driveway",
         badge="<b>15 yd</b>trucks that clear most homes in one trip", eyebrow="About Us"))
 
-    b.append(service_cards(
+    b.append(service_feature(
         "Junk Removal and Hauling Services in Homestead",
         "From one old recliner to a full estate cleanout, every service below is available for residential and commercial customers across South Miami-Dade.",
         alt_bg=True))
@@ -97,7 +98,10 @@ def body():
          ["3/4 truck (about 11 yards)", "Packed one-car garage or several rooms", "$440 to $560"],
          ["Full truck (about 15 yards)", "Two-car garage or a small home's contents", "$560 to $650"]],
         "Prices are typical ranges for Homestead and nearby ZIP codes. Very heavy loads such as concrete, dirt or roofing shingles may be priced by weight. "
-        "Your final price is confirmed on site before any work begins. Prices updated " + seo.UPDATED + ".", alt_bg=True))
+        "Your final price is confirmed on site before any work begins. Prices updated " + seo.UPDATED + ".",
+        tiers=[("Single item", "$95", "$150", "One couch, mattress or appliance", ["Carried out from any room", "Labor and disposal included"]),
+               ("Half truck", "$300", "$425", "One-car garage or small apartment", ["About 7.5 cubic yards", "Donation and recycling sorted"]),
+               ("Full truck", "$560", "$650", "Two-car garage or a small home's contents", ["About 15 cubic yards", "Swept clean when we finish"])]))
 
     b.append(seo.estimator())
 
