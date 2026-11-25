@@ -71,7 +71,8 @@ def home_section():
         a = HOME_LABEL[z]
         pickup = "Call ahead for base access" if z == "33039" else "Same day when you call before noon"
         rows.append([f"<b>{z}</b>", a, pickup, "None"])
-    intro = ("We cover every part of Homestead, from downtown and Keys Gate to the neighborhoods near Homestead Air Reserve Base.")
+    intro = ("We cover every part of Homestead, including Downtown Homestead, Keys Gate, Waterstone, the Villages of Homestead, "
+             "Malibu Bay and East Homestead, plus the neighborhoods near Homestead Air Reserve Base.")
     body = ("<p>Prices are the same in every ZIP code, and there is no travel fee anywhere in our service area. "
             "Tell us your ZIP code when you call, and we will give you the earliest arrival window for your street.</p>")
     return (f'<section class="section" id="zip-codes"><div class="wrap">'

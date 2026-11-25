@@ -1,7 +1,7 @@
 from lib import *
 import blogs, zips, seo
 
-TITLE = "Junk Removal in Homestead, FL | Same-Day Junk Hauling"
+TITLE = "Junk Removal Homestead, FL 33030 | Same-Day Junk Hauling"
 DESC = ("Affordable junk removal in Homestead, FL 33030. Same-day junk pickup, furniture and appliance removal, dumpster rental and cleanouts. Call 877-745-9845.")
 
 FAQS = [
@@ -79,6 +79,22 @@ def body():
         "<p>On the residential side, we handle garage cleanouts, move-out junk, hoarding situations, shed demolition debris and backyard cleanups. "
         "On the commercial side, we serve property managers, realtors, contractors and small businesses along Krome Avenue and Campbell Drive. Our commercial junk removal runs on flexible schedules, including early mornings before stores open. "
         "Landlords turning over units near Homestead Air Reserve Base also rely on us. We clear out tenant leftovers in a single visit, so the unit can be cleaned and listed the same week.</p>"))
+
+    b.append(prose(alt_bg=False, sid="problems", body=
+        "<h2>Common Junk Problems We Solve in Homestead</h2>"
+        "<p>Most people call us because of a specific problem, not because they searched for a service. Here are the ones we hear about most often.</p>"
+        "<h3><a href=\"/service/appliance-removal\">The City Will Not Pick Up Your Old Fridge</a></h3>"
+        "<p>City of Homestead bulk pickup does not accept appliances. We carry out refrigerators, washers and water heaters and take them to a licensed recycler.</p>"
+        "<h3><a href=\"/service/furniture-removal\">Your Couch Is Too Heavy for Bulk Pickup</a></h3>"
+        "<p>Miami-Dade County bulky pickup refuses single items over 150 pounds. Sleeper sofas, sectionals and solid wood dressers are no problem for a two-person crew.</p>"
+        "<h3><a href=\"/service/garage-cleanout\">You Can No Longer Park in the Garage</a></h3>"
+        "<p>We sort, haul and sweep a packed garage in one visit, so you can park inside again and keep your car out of the sun.</p>"
+        "<h3>Your HOA Sent a Notice About a Curb Pile</h3>"
+        "<p>Many Keys Gate and Waterstone associations limit what can sit at the curb. We load straight from your garage, patio or backyard, so nothing waits on the street.</p>"
+        "<h3><a href=\"/service/estate-cleanout\">You Need to Empty a House Before a Sale</a></h3>"
+        "<p>When a home must be cleared for a closing or a new tenant, we empty it room by room, set aside keepsakes and leave it broom-clean.</p>"
+        "<h3><a href=\"/service/hurricane-debris-removal\">A Storm Left Limbs and Soaked Carpet Behind</a></h3>"
+        "<p>Public storm debris collection can take weeks. We clear downed limbs, fencing and water-damaged contents quickly, so repairs can start sooner.</p>"))
 
     b.append(steps("How Our Junk Pickup Service Works",
         "Booking junk removal in Homestead takes about two minutes. Here is what to expect from first call to clean floor.",
