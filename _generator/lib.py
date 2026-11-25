@@ -350,7 +350,8 @@ def page(path, title, desc, body, faqs, crumbs, service=None, og_image="og-junk-
     if service:
         graph.append({"@type": "Service", "@id": url + "#service", "name": service["name"], "serviceType": service["type"],
                       "description": desc, "url": url, "provider": {"@id": f"{SITE}/#business"},
-                      "areaServed": service.get("area") or [{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS],
+                      "areaServed": service.get("area") or ([{"@type": "City", "name": f"{n}, FL"} for n, _ in AREAS]
+                                                            + __import__("zips").zip_schema(__import__("zips").HOMESTEAD_ZIPS)),
                       "offers": __import__("seo").aggregate_offer(service["min"], service.get("max", service["min"])),
                       **({"hasOfferCatalog": service["catalog"]} if service.get("catalog") else {}),
                       "hoursAvailable": {"@type": "OpeningHoursSpecification",

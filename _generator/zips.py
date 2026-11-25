@@ -134,6 +134,14 @@ LOC_ZIP = {
  "33170": ("Eastern Redland", "Homes, small farms and nurseries on the eastern edge of the Redland. Yard waste, appliance pickups and shed removal are frequent requests."),
 }
 
+# Neighborhoods named on each location page (only names confirmed in public listings or records)
+LOC_HOODS = {
+ "Florida City": ["the downtown blocks along Krome Avenue", "the Palm Drive corridor", "the area around the Florida Keys Outlet Marketplace"],
+ "Cutler Bay": ["Saga Bay", "Lakes by the Bay", "the Old Cutler area", "the area around Southland Mall"],
+ "Princeton": ["Hemingway Point", "Silver Palm Park", "Silver Palm East", "Spicewood"],
+ "Redland": ["Silver Palm and its historic district", "the groves around the Fruit and Spice Park", "the farms along Krome Avenue"],
+}
+
 def location_section(l, place):
     zs = [z.strip() for z in l["zips"].split(",")]
     rows = [[f"<b>{z}</b>", *LOC_ZIP.get(z, ZIP[z])] for z in zs]
@@ -146,6 +154,9 @@ def location_section(l, place):
         h2 = f"Junk Removal in {place} ZIP Codes {zip_list(zs)}"
         intro = (f"{cap} spans ZIP codes {zip_list(zs)}. We offer the same fast junk removal, cleanouts and dumpster rental "
                  "in each one, with no travel fee.")
+    hoods = LOC_HOODS.get(l["name"])
+    if hoods:
+        intro += f" Our {place.replace('the ', '')} junk removal crews work throughout {place}, including {zip_list(hoods)}."
     return (f'<section class="section" id="zip-codes"><div class="wrap">'
             f'{sec_head(h2, intro, "ZIP Codes")}'
             f'{_table(["ZIP Code", "Area", "What to Know"], rows)}'
